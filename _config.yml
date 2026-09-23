@@ -1,0 +1,42 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole site, values
+# which you are expected to set up once and rarely edit after that.
+
+# Site settings
+title: Open IIoT Lab
+description: >-
+  An open research collective for industrial intelligence, edge-native systems,
+  and trustworthy automation.
+
+# The subpath of your site, e.g. "/open-iiot-lab-homepage".
+# Leave it empty for a local preview at http://127.0.0.1:4000/ or for a site
+# served from the root of a domain. When the repository is published as a
+# GitHub Pages project site, set this to "/<repository-name>".
+baseurl: ""
+
+# The full URL of your site, e.g. "https://example.org". Optional.
+url: ""
+
+# Build settings
+markdown: kramdown
+
+# Blog articles live under /blog/ so that the blog index and the articles share a path prefix.
+permalink: /blog/:year/:month/:day/:title/
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+  - .bundle
+plugins:
+  - jekyll-email-protect
+
+# timezone: Asia/Shanghai
+
+collections:
+  - publications
+  - news
+  - showcase
+  - posts

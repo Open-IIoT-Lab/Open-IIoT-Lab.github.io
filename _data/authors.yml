@@ -1,0 +1,19 @@
+# Author names used by the publication list. The key is what you write in a
+# publication's `authors:` field; `name` overrides the displayed text, `url`
+# turns the name into a link, and `bold: true` highlights it.
+#
+# Open IIoT Lab publishes collectively, so the lab itself — not an individual —
+# is the highlighted author. Replace these entries with your lab members if you
+# prefer to list people.
+
+"Open IIoT Lab":
+  bold: true
+
+"Edge Runtime Group":
+  name: Edge Runtime Group
+
+"Plant Semantics Group":
+  name: Plant Semantics Group
+
+"Field Studies Group":
+  name: Field Studies Group

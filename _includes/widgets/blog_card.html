@@ -1,0 +1,7 @@
+{% assign item = include.item %}
+<article class="classic-blog-entry {% if include.hide_bottom_border %}classic-publication-last{% endif %}">
+    <h3><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h3>
+    <div class="classic-small"><time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: '%B %d, %Y' }}</time>{% for tag in item.tags %}<span class="classic-tag">{{ tag }}</span>{% endfor %}</div>
+    <p class="classic-blog-excerpt">{% if item.excerpt %}{{ item.excerpt | strip_html | truncate: 500 }}{% else %}{{ item.content | strip_html | truncate: 500 }}{% endif %}</p>
+    <a class="classic-button" href="{{ item.url | relative_url }}">Read article</a>
+</article>

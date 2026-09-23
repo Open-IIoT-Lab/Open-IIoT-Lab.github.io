@@ -1,0 +1,21 @@
+<section id="experience" class="classic-section" aria-label="Lab background">
+    <div class="classic-background-grid">
+        {% for category in site.data.profile %}
+        {% assign key = category[0] %}
+        {% if key == 'education' or key == 'experience' or key == 'awards' %}
+        {% assign group_heading = site.data.profile.section_headings[key] %}
+        <section class="classic-background-group">
+            <h2>{% if group_heading %}{{ group_heading }}{% elsif key == 'awards' %}Honors & Awards{% else %}{{ key | capitalize }}{% endif %}</h2>
+            <ul class="classic-background-list">
+                {% for item in category[1] %}
+                <li>
+                    {% if item.logo %}<img class="classic-institution-logo" src="{{ item.logo | relative_url }}" alt="" width="32" height="32">{% endif %}
+                    <div><div class="classic-background-name">{{ item.name }}</div>{% if item.dept %}<div>{{ item.dept }}</div>{% endif %}{% if item.position %}<div>{{ item.position }}</div>{% endif %}<div class="classic-date">{{ item.date }}</div></div>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+        {% endif %}
+        {% endfor %}
+    </div>
+</section>

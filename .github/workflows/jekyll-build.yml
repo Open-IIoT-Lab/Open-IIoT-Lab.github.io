@@ -1,0 +1,43 @@
+name: Build site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+          bundler-cache: true
+
+      - name: Build the site with Jekyll
+        run: bundle exec jekyll build --trace
+
+      - name: Check that every page was generated
+        run: |
+          for page in index.html publications.html blog.html showcase.html 404.html; do
+            if [ ! -f "_site/$page" ]; then
+              echo "::error::Jekyll did not generate _site/$page"
+              exit 1
+            fi
+          done
+          echo "Pages generated:"; ls _site
+
+      - name: Upload the generated site
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: _site
+          retention-days: 7

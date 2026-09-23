@@ -1,0 +1,18 @@
+{% assign item = include.item %}
+<article class="classic-publication {% if include.hide_bottom_border %}classic-publication-last{% endif %}">
+    <div class="classic-publication-cover">
+        {% if item.cover %}<img src="{{ item.cover | relative_url }}" alt="Cover for {{ item.title | escape }}" loading="lazy" class="classic-research-cover">{% else %}<svg class="bubble-visual-hash classic-visual-hash" data-bubble-visual-hash="{{ item.title | strip_html | escape }}" viewBox="0 0 150 100" width="150" height="100" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><rect width="150" height="100" fill="#dfdfdf"></rect><path d="M0 20H150M0 40H150M0 60H150M0 80H150M30 0V100M60 0V100M90 0V100M120 0V100" fill="none" stroke="#c0c0c0"></path></svg>{% endif %}
+    </div>
+    <div class="classic-publication-content">
+        <h3>{{ item.title }}</h3>
+        <p class="classic-publication-authors">{% include widgets/author_list.html authors=item.authors %}</p>
+        <p class="classic-publication-venue">{{ item.pub_pre }}<i>{{ item.pub }}</i>{{ item.pub_post }} {{ item.pub_date }} {{ item.pub_last }} <span data-semantic-scholar-id="{{ item.semantic_scholar_id }}"></span></p>
+        <div class="classic-publication-abstract">{{ item.abstract }}</div>
+        <div class="classic-publication-links">
+            {% for link in item.links %}
+            {% if link[1].url %}{% assign link_url = link[1].url %}{% assign link_target = link[1].target | default: '_blank' %}{% else %}{% assign link_url = link[1] %}{% assign link_target = '_blank' %}{% endif %}
+            <a class="classic-button" href="{{ link_url | relative_url }}" target="{{ link_target }}" {% if link_target == '_blank' %}rel="noopener noreferrer"{% endif %}>{{ link[0] }}</a>
+            {% endfor %}
+        </div>
+    </div>
+</article>

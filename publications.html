@@ -1,0 +1,21 @@
+---
+layout: default
+title: Publications
+navbar_title: Publications
+---
+{% assign pubs_by_year = site.publications | sort: 'date' | reverse | group_by_exp: 'item', "item.date | date: '%Y'" %}
+<div class="classic-archive-grid">
+    <div class="classic-document">
+        <h1 class="classic-section-heading"><img class="classic-icon" src="{{ '/assets/images/classic/icons/32/directory_open_file_mydocs-0.png' | relative_url }}" alt="" width="32" height="32">Publications</h1>
+        {% for year in pubs_by_year %}
+        <section class="classic-archive-year" aria-labelledby="year-{{ year.name }}">
+            <h2 id="year-{{ year.name }}">{{ year.name }}</h2>
+            {% for item in year.items %}{% include widgets/publication_item.html item=item hide_bottom_border=forloop.last %}{% endfor %}
+        </section>
+        {% endfor %}
+    </div>
+    <nav id="navbar-year" class="classic-year-navigation" aria-label="Publication years">
+        <h2 class="classic-rail-heading">By year</h2>
+        {% for year in pubs_by_year %}<a class="classic-button" href="#year-{{ year.name }}">{{ year.name }}</a>{% endfor %}
+    </nav>
+</div>

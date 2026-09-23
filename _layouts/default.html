@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" class="classic-root">
+<!-- Template: https://github.com/luost26/academic-homepage -->
+<head>
+    {% include classic/head.html %}
+</head>
+<body class="classic-site" {{ page.body_attr }}>
+    <a class="classic-skip-link" href="#main-content">Skip to content</a>
+    <div class="classic-frame">
+        {% include navbar.html %}
+        <main id="main-content" class="classic-main" tabindex="-1">{{ content }}</main>
+        {% include footer.html %}
+    </div>
+    {% include classic/scripts.html %}
+</body>
+</html>

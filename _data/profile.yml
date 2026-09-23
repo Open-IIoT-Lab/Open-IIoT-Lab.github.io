@@ -1,0 +1,85 @@
+primary_name: "Open IIoT Lab"
+secondary_name: "Open Industrial Intelligence"
+navbar_name: "Open IIoT Lab"
+eyebrow: "Open research collective"
+
+positions:
+- name: An open research collective for industrial intelligence
+- name: Edge systems · Interoperability · Trustworthy automation
+
+email: "hello@openiiotlab.org"
+github: Open-IIoT-Lab
+
+short_bio_text_justify: false
+short_bio: >-
+  <p>
+    Open IIoT Lab works on the unglamorous middle of industrial digitalisation: the place where
+    machines, models, protocols, and people have to agree well enough to run a plant. We build
+    <strong>edge-native systems</strong>, practical <strong>interoperability</strong> layers, and
+    automation that can be inspected, tested, and argued with.
+  </p>
+  <p>
+    Everything the lab produces is published in the open — reference implementations, benchmarks,
+    field notes, and the failure modes that taught us something. We would rather ship a small system
+    that a plant engineer can read end to end than a large one nobody can question.
+  </p>
+
+# The lab mark stands in for the portrait used by the upstream template.
+portrait_url: /assets/images/open-iiot-mark.svg
+portrait_caption: >-
+  The lab mark: an open industrial network drawn as connected nodes.
+
+# The upstream template renders the "education", "experience", and "awards" groups as the
+# background section. For an organisation they carry the lab's focus areas, programmes, and
+# milestones; the headings below rename them without touching the widget.
+section_headings:
+  education: Focus areas
+  experience: Programmes
+  awards: Milestones
+
+education:
+- name: Intelligence at the edge
+  position: >-
+    Low-latency inference, scheduling, and resilience patterns that keep data, decisions, and
+    recovery close to the process.
+- name: Meaning across systems
+  position: >-
+    Open information models and pragmatic interfaces that let equipment, tooling, and people
+    share the same context.
+- name: Automation with agency
+  position: >-
+    Observable, testable automation that leaves room for human judgement, escalation, and
+    accountability.
+- name: Practice and evidence
+  position: >-
+    Benchmarks, field notes, and reference implementations that make industrial claims
+    checkable by someone other than their author.
+
+experience:
+- name: Open Edge Runtime
+  position: >-
+    A portable control plane for running event-driven services beside production equipment.
+  date: 2024 - present
+- name: Plant Graph
+  position: >-
+    An operational knowledge graph that links assets, signals, procedures, and people into one
+    reviewable digital thread.
+  date: 2024 - present
+- name: Open Loop Bench
+  position: >-
+    A repeatable scenario harness for testing industrial AI before it meets a production line.
+  date: 2025 - present
+- name: Protocol Field Notes
+  position: >-
+    Short, practical write-ups on connecting legacy interfaces to inspectable workflows.
+  date: 2023 - present
+
+awards:
+- name: Open IIoT Lab is founded as an independent open research collective
+  date: 2023
+- name: First public release of the Open Edge Runtime reference implementation
+  date: 2024
+- name: Field study programme opens with three partner plants
+  date: 2024
+- name: Open benchmark suite for industrial edge workloads published
+  date: 2025

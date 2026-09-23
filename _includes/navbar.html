@@ -1,0 +1,11 @@
+<header class="classic-masthead">
+    <p class="classic-eyebrow">{{ site.data.profile.eyebrow | default: 'Open research collective' }}</p>
+    <a class="classic-site-name" href="{{ '/' | relative_url }}">{{ site.data.profile.navbar_name | escape }}</a>
+    <p class="classic-masthead-affiliation">{% for position in site.data.profile.positions %}{{ position.name }}{% unless forloop.last %} <span aria-hidden="true">·</span> {% endunless %}{% endfor %}</p>
+</header>
+{% assign active_page = page.navbar_title %}{% if page.layout == 'blog_post' %}{% assign active_page = 'Blog' %}{% endif %}
+<nav class="classic-navigation" aria-label="Main navigation">
+    {% for item in site.data.navigation.pages %}
+    <a class="classic-tab" href="{{ item.url | relative_url }}" {% if item.name == active_page %}aria-current="page"{% endif %}>{{ item.name }}</a>
+    {% endfor %}
+</nav>

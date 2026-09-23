@@ -1,0 +1,7 @@
+{% assign news_items = site.news | sort: 'date' | reverse | slice: 0, include.limit %}
+<section id="news" class="classic-section" aria-labelledby="news-heading">
+    <h2 id="news-heading" class="classic-section-heading"><img class="classic-icon" src="{{ '/assets/images/classic/icons/32/calendar-2.png' | relative_url }}" alt="" width="32" height="32">News</h2>
+    <ul class="classic-news-list">
+        {% for item in news_items %}<li><time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: '%b %d, %Y' }}</time><div>{{ item.title }}</div></li>{% endfor %}
+    </ul>
+</section>
