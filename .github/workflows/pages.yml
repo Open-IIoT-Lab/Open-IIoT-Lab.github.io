@@ -43,7 +43,7 @@ jobs:
           missing=0
           # The site's permalink style gives pages clean URLs, so look for either
           # publications.html or publications/index.html and so on.
-          for page in index publications blog showcase; do
+          for page in index research publications people blog gallery contact; do
             if [ ! -f "_site/$page.html" ] && [ ! -f "_site/$page/index.html" ]; then
               echo "::error::Jekyll did not generate a page for $page"
               missing=1
