@@ -1,0 +1,14 @@
+# Photo sets for the Gallery page. Put the image files in assets/images/gallery/
+# and list them here, for example:
+#
+# - title: Group photo
+#   date: 2025-06-01
+#   images:
+#     - src: /assets/images/gallery/group-2025.jpg
+#       caption: Lab retreat, June 2025
+#     - src: /assets/images/gallery/bench.jpg
+#       caption: On the bench
+#
+# Sets are shown newest first. The page explains the empty state while this list is empty.
+
+groups: []

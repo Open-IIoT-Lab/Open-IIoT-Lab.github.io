@@ -1,6 +1,7 @@
 ---
 title:          "Replay in Practice: Comparing Industrial Models on Recorded Plant Traces"
 date:           2026-04-08 00:01:00 +0800
+programme:      "Open Loop Bench"
 selected:       true
 pub:            "Open Industrial IoT Lab Technical Report Series"
 pub_pre:        "OIL-TR-2026-01 · "

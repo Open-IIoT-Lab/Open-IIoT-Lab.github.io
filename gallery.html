@@ -1,0 +1,49 @@
+---
+layout: default
+title: Gallery
+navbar_title: Gallery
+---
+
+{% assign photo_sets = site.data.gallery.groups | sort: "date" | reverse %}
+
+<div class="classic-document classic-showcase">
+    <h1 class="classic-section-heading"><img class="classic-icon" src="{{ '/assets/images/classic/icons/32/paint_file-2.png' | relative_url }}" alt="" width="32" height="32">Gallery</h1>
+
+    <p>
+        Photographs from the parts of the work that do not fit in a report: benches mid-build,
+        equipment that fought back, field visits, and the occasional meal that ended a long week.
+    </p>
+
+    {% if photo_sets.size > 0 %}
+    {% for set in photo_sets %}
+    <section class="classic-section" aria-labelledby="set-{{ set.title | slugify }}">
+        <h2 id="set-{{ set.title | slugify }}" class="classic-section-heading">{{ set.title }}</h2>
+        <div class="row grid">
+            <div class="grid-sizer col-1"></div>
+            {% for image in set.images %}
+            <div class="p-2 grid-item col-md-4 col-sm-6 col-12">
+                <figure class="card border-0 shadow-sm bg-white">
+                    <img src="{{ image.src | relative_url }}" alt="{{ image.caption | default: set.title | escape }}" loading="lazy" class="card-img-top">
+                    {% if image.caption %}<figcaption class="p-3">{{ image.caption }}</figcaption>{% endif %}
+                </figure>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    {% endfor %}
+
+    {% else %}
+    <section class="classic-section" aria-labelledby="empty-heading">
+        <h2 id="empty-heading" class="classic-section-heading">Nothing published yet</h2>
+        <p>
+            We add photos here once everybody in them is happy for them to be public — which is why
+            this page is still empty. The groups we are collecting are group photos, field work, and
+            lab life.
+        </p>
+        <p>
+            If you have pictures from a lab event that should be here, send them to the lab and they
+            will be added with a caption.
+        </p>
+    </section>
+    {% endif %}
+</div>

@@ -1,6 +1,7 @@
 ---
 title:          "A Small, Boring Checklist for Benchmarking Industrial AI at the Edge"
 date:           2025-03-21 00:01:00 +0800
+programme:      "Open Loop Bench"
 selected:       true
 pub:            "Open Industrial IoT Lab Working Paper Series"
 pub_pre:        "OIL-WP-2025-01 · "

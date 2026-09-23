@@ -2,7 +2,7 @@
 show: true
 width: 6
 date: 2024-01-16 09:00:00 +0800
-group: Working in the open
+group: How we work
 ---
 
 <div class="p-4">

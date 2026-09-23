@@ -1,6 +1,7 @@
 ---
 title:          "Aligning Legacy Industrial Interfaces with Shared Information Models: A Minimal Ontology and Its Failure Modes"
 date:           2025-05-20 00:01:00 +0800
+programme:      "Plant Graph"
 selected:       true
 pub:            "Open Industrial IoT Lab Technical Report Series"
 pub_pre:        "OIL-TR-2025-01 · "

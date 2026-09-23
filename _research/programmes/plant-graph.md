@@ -1,6 +1,7 @@
 ---
 show: true
 width: 6
+title: Plant Graph
 date: 2025-09-08 09:00:00 +0800
 group: Programmes
 ---
@@ -18,8 +19,8 @@ group: Programmes
         <li>Mapping tables published with the mappings, unknown values kept distinct from empty ones.</li>
         <li>A review workflow that runs before a mapping reaches production.</li>
     </ul>
+    {% include widgets/programme_reports.html %}
     <p>
-        <a class="classic-button" href="{{ '/publications' | relative_url }}">Read OIL-TR-2024-03</a>
         <a class="classic-button" href="{{ '/blog/2025/08/19/why-industrial-data-models-keep-failing/' | relative_url }}">Why models fail</a>
     </p>
 </div>

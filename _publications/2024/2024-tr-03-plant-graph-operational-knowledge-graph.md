@@ -1,6 +1,7 @@
 ---
 title:          "Plant Graph: Modelling Assets, Signals, and Procedures as an Operational Knowledge Graph"
 date:           2024-10-09 00:01:00 +0800
+programme:      "Plant Graph"
 pub:            "Open Industrial IoT Lab Technical Report Series"
 pub_pre:        "OIL-TR-2024-03 · "
 pub_date:       "2024"

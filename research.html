@@ -1,0 +1,46 @@
+---
+layout: default
+title: Research
+navbar_title: Research
+---
+
+{% assign programmes = site.research | where: "show", true | where: "group", "Programmes" | sort: "date" | reverse %}
+{% assign practice = site.research | where: "show", true | where: "group", "How we work" | sort: "date" | reverse %}
+
+<div class="classic-document classic-showcase">
+    <h1 class="classic-section-heading"><img class="classic-icon" src="{{ '/assets/images/classic/icons/32/tree-0.png' | relative_url }}" alt="" width="32" height="32">Research</h1>
+
+    <p>
+        Our lab works on the middle of industrial digitalisation where the interesting failures
+        happen: between the sensor and the model, between the model and the machine, and between the
+        machine and the person responsible for it. Four directions guide the work, four programmes
+        carry it, and everything we find is published — including the parts that did not work.
+    </p>
+
+    <section class="classic-section" aria-labelledby="directions-heading">
+        <h2 id="directions-heading" class="classic-section-heading">Directions</h2>
+        <div class="classic-background-grid">
+            {% for area in site.data.profile.education %}
+            <section class="classic-background-group">
+                <h2>{{ area.name }}</h2>
+                <p>{{ area.position }}</p>
+            </section>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="classic-section" aria-labelledby="programmes-heading">
+        <h2 id="programmes-heading" class="classic-section-heading">Programmes and outputs</h2>
+        <p>
+            Each programme is something we are actively building, instrumenting, or writing about.
+            The reports listed under a programme are the outputs it has produced so far; they link
+            straight into the publication list.
+        </p>
+        {% include widgets/card_grid.html items=programmes %}
+    </section>
+
+    <section class="classic-section" aria-labelledby="practice-heading">
+        <h2 id="practice-heading" class="classic-section-heading">How we work</h2>
+        {% include widgets/card_grid.html items=practice %}
+    </section>
+</div>

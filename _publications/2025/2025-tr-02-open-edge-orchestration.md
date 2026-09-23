@@ -1,6 +1,7 @@
 ---
 title:          "Open Edge Orchestration: A Vendor-Neutral Reference Architecture for Services Beside Industrial Equipment"
 date:           2025-09-18 00:01:00 +0800
+programme:      "Open Edge Runtime"
 selected:       true
 pub:            "Open Industrial IoT Lab Technical Report Series"
 pub_pre:        "OIL-TR-2025-02 · "

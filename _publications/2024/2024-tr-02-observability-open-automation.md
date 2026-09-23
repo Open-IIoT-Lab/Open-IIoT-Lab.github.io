@@ -1,6 +1,7 @@
 ---
 title:          "Observability Patterns for Open Automation: Logging, Tracing, and Recovery in Long-Lived Deployments"
 date:           2024-06-11 00:01:00 +0800
+programme:      "Open Edge Runtime"
 pub:            "Open Industrial IoT Lab Technical Report Series"
 pub_pre:        "OIL-TR-2024-02 · "
 pub_date:       "2024"

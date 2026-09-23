@@ -1,0 +1,20 @@
+# Lab members. The People page renders one section per group, in the order listed
+# below, and skips any group that is still empty. Add a member like this:
+#
+# - name: Jane Doe
+#   role: PhD student, battery-free wireless sensing
+#   url: https://example.org                     # optional link
+#   photo: /assets/images/people/jane-doe.jpg    # optional, 240x240 or larger
+#   dates: 2024 - present                        # optional
+#
+# Nobody is listed until you add them here.
+
+groups:
+  - name: Principal Investigator
+    members: []
+  - name: PhD students
+    members: []
+  - name: Master students
+    members: []
+  - name: Alumni
+    members: []

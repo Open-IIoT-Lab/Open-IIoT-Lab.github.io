@@ -29,6 +29,25 @@ comes from that template; the content, the lab mark, and the section structure a
 
 ![The Open Industrial IoT Lab homepage: navy masthead, tabbed navigation, profile rail, and the lab's focus areas, programmes, milestones, and news](assets/images/screenshots/homepage.png)
 
+## Sections
+
+The navigation follows the column arrangement of a typical research-lab site — the same six
+columns as [WiNet Lab](https://zjugxz.github.io/WiNet-Lab/) — with the lab's blog kept as an extra
+column:
+
+| Tab | Page | What it holds |
+| --- | --- | --- |
+| Home | `index.html` | Profile rail, about the lab, focus areas, programmes, milestones, news, selected publications |
+| Research | `research.html` | Directions, then each programme with the reports it produced, then how the lab works |
+| Publications | `publications.html` | Every report, grouped by year |
+| People | `people.html` | The roster, grouped by role, filled from `_data/people.yml` |
+| Blog | `blog.html` | Lab notes — the extra column this site keeps |
+| Gallery | `gallery.html` | Photo sets, filled from `_data/gallery.yml` |
+| Contact | `contact.html` | Joining the lab, collaborating with it, and how to reach it |
+
+The order and labels live in `_data/navigation.yml`; each page's front matter carries a
+`navbar_title` that must match the `name` of its navigation entry so the right tab is highlighted.
+
 ## Preview locally
 
 The site is plain Jekyll; there is no build step for the content itself.
@@ -48,14 +67,16 @@ the root of the local server, exactly as it is in production, so internal links 
 | Path | What it holds |
 | --- | --- |
 | `_data/profile.yml` | Lab name, strapline, eyebrow, contact links, about text, focus areas, programmes, milestones |
-| `_data/navigation.yml` | The four navigation tabs, in order |
+| `_data/navigation.yml` | The seven navigation tabs, in order |
 | `_data/display.yml` | Which homepage sections are shown, how many news items, footer text |
 | `_data/authors.yml` | Author names used (and highlighted) in publication lists |
+| `_data/people.yml` | Lab members, grouped by role for the People page |
+| `_data/gallery.yml` | Photo sets for the Gallery page |
 | `_news/*.md` | One file per news line on the homepage |
 | `_publications/<year>/*.md` | One file per report, paper, or working paper |
 | `_posts/*.md` | Blog articles (the lab notebook) |
-| `_showcase/<group>/*.md` | Showcase cards, grouped by their `group:` field |
-| `index.html`, `publications.html`, `blog.html`, `showcase.html`, `404.html` | Page shells; they mostly assemble the widgets below |
+| `_research/<group>/*.md` | Research cards: programme cards and the "how we work" cards, grouped by `group:` |
+| `index.html`, `research.html`, `publications.html`, `people.html`, `blog.html`, `gallery.html`, `contact.html`, `404.html` | Page shells; they mostly assemble the widgets below |
 | `_layouts/`, `_includes/` | Template engine: page layouts and the widgets each page uses |
 | `assets/` | Theme CSS and JS, the Windows 95-style font, the classic icon set, the lab mark |
 | `.github/workflows/pages.yml` | CI: builds the site on every push and pull request, and deploys it to GitHub Pages from `main` |
@@ -87,30 +108,45 @@ date: 2026-01-15 09:00:00 +0800
 ```
 
 **A publication** — add `_publications/<year>/<year>-short-title.md`. Set `selected: true` to show
-it on the homepage. Fields: `title`, `date`, `selected`, `pub_pre`, `pub`, `pub_date`, `pub_last`
-(trailing badges), `abstract`, `authors` (keys from `_data/authors.yml`), `links`, and optionally
-`cover` (an image path; without it the template draws a deterministic dithered cover from the
-title) and `semantic_scholar_id` (adds a live citation count).
+it on the homepage. Fields: `title`, `date`, `selected`, `programme` (must match a programme card's
+`title` so the Research page lists the report under that programme), `pub_pre`, `pub`, `pub_date`,
+`pub_last` (trailing badges), `abstract`, `authors` (keys from `_data/authors.yml`), `links`, and
+optionally `cover` (an image path; without it the template draws a deterministic dithered cover from
+the title) and `semantic_scholar_id` (adds a live citation count).
 
 **A blog article** — add `_posts/YYYY-MM-DD-short-title.md` with `layout: blog_post`, `title`,
 `date`, and `tags`. Articles are published under `/blog/YYYY/MM/DD/slug/`; headings in the article
 become the "On this page" list automatically.
 
-**A showcase card** — add `_showcase/<group>/<name>.md`:
+**A research programme** — add `_research/programmes/<name>.md`:
 
 ```yaml
 ---
 show: true
 width: 6          # 1-12; 6 is half width, 12 is full width
+title: Open Edge Runtime   # the value reports use in their `programme:` field
 date: 2026-01-15 09:00:00 +0800
-group: Programmes
+group: Programmes          # or: How we work
 ---
 
 <div class="p-4">
-    <h3>Card title</h3>
+    <h3>Programme name</h3>
     <p>Plain HTML, styled by the theme's classic card look.</p>
+    {% include widgets/programme_reports.html %}
 </div>
 ```
+
+The `programme_reports.html` include lists every publication whose `programme:` matches the card's
+`title`, each one deep-linking into the publication list. Cards are ordered by `date` (newest first)
+and rendered in the `Programmes` and `How we work` grids on the Research page.
+
+**A lab member** — `_data/people.yml`. Add entries under a group's `members:` list; groups with no
+members are skipped, and while every group is empty the People page explains that instead. Entries
+take `name`, and optionally `role`, `url`, `photo`, and `dates`.
+
+**A photo set** — `_data/gallery.yml`, with the image files in `assets/images/gallery/`. Each set
+takes a `title`, a `date`, and an `images:` list of `src` and optional `caption`. While the list is
+empty the Gallery page explains why.
 
 Cards are ordered by `date` (newest first) and grouped by `group` (the newest card's group appears
 first).
@@ -146,9 +182,12 @@ The site ships with coherent but **sample** content so the design can be judged 
 the lab's own site, so replace the samples with real material before treating it as a record of
 actual work:
 
-- The reports in `_publications/`, the news lines, the blog articles, and the showcase cards
+- The reports in `_publications/`, the news lines, the blog articles, and the research cards
   describe the kind of work the lab does; they are not claims about real projects, and every date,
   identifier, and number in them is illustrative.
+- The **People** and **Gallery** pages are deliberately empty: no member is listed until somebody is
+  added to `_data/people.yml`, and no photo appears until a set is added to `_data/gallery.yml`.
+  Both pages explain that state instead of showing a broken layout.
 - The contact rail links to the lab's GitHub organization. Add the lab's real email address in
   `_data/profile.yml` (`email:`) to show an email button as well.
 - `assets/images/open-iiot-mark.svg` and `assets/images/favicon.svg` are the lab mark and its

@@ -1,6 +1,7 @@
 ---
 show: true
 width: 6
+title: Protocol Field Notes
 date: 2024-02-01 09:00:00 +0800
 group: Programmes
 ---
@@ -18,8 +19,8 @@ group: Programmes
         <li>Read-only readers first, so the machine is never the experiment.</li>
         <li>An honest artefact: what is known, what is assumed, what is still unknown.</li>
     </ul>
+    {% include widgets/programme_reports.html %}
     <p>
-        <a class="classic-button" href="{{ '/publications' | relative_url }}">Read OIL-TR-2024-01</a>
         <a class="classic-button" href="{{ '/blog/2025/02/11/reading-a-protocol-you-did-not-choose/' | relative_url }}">Field method</a>
     </p>
 </div>
