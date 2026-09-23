@@ -63,5 +63,5 @@ the invariants, the safety envelope, the open questions, and the date. Anyone wh
 should be able to disagree with your conclusions without re-doing your observations.
 
 We keep the full method, including the field checklist and the mistakes that produced it, in
-[OIL-TR-2024-01]({{ '/publications' | relative_url }}). The companion notes on integrating what
-you find are on the [blog index]({{ '/blog' | relative_url }}).
+[OIL-TR-2024-01]({{ '/publications/' | relative_url }}). The companion notes on integrating what
+you find are on the [blog index]({{ '/blog/' | relative_url }}).

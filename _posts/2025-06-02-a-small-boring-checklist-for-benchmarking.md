@@ -69,4 +69,4 @@ because a system that degrades predictably is often better than one that fails c
 - Any accuracy figure produced on data collected after the model was deployed.
 
 The checklist, with the reasoning behind each item and the measurements that failed to convince
-us, is in [OIL-WP-2025-01]({{ '/publications' | relative_url }}).
+us, is in [OIL-WP-2025-01]({{ '/publications/' | relative_url }}).

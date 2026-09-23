@@ -55,6 +55,9 @@ jobs:
           [ "$post_count" -gt 0 ] || { echo "::error::no blog articles were generated"; missing=1; }
           exit $missing
 
+      - name: Check that no internal link is broken
+        run: python3 scripts/check_links.py _site
+
       - name: Configure GitHub Pages
         id: pages
         uses: actions/configure-pages@v5

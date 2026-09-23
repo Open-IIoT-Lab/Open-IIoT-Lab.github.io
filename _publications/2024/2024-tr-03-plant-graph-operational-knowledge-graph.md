@@ -14,7 +14,7 @@ authors:
   - Open Industrial IoT Lab
   - Plant Semantics Group
 links:
-  Project: /showcase
+  Project: /research/
 ---
 
 The graph schema, the review workflow, and the queries that turned out to be worth maintaining are

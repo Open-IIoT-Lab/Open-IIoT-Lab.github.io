@@ -15,7 +15,7 @@ authors:
   - Open Industrial IoT Lab
   - Edge Runtime Group
 links:
-  Project: /showcase
+  Project: /research/
   Related notes: /blog
 ---
 

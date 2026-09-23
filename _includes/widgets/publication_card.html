@@ -2,5 +2,5 @@
 <section id="selected-publications" class="classic-section" aria-labelledby="selected-publications-heading">
     <h2 id="selected-publications-heading" class="classic-section-heading"><img class="classic-icon" src="{{ '/assets/images/classic/icons/32/directory_open_file_mydocs-0.png' | relative_url }}" alt="" width="32" height="32">{% if include.title %}{{ include.title }}{% else %}Selected Recent Publications{% endif %}</h2>
     {% for item in publications limit:include.limit %}{% include widgets/publication_item.html item=item hide_bottom_border=forloop.last %}{% endfor %}
-    <div class="classic-section-end"><a class="classic-button" href="{{ '/publications' | relative_url }}">All publications</a></div>
+    <div class="classic-section-end"><a class="classic-button" href="{{ '/publications/' | relative_url }}">All publications</a></div>
 </section>

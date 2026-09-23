@@ -14,7 +14,7 @@ authors:
   - Open Industrial IoT Lab
   - Field Studies Group
 links:
-  Project: /showcase
+  Project: /research/
   Related notes: /blog
 ---
 

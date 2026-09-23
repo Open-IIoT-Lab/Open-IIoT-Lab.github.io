@@ -79,7 +79,8 @@ the root of the local server, exactly as it is in production, so internal links 
 | `index.html`, `research.html`, `publications.html`, `people.html`, `blog.html`, `gallery.html`, `contact.html`, `404.html` | Page shells; they mostly assemble the widgets below |
 | `_layouts/`, `_includes/` | Template engine: page layouts and the widgets each page uses |
 | `assets/` | Theme CSS and JS, the Windows 95-style font, the classic icon set, the lab mark |
-| `.github/workflows/pages.yml` | CI: builds the site on every push and pull request, and deploys it to GitHub Pages from `main` |
+| `scripts/check_links.py` | Fails the build when an internal link or in-page anchor points at something that does not exist |
+| `.github/workflows/pages.yml` | CI: builds the site on every push and pull request, checks the pages and the links, and deploys it to GitHub Pages from `main` |
 
 Content lives in data files and Markdown; you should not need to touch `_layouts/`, `_includes/`,
 or `assets/` to keep the site up to date.
@@ -102,7 +103,7 @@ Add lab members here if you would rather list people.
 ```yaml
 ---
 title: >-
-    What happened, in one sentence. <a href="publications">Optional link <i class="fas fa-angle-double-right"></i></a>
+    What happened, in one sentence. <a href="publications/">Optional link <i class="fas fa-angle-double-right"></i></a>
 date: 2026-01-15 09:00:00 +0800
 ---
 ```

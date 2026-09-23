@@ -21,7 +21,7 @@ group: How we work
     <p>
         The cards below describe how to work with the lab, and how our output may be reused. If you
         would rather start from the research itself, the
-        <a href="{{ '/publications' | relative_url }}">publication list</a> is the shortest route, and
-        the <a href="{{ '/contact' | relative_url }}">contact page</a> says how to reach us.
+        <a href="{{ '/publications/' | relative_url }}">publication list</a> is the shortest route, and
+        the <a href="{{ '/contact/' | relative_url }}">contact page</a> says how to reach us.
     </p>
 </div>

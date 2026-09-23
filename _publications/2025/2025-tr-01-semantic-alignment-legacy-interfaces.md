@@ -16,7 +16,7 @@ authors:
   - Open Industrial IoT Lab
   - Plant Semantics Group
 links:
-  Project: /showcase
+  Project: /research/
   Related notes: /blog
 ---
 

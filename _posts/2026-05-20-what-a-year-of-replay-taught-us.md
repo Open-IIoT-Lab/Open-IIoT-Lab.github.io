@@ -53,4 +53,4 @@ smoothing filter.
   opens. Twenty minutes with a maintenance engineer beats a week of aggregate statistics.
 
 The comparison protocol, the replay format, and the three models that failed it are written up in
-[OIL-TR-2026-01]({{ '/publications' | relative_url }}).
+[OIL-TR-2026-01]({{ '/publications/' | relative_url }}).

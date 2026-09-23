@@ -8,7 +8,7 @@ publications page. The programme card includes this widget; it matches publicati
 <p><strong>Reports</strong></p>
 <ul>
     {% for report in programme_reports %}
-    <li><a href="{{ '/publications' | relative_url }}#{{ report.title | slugify }}">{{ report.pub_pre }}{{ report.title | truncate: 78 }}</a></li>
+    <li><a href="{{ '/publications/' | relative_url }}#{{ report.title | slugify }}">{{ report.pub_pre }}{{ report.title | truncate: 78 }}</a></li>
     {% endfor %}
 </ul>
 {% endif %}

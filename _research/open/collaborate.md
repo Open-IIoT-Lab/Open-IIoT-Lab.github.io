@@ -17,7 +17,7 @@ group: How we work
         <li><strong>Reproduce a result.</strong> Benchmarks and mappings are published so that a third party can check them.</li>
     </ul>
     <p>
-        <a class="classic-button" href="{{ '/contact' | relative_url }}">How to get in touch</a>
-        <a class="classic-button" href="{{ '/blog' | relative_url }}">Read the notes</a>
+        <a class="classic-button" href="{{ '/contact/' | relative_url }}">How to get in touch</a>
+        <a class="classic-button" href="{{ '/blog/' | relative_url }}">Read the notes</a>
     </p>
 </div>

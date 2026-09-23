@@ -77,7 +77,7 @@ single line per hour into the plant's existing shift log, in the format the plan
 It is an operational concern. When a model update changed behaviour on one line but not another,
 the difference was temperature drift in the sensor, not the model. We could only see that because
 we had recorded raw inputs alongside decisions. Replay is now a first-class feature rather than a
-debugging trick — see [Open Loop Bench]({{ '/showcase' | relative_url }}).
+debugging trick — see [Open Loop Bench]({{ '/research/' | relative_url }}).
 
 ## What we would tell the next team
 
@@ -88,5 +88,5 @@ debugging trick — see [Open Loop Bench]({{ '/showcase' | relative_url }}).
 - Let things stop. Restart loops hide more than they fix.
 
 The reference architecture, including the parts we have not solved, is written up in
-[OIL-TR-2025-02]({{ '/publications' | relative_url }}). If you run something similar in a plant and
+[OIL-TR-2025-02]({{ '/publications/' | relative_url }}). If you run something similar in a plant and
 disagree with any of this, we would like to hear about it.

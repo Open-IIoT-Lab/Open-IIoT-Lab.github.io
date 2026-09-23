@@ -67,4 +67,4 @@ Before a mapping is allowed near a production line, we ask three questions:
 
 If the third answer is "everything", the mapping is not ready. The minimal ontology we ended up
 with, and the failure modes we hit getting there, are documented in
-[OIL-TR-2025-01]({{ '/publications' | relative_url }}).
+[OIL-TR-2025-01]({{ '/publications/' | relative_url }}).
