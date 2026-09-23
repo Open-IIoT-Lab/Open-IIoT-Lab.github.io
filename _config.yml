@@ -4,10 +4,10 @@
 # which you are expected to set up once and rarely edit after that.
 
 # Site settings
-title: Open IIoT Lab
+title: Open Industrial IoT Lab
 description: >-
-  An open research collective for industrial intelligence, edge-native systems,
-  and trustworthy automation.
+  The research lab of Open IIoT: industrial IoT systems, edge intelligence, and
+  trustworthy automation, published in the open.
 
 # The repository is named Open-IIoT-Lab.github.io, so GitHub Pages serves it as
 # the organization homepage at https://open-iiot-lab.github.io/ — from the root

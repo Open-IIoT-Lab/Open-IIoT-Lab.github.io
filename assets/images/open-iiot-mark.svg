@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
-  <title id="title">Open IIoT Lab mark</title>
+  <title id="title">Open Industrial IoT Lab mark</title>
   <desc id="desc">A teal industrial network of connected nodes.</desc>
   <rect width="96" height="96" fill="#0a4b58"/>
   <path d="M24 24 48 16l24 13v28L48 72 24 59Z" fill="none" stroke="#9fe4d5" stroke-width="4"/>

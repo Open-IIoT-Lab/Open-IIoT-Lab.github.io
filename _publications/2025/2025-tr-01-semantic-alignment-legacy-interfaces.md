@@ -2,7 +2,7 @@
 title:          "Aligning Legacy Industrial Interfaces with Shared Information Models: A Minimal Ontology and Its Failure Modes"
 date:           2025-05-20 00:01:00 +0800
 selected:       true
-pub:            "Open IIoT Lab Technical Report Series"
+pub:            "Open Industrial IoT Lab Technical Report Series"
 pub_pre:        "OIL-TR-2025-01 · "
 pub_date:       "2025"
 pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Open access</span>'
@@ -12,7 +12,7 @@ abstract: >-
   ontology, nine mapping patterns, and the failure modes we hit during the first two plant
   integrations — including the ones caused by our own model.
 authors:
-  - Open IIoT Lab
+  - Open Industrial IoT Lab
   - Plant Semantics Group
 links:
   Project: /showcase

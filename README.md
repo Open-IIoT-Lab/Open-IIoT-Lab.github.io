@@ -1,11 +1,24 @@
-# Open IIoT Lab — homepage
+# Open Industrial IoT Lab — homepage
 
-The website for **Open IIoT Lab**, an open research collective working on industrial
-intelligence, edge-native systems, and trustworthy automation.
+The website for **Open Industrial IoT Lab** — the lab's own homepage, covering our work on
+edge-native industrial systems, interoperability, and trustworthy automation.
 
 **Live site: <https://open-iiot-lab.github.io/>** — published by GitHub Pages from this
 repository, which is named `Open-IIoT-Lab.github.io` so that it serves as the organization
 homepage.
+
+## Naming
+
+The site uses three forms of the same name. Keep them in step when you edit:
+
+| Form | Where it is used |
+| --- | --- |
+| **Open Industrial IoT Lab** | The full name: page titles, the masthead, the footer, publication authors |
+| Open IIoT Lab | The short form, for running text where the full name is too long |
+| Open IIoT | The abbreviation: the web address `open-iiot-lab.github.io`, the GitHub organization `Open-IIoT-Lab`, and the report identifiers `OIL-TR-…` / `OIL-WP-…` |
+
+The full name lives in `_data/profile.yml` (`primary_name`, `navbar_name`) and `_config.yml`
+(`title`); the report prefix is written per publication in `pub_pre`.
 
 The site is built with Jekyll on top of the
 [Nostalgia 1990s academic homepage template](https://github.com/luost26/academic-homepage-nostalgia-1990s)
@@ -14,7 +27,7 @@ by [luost26](https://github.com/luost26), which is itself a variant of
 language — teal backdrop, beveled silver chrome, navy masthead, tabbed navigation, classic icons —
 comes from that template; the content, the lab mark, and the section structure are the lab's own.
 
-![The Open IIoT Lab homepage: navy masthead, tabbed navigation, profile rail, and the lab's focus areas, programmes, milestones, and news](assets/images/screenshots/homepage.png)
+![The Open Industrial IoT Lab homepage: navy masthead, tabbed navigation, profile rail, and the lab's focus areas, programmes, milestones, and news](assets/images/screenshots/homepage.png)
 
 ## Preview locally
 
@@ -34,7 +47,7 @@ the root of the local server, exactly as it is in production, so internal links 
 
 | Path | What it holds |
 | --- | --- |
-| `_data/profile.yml` | Lab name, strapline, contact links, about text, focus areas, programmes, milestones |
+| `_data/profile.yml` | Lab name, strapline, eyebrow, contact links, about text, focus areas, programmes, milestones |
 | `_data/navigation.yml` | The four navigation tabs, in order |
 | `_data/display.yml` | Which homepage sections are shown, how many news items, footer text |
 | `_data/authors.yml` | Author names used (and highlighted) in publication lists |
@@ -56,7 +69,12 @@ or `assets/` to keep the site up to date.
 the template's `education`, `experience`, and `awards` keys; the headings shown on the page are
 renamed to *Focus areas*, *Programmes*, and *Milestones* through the `section_headings` map in the
 same file, so the widget itself stays untouched. Uncomment the `email:` line and add the lab's real
-address to show an email button in the contact rail.
+address to show an email button in the contact rail. The lab's name, eyebrow line, and subtitle
+lines are in the same file — see [Naming](#naming) above for the three forms of the name.
+
+**An author name** — `_data/authors.yml`. The lab publishes as a lab, so `Open Industrial IoT Lab`
+is the highlighted author of every report; the working-group names below it are ordinary entries.
+Add lab members here if you would rather list people.
 
 **A news line** — add `_news/YYYY-MM-DD-short-title.md`:
 
@@ -124,8 +142,9 @@ not match the path the site is actually served from.
 
 ## Replace before relying on it
 
-The site ships with coherent but **sample** content so the design can be judged in context. Replace
-it with the lab's real material before treating the site as a record of actual work:
+The site ships with coherent but **sample** content so the design can be judged in context. It is
+the lab's own site, so replace the samples with real material before treating it as a record of
+actual work:
 
 - The reports in `_publications/`, the news lines, the blog articles, and the showcase cards
   describe the kind of work the lab does; they are not claims about real projects, and every date,

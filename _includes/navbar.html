@@ -1,5 +1,5 @@
 <header class="classic-masthead">
-    <p class="classic-eyebrow">{{ site.data.profile.eyebrow | default: 'Open research collective' }}</p>
+    <p class="classic-eyebrow">{{ site.data.profile.eyebrow | default: 'Industrial IoT research lab' }}</p>
     <a class="classic-site-name" href="{{ '/' | relative_url }}">{{ site.data.profile.navbar_name | escape }}</a>
     <p class="classic-masthead-affiliation">{% for position in site.data.profile.positions %}{{ position.name }}{% unless forloop.last %} <span aria-hidden="true">·</span> {% endunless %}{% endfor %}</p>
 </header>

@@ -2,7 +2,7 @@
 title:          "Open Edge Orchestration: A Vendor-Neutral Reference Architecture for Services Beside Industrial Equipment"
 date:           2025-09-18 00:01:00 +0800
 selected:       true
-pub:            "Open IIoT Lab Technical Report Series"
+pub:            "Open Industrial IoT Lab Technical Report Series"
 pub_pre:        "OIL-TR-2025-02 · "
 pub_date:       "2025"
 pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Open access</span>'
@@ -12,7 +12,7 @@ abstract: >-
   scheduling model, the failure domains we accept on purpose, and the three problems we have not
   solved. A worked latency budget is written as $t_{p99} = t_{sense} + t_{infer} + t_{act} + t_{slack}$.
 authors:
-  - Open IIoT Lab
+  - Open Industrial IoT Lab
   - Edge Runtime Group
 links:
   Project: /showcase
