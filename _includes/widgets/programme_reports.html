@@ -1,7 +1,8 @@
 {% comment %}
-Lists the reports that came out of one research programme, as deep links into the
-publications page. The programme card includes this widget; it matches publications by the
-`programme:` field in their front matter, which must equal the card's `title:`.
+Lists the reports and the open-source software that came out of one research programme, as deep
+links into the publications and resources pages. The programme card includes this widget; it
+matches publications and resources by their `programme:` field, which must equal the card's
+`title:`.
 {% endcomment %}
 {% assign programme_reports = site.publications | where: "programme", page.title | sort: "date" | reverse %}
 {% if programme_reports.size > 0 %}
@@ -9,6 +10,15 @@ publications page. The programme card includes this widget; it matches publicati
 <ul>
     {% for report in programme_reports %}
     <li><a href="{{ '/publications/' | relative_url }}#{{ report.title | slugify }}">{{ report.pub_pre }}{{ report.title | truncate: 78 }}</a></li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% assign programme_software = site.resources | where: "programme", page.title | sort: "date" | reverse %}
+{% if programme_software.size > 0 %}
+<p><strong>Software</strong></p>
+<ul>
+    {% for tool in programme_software %}
+    <li><a href="{{ '/resources/' | relative_url }}#{{ tool.title | slugify }}">{{ tool.package | default: tool.title }}</a>{% if tool.summary %} — {{ tool.summary | truncate: 70 }}{% endif %}</li>
     {% endfor %}
 </ul>
 {% endif %}
