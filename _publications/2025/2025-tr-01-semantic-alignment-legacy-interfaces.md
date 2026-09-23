@@ -17,7 +17,7 @@ authors:
   - Plant Semantics Group
 links:
   Project: /research/
-  Related notes: /blog
+  Related notes: /blog/
 ---
 
 Mapping tables, the review checklist we use before a mapping is allowed near a production line,

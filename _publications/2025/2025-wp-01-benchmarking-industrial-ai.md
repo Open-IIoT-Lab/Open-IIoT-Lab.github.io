@@ -16,7 +16,7 @@ authors:
   - Edge Runtime Group
 links:
   Project: /research/
-  Related notes: /blog
+  Related notes: /blog/
 ---
 
 Feedback on the checklist is welcome; the paper is versioned and the change log is kept in the

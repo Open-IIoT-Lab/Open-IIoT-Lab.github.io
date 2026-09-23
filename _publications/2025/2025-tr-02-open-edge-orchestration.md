@@ -17,7 +17,7 @@ authors:
   - Edge Runtime Group
 links:
   Project: /research/
-  Related notes: /blog
+  Related notes: /blog/
 ---
 
 The full report is published as part of the lab's open technical report series. Cite it as

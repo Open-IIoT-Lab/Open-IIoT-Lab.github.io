@@ -15,7 +15,7 @@ authors:
   - Field Studies Group
 links:
   Project: /research/
-  Related notes: /blog
+  Related notes: /blog/
 ---
 
 The checklist is deliberately short. Everything that made it longer was moved into the notes that

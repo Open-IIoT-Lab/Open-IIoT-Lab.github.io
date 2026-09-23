@@ -15,7 +15,7 @@ authors:
   - Field Studies Group
 links:
   Project: /research/
-  Related notes: /blog
+  Related notes: /blog/
 ---
 
 Each pattern is described with the evidence that justified it, so a team can decide against it on

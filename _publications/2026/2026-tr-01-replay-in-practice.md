@@ -17,7 +17,7 @@ authors:
   - Edge Runtime Group
 links:
   Project: /research/
-  Related notes: /blog
+  Related notes: /blog/
 ---
 
 The replay corpus, its provenance, and the cases where replay disagreed with the plant are all
