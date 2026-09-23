@@ -1,219 +1,65 @@
-# Open Industrial IoT Lab — homepage
+# Open Industrial IoT Lab — website
 
-The website for **Open Industrial IoT Lab** — the lab's own homepage, covering our work on
-edge-native industrial systems, interoperability, and trustworthy automation.
+The website of **Open Industrial IoT Lab** (Open IIoT), a research lab working on edge-native
+industrial systems, interoperability, and trustworthy automation.
 
-**Live site: <https://open-iiot-lab.github.io/>** — published by GitHub Pages from this
-repository, which is named `Open-IIoT-Lab.github.io` so that it serves as the organization
-homepage.
+**Live: <https://open-iiot-lab.github.io/>**
 
-## Naming
-
-The site uses three forms of the same name. Keep them in step when you edit:
-
-| Form | Where it is used |
-| --- | --- |
-| **Open Industrial IoT Lab** | The full name: page titles, the masthead, the footer, publication authors |
-| Open IIoT Lab | The short form, for running text where the full name is too long |
-| Open IIoT | The abbreviation: the web address `open-iiot-lab.github.io`, the GitHub organization `Open-IIoT-Lab`, and the report identifiers `OIL-TR-…` / `OIL-WP-…` |
-
-The full name lives in `_data/profile.yml` (`primary_name`, `navbar_name`) and `_config.yml`
-(`title`); the report prefix is written per publication in `pub_pre`.
-
-The site is built with Jekyll on top of the
-[Nostalgia 1990s academic homepage template](https://github.com/luost26/academic-homepage-nostalgia-1990s)
-by [luost26](https://github.com/luost26), which is itself a variant of
-[academic-homepage](https://github.com/luost26/academic-homepage). The late-1990s desktop design
-language — teal backdrop, beveled silver chrome, navy masthead, tabbed navigation, classic icons —
-comes from that template; the content, the lab mark, and the section structure are the lab's own.
-
-![The Open Industrial IoT Lab homepage: navy masthead, tabbed navigation, profile rail, and the lab's focus areas, programmes, milestones, and news](assets/images/screenshots/homepage.png)
-
-## Sections
-
-The navigation follows the column arrangement of a typical research-lab site — the same six
-columns as [WiNet Lab](https://zjugxz.github.io/WiNet-Lab/) — with the lab's blog kept as an extra
-column:
-
-| Tab | Page | What it holds |
-| --- | --- | --- |
-| Home | `index.html` | Profile rail, about the lab, focus areas, programmes, milestones, news, selected publications |
-| Research | `research.html` | Directions, then each programme with the reports it produced, then how the lab works |
-| Publications | `publications.html` | Every report, grouped by year |
-| People | `people.html` | The roster, grouped by role, filled from `_data/people.yml` |
-| Blog | `blog.html` | Lab notes — the extra column this site keeps |
-| Gallery | `gallery.html` | Photo sets, filled from `_data/gallery.yml` |
-| Contact | `contact.html` | Joining the lab, collaborating with it, and how to reach it |
-
-The order and labels live in `_data/navigation.yml`; each page's front matter carries a
-`navbar_title` that must match the `name` of its navigation entry so the right tab is highlighted.
+![The lab homepage](assets/images/screenshots/homepage.png)
 
 ## Preview locally
 
-The site is plain Jekyll; there is no build step for the content itself.
-
 ```bash
 bundle install
-bundle exec jekyll serve
+bundle exec jekyll serve     # http://127.0.0.1:4000/
 ```
 
-Then open <http://127.0.0.1:4000/>. With `baseurl: ""` in `_config.yml` the site is served from
-the root of the local server, exactly as it is in production, so internal links work as written.
+`bundle exec jekyll build` writes the site to `_site/`.
 
-`bundle exec jekyll build` writes the generated site to `_site/`.
+## Editing
 
-## What is in the repository
+Almost everything lives in data files and Markdown; the layouts and theme in `_layouts/`,
+`_includes/`, and `assets/` rarely need to change.
 
 | Path | What it holds |
 | --- | --- |
-| `_data/profile.yml` | Lab name, strapline, eyebrow, contact links, about text, focus areas, programmes, milestones |
-| `_data/navigation.yml` | The seven navigation tabs, in order |
-| `_data/display.yml` | Which homepage sections are shown, how many news items, footer text |
+| `_data/profile.yml` | Lab name, eyebrow, contact links, about text, focus areas, programmes, milestones |
+| `_data/navigation.yml` | The seven navigation tabs |
+| `_data/display.yml` | Which homepage sections appear, how many news items, footer text |
 | `_data/authors.yml` | Author names used (and highlighted) in publication lists |
 | `_data/people.yml` | Lab members, grouped by role for the People page |
 | `_data/gallery.yml` | Photo sets for the Gallery page |
 | `_news/*.md` | One file per news line on the homepage |
-| `_publications/<year>/*.md` | One file per report, paper, or working paper |
-| `_posts/*.md` | Blog articles (the lab notebook) |
-| `_research/<group>/*.md` | Research cards: programme cards and the "how we work" cards, grouped by `group:` |
-| `index.html`, `research.html`, `publications.html`, `people.html`, `blog.html`, `gallery.html`, `contact.html`, `404.html` | Page shells; they mostly assemble the widgets below |
-| `_layouts/`, `_includes/` | Template engine: page layouts and the widgets each page uses |
-| `assets/` | Theme CSS and JS, the Windows 95-style font, the classic icon set, the lab mark |
-| `scripts/check_links.py` | Fails the build when an internal link or in-page anchor points at something that does not exist |
-| `.github/workflows/pages.yml` | CI: builds the site on every push and pull request, checks the pages and the links, and deploys it to GitHub Pages from `main` |
+| `_publications/<year>/*.md` | One file per report; set `programme:` to list it under a programme |
+| `_posts/*.md` | Blog articles |
+| `_research/<group>/*.md` | Research cards: programme cards and the "how we work" cards |
+| `index.html`, `research.html`, `publications.html`, `people.html`, `blog.html`, `gallery.html`, `contact.html` | Page shells |
 
-Content lives in data files and Markdown; you should not need to touch `_layouts/`, `_includes/`,
-or `assets/` to keep the site up to date.
+Each page's front matter carries a `navbar_title` that must match the `name` of its entry in
+`_data/navigation.yml` so the right tab is highlighted. Internal links use the canonical
+trailing-slash form (`/publications/`); `scripts/check_links.py` fails the build if a link or an
+in-page anchor points at something that does not exist.
 
-## Editing content
+## Deployment
 
-**Lab identity and homepage background** — `_data/profile.yml`. The three background groups reuse
-the template's `education`, `experience`, and `awards` keys; the headings shown on the page are
-renamed to *Focus areas*, *Programmes*, and *Milestones* through the `section_headings` map in the
-same file, so the widget itself stays untouched. Uncomment the `email:` line and add the lab's real
-address to show an email button in the contact rail. The lab's name, eyebrow line, and subtitle
-lines are in the same file — see [Naming](#naming) above for the three forms of the name.
+Every push to `main` builds the site and publishes it with GitHub Pages through
+`.github/workflows/pages.yml`; pull requests only build, so a broken page is caught first.
 
-**An author name** — `_data/authors.yml`. The lab publishes as a lab, so `Open Industrial IoT Lab`
-is the highlighted author of every report; the working-group names below it are ordinary entries.
-Add lab members here if you would rather list people.
+After a deploy, hard-refresh (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>) if a page still looks
+like the previous version: GitHub Pages caches HTML for ten minutes. The footer shows the build id
+it was generated from, so a stale page is easy to spot.
 
-**A news line** — add `_news/YYYY-MM-DD-short-title.md`:
+## Content status
 
-```yaml
----
-title: >-
-    What happened, in one sentence. <a href="publications/">Optional link <i class="fas fa-angle-double-right"></i></a>
-date: 2026-01-15 09:00:00 +0800
----
-```
+The reports, news lines, blog articles, and research cards describe the kind of work the lab does;
+they are sample content, and every date, identifier, and number in them is illustrative. The People
+and Gallery pages stay empty until members are added to `_data/people.yml` and photos to
+`_data/gallery.yml` — both pages explain that state rather than showing a broken layout.
 
-**A publication** — add `_publications/<year>/<year>-short-title.md`. Set `selected: true` to show
-it on the homepage. Fields: `title`, `date`, `selected`, `programme` (must match a programme card's
-`title` so the Research page lists the report under that programme), `pub_pre`, `pub`, `pub_date`,
-`pub_last` (trailing badges), `abstract`, `authors` (keys from `_data/authors.yml`), `links`, and
-optionally `cover` (an image path; without it the template draws a deterministic dithered cover from
-the title) and `semantic_scholar_id` (adds a live citation count).
+## Credits
 
-**A blog article** — add `_posts/YYYY-MM-DD-short-title.md` with `layout: blog_post`, `title`,
-`date`, and `tags`. Articles are published under `/blog/YYYY/MM/DD/slug/`; headings in the article
-become the "On this page" list automatically.
-
-**A research programme** — add `_research/programmes/<name>.md`:
-
-```yaml
----
-show: true
-width: 6          # 1-12; 6 is half width, 12 is full width
-title: Open Edge Runtime   # the value reports use in their `programme:` field
-date: 2026-01-15 09:00:00 +0800
-group: Programmes          # or: How we work
----
-
-<div class="p-4">
-    <h3>Programme name</h3>
-    <p>Plain HTML, styled by the theme's classic card look.</p>
-    {% include widgets/programme_reports.html %}
-</div>
-```
-
-The `programme_reports.html` include lists every publication whose `programme:` matches the card's
-`title`, each one deep-linking into the publication list. Cards are ordered by `date` (newest first)
-and rendered in the `Programmes` and `How we work` grids on the Research page.
-
-**A lab member** — `_data/people.yml`. Add entries under a group's `members:` list; groups with no
-members are skipped, and while every group is empty the People page explains that instead. Entries
-take `name`, and optionally `role`, `url`, `photo`, and `dates`.
-
-**A photo set** — `_data/gallery.yml`, with the image files in `assets/images/gallery/`. Each set
-takes a `title`, a `date`, and an `images:` list of `src` and optional `caption`. While the list is
-empty the Gallery page explains why.
-
-Cards are ordered by `date` (newest first) and grouped by `group` (the newest card's group appears
-first).
-
-## Publishing
-
-Deployment is automatic. `.github/workflows/pages.yml` builds the site with the Gemfile in this
-repository and publishes it with GitHub Pages:
-
-- every push to `main` builds **and** deploys — <https://open-iiot-lab.github.io/> updates within a
-  minute or two;
-- pull requests only build the site, so a broken page is caught before it reaches `main`;
-- runs can also be started by hand from the Actions tab (`workflow_dispatch`).
-
-### If a page looks like the previous version
-
-GitHub Pages serves HTML with `Cache-Control: max-age=600`, so a browser can keep showing the page
-it fetched before a deploy for up to ten minutes. Right after a restructure that is confusing: the
-page you already had open (say `/publications/`) still shows the old navigation while pages you had
-never visited load fresh. It is a stale copy, not a broken build — hard-refresh with
-<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> (<kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> on a
-Mac) or open the page in a private window.
-
-Every deploy stamps the short commit it was built from into the footer
-(`Last updated: Sep 2026 · build b61f420`). Compare that with the newest commit on `main`: if the
-footer shows an older build, you are looking at a cached page.
-
-Repository settings that make this work, for reference:
-
-1. **Settings → Pages → Build and deployment → Source: GitHub Actions.** Pages builds with the
-   workflow, not with GitHub's own Jekyll pipeline, because the site needs the `jekyll-email-protect`
-   plugin, which the built-in pipeline does not allow.
-2. **The repository name matters.** For an organization site, the repository must be
-   `Open-IIoT-Lab.github.io`, the default branch must be `main`, and the repository must be public —
-   GitHub Pages is not available for private repositories on the Free plan.
-3. **`baseurl` stays empty** in `_config.yml` because the site is served from the root of
-   `open-iiot-lab.github.io`. If the site ever moves to a project path such as
-   `https://open-iiot-lab.github.io/lab/`, set `baseurl: "/lab"`.
-
-The template's debugging widgets on the homepage will show a warning box whenever `baseurl` does
-not match the path the site is actually served from.
-
-## Replace before relying on it
-
-The site ships with coherent but **sample** content so the design can be judged in context. It is
-the lab's own site, so replace the samples with real material before treating it as a record of
-actual work:
-
-- The reports in `_publications/`, the news lines, the blog articles, and the research cards
-  describe the kind of work the lab does; they are not claims about real projects, and every date,
-  identifier, and number in them is illustrative.
-- The **People** and **Gallery** pages are deliberately empty: no member is listed until somebody is
-  added to `_data/people.yml`, and no photo appears until a set is added to `_data/gallery.yml`.
-  Both pages explain that state instead of showing a broken layout.
-- The contact rail links to the lab's GitHub organization. Add the lab's real email address in
-  `_data/profile.yml` (`email:`) to show an email button as well.
-- `assets/images/open-iiot-mark.svg` and `assets/images/favicon.svg` are the lab mark and its
-  favicon; replace them if the lab has its own artwork.
-- `assets/images/screenshots/homepage.png` is the screenshot used at the top of this README; refresh
-  it when the homepage changes.
-
-## Credits and licence
-
-The theme is adapted from [luost26/academic-homepage-nostalgia-1990s](https://github.com/luost26/academic-homepage-nostalgia-1990s),
-released under the MIT licence — see [`LICENSE`](LICENSE), which is kept unchanged. The Windows 98
-icon set, the W95FA and MS Sans Serif fonts, and the other artwork keep their own licences and
-provenance records; those notices ship with the assets (`assets/images/classic/NOTICE.md`,
-`assets/fonts/classic/NOTICE.md`) and are repeated in the collapsed *Artwork credits* section in
-the site footer. Please keep those credits and licence files in place when reusing the theme.
+The theme is adapted from [academic-homepage — Nostalgia 1990s](https://github.com/luost26/academic-homepage-nostalgia-1990s)
+by [luost26](https://github.com/luost26), released under the MIT licence (see `LICENSE`). The
+bundled icons and font keep their own provenance and licence notices:
+`assets/images/classic/NOTICE.md` and `assets/fonts/classic/NOTICE.md`. Artwork credits also appear
+in the collapsed *Artwork credits* section of the site footer.
