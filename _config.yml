@@ -9,14 +9,13 @@ description: >-
   An open research collective for industrial intelligence, edge-native systems,
   and trustworthy automation.
 
-# The subpath of your site, e.g. "/open-iiot-lab-homepage".
-# Leave it empty for a local preview at http://127.0.0.1:4000/ or for a site
-# served from the root of a domain. When the repository is published as a
-# GitHub Pages project site, set this to "/<repository-name>".
+# The repository is named Open-IIoT-Lab.github.io, so GitHub Pages serves it as
+# the organization homepage at https://open-iiot-lab.github.io/ — from the root
+# of that domain, which is why baseurl stays empty. A local preview is also
+# served from the root (http://127.0.0.1:4000/). If the site ever moves to a
+# project path such as https://example.github.io/lab/, set baseurl to "/lab".
 baseurl: ""
-
-# The full URL of your site, e.g. "https://example.org". Optional.
-url: ""
+url: "https://open-iiot-lab.github.io"
 
 # Build settings
 markdown: kramdown

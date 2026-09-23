@@ -3,6 +3,10 @@
 The website for **Open IIoT Lab**, an open research collective working on industrial
 intelligence, edge-native systems, and trustworthy automation.
 
+**Live site: <https://open-iiot-lab.github.io/>** — published by GitHub Pages from this
+repository, which is named `Open-IIoT-Lab.github.io` so that it serves as the organization
+homepage.
+
 The site is built with Jekyll on top of the
 [Nostalgia 1990s academic homepage template](https://github.com/luost26/academic-homepage-nostalgia-1990s)
 by [luost26](https://github.com/luost26), which is itself a variant of
@@ -11,10 +15,6 @@ language — teal backdrop, beveled silver chrome, navy masthead, tabbed navigat
 comes from that template; the content, the lab mark, and the section structure are the lab's own.
 
 ![The Open IIoT Lab homepage: navy masthead, tabbed navigation, profile rail, and the lab's focus areas, programmes, milestones, and news](assets/images/screenshots/homepage.png)
-
-> **The repository is private.** That is fine for development and for a private preview, but
-> GitHub Pages is only available for private repositories on paid plans (see
-> [Publishing](#publishing)).
 
 ## Preview locally
 
@@ -25,8 +25,8 @@ bundle install
 bundle exec jekyll serve
 ```
 
-Then open <http://127.0.0.1:4000/>. With the default `baseurl: ""` in `_config.yml` the site is
-served from the root of the local server, so internal links work as written.
+Then open <http://127.0.0.1:4000/>. With `baseurl: ""` in `_config.yml` the site is served from
+the root of the local server, exactly as it is in production, so internal links work as written.
 
 `bundle exec jekyll build` writes the generated site to `_site/`.
 
@@ -44,8 +44,8 @@ served from the root of the local server, so internal links work as written.
 | `_showcase/<group>/*.md` | Showcase cards, grouped by their `group:` field |
 | `index.html`, `publications.html`, `blog.html`, `showcase.html`, `404.html` | Page shells; they mostly assemble the widgets below |
 | `_layouts/`, `_includes/` | Template engine: page layouts and the widgets each page uses |
-| `assets/` | Theme CSS and JS, the Windows 95-style font, and the classic icon set |
-| `.github/workflows/jekyll-build.yml` | CI that builds the site and uploads the generated `_site` as an artifact |
+| `assets/` | Theme CSS and JS, the Windows 95-style font, the classic icon set, the lab mark |
+| `.github/workflows/pages.yml` | CI: builds the site on every push and pull request, and deploys it to GitHub Pages from `main` |
 
 Content lives in data files and Markdown; you should not need to touch `_layouts/`, `_includes/`,
 or `assets/` to keep the site up to date.
@@ -55,7 +55,8 @@ or `assets/` to keep the site up to date.
 **Lab identity and homepage background** — `_data/profile.yml`. The three background groups reuse
 the template's `education`, `experience`, and `awards` keys; the headings shown on the page are
 renamed to *Focus areas*, *Programmes*, and *Milestones* through the `section_headings` map in the
-same file, so the widget itself stays untouched.
+same file, so the widget itself stays untouched. Uncomment the `email:` line and add the lab's real
+address to show an email button in the contact rail.
 
 **A news line** — add `_news/YYYY-MM-DD-short-title.md`:
 
@@ -98,31 +99,43 @@ first).
 
 ## Publishing
 
-The generated site is a normal Jekyll site, so it can be served by GitHub Pages, an internal web
-server, or any static host.
+Deployment is automatic. `.github/workflows/pages.yml` builds the site with the Gemfile in this
+repository and publishes it with GitHub Pages:
 
-- **GitHub Pages, private repository:** Pages on a private repository requires a paid GitHub plan.
-  If the account has one, enable Pages with "Deploy from a branch" and select the branch root.
-- **GitHub Pages, free plan:** the repository has to be public. Make it public only after checking
-  the content in `_data/`, `_news/`, and `_publications/` — nothing in this repository is secret,
-  but the placeholder text should be replaced first.
-- **Any static host:** run `bundle exec jekyll build` and upload `_site/`.
+- every push to `main` builds **and** deploys — <https://open-iiot-lab.github.io/> updates within a
+  minute or two;
+- pull requests only build the site, so a broken page is caught before it reaches `main`;
+- runs can also be started by hand from the Actions tab (`workflow_dispatch`).
 
-When the site is served from a subpath (for example `https://<user>.github.io/open-iiot-lab-homepage/`),
-set `baseurl` in `_config.yml` to that subpath — `/open-iiot-lab-homepage` — and rebuild. The
-template's debugging widgets on the homepage will show a warning whenever `baseurl` does not match
-the path the site is actually served from.
+Repository settings that make this work, for reference:
 
-## Replace before publishing
+1. **Settings → Pages → Build and deployment → Source: GitHub Actions.** Pages builds with the
+   workflow, not with GitHub's own Jekyll pipeline, because the site needs the `jekyll-email-protect`
+   plugin, which the built-in pipeline does not allow.
+2. **The repository name matters.** For an organization site, the repository must be
+   `Open-IIoT-Lab.github.io`, the default branch must be `main`, and the repository must be public —
+   GitHub Pages is not available for private repositories on the Free plan.
+3. **`baseurl` stays empty** in `_config.yml` because the site is served from the root of
+   `open-iiot-lab.github.io`. If the site ever moves to a project path such as
+   `https://open-iiot-lab.github.io/lab/`, set `baseurl: "/lab"`.
 
-The site ships with coherent but **sample** content so the design can be judged in context:
+The template's debugging widgets on the homepage will show a warning box whenever `baseurl` does
+not match the path the site is actually served from.
 
-- `hello@openiiotlab.org` and the `github:` entry in `_data/profile.yml` are placeholders.
+## Replace before relying on it
+
+The site ships with coherent but **sample** content so the design can be judged in context. Replace
+it with the lab's real material before treating the site as a record of actual work:
+
 - The reports in `_publications/`, the news lines, the blog articles, and the showcase cards
   describe the kind of work the lab does; they are not claims about real projects, and every date,
   identifier, and number in them is illustrative.
+- The contact rail links to the lab's GitHub organization. Add the lab's real email address in
+  `_data/profile.yml` (`email:`) to show an email button as well.
 - `assets/images/open-iiot-mark.svg` and `assets/images/favicon.svg` are the lab mark and its
   favicon; replace them if the lab has its own artwork.
+- `assets/images/screenshots/homepage.png` is the screenshot used at the top of this README; refresh
+  it when the homepage changes.
 
 ## Credits and licence
 

@@ -7,7 +7,10 @@ positions:
 - name: An open research collective for industrial intelligence
 - name: Edge systems · Interoperability · Trustworthy automation
 
-email: "hello@openiiotlab.org"
+# The lab's public contact address. Left unset because the address that shipped with the
+# draft was a placeholder: uncomment the line and use the lab's real address to show the
+# email button in the contact rail.
+# email: "hello@openiiotlab.org"
 github: Open-IIoT-Lab
 
 short_bio_text_justify: false
