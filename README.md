@@ -74,8 +74,12 @@ it was generated from, so a stale page is easy to spot.
 
 The reports, news lines, blog articles, and research cards describe the kind of work the lab does;
 they are sample content, and every date, identifier, and number in them is illustrative. The People
-and Gallery pages stay empty until members are added to `_data/people.yml` and photos to
-`_data/gallery.yml` — both pages explain that state rather than showing a broken layout.
+page lists the lab lead and fills up from `_data/people.yml`; the Gallery stays empty until photo
+sets are added to `_data/gallery.yml`, and explains that state rather than showing a broken layout.
+
+The logo and favicon are generated from the lab's wordmark: `assets/images/open-iiot-lab-logo.png`
+is the artwork as supplied, and `favicon.ico`, `favicon-192.png`, and `apple-touch-icon.png` are
+crops of it sized for browser tabs and home screens.
 
 ## Credits
 
