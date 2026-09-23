@@ -3,15 +3,22 @@
 #
 # - name: Jane Doe
 #   role: PhD student, battery-free wireless sensing
-#   url: https://example.org                     # optional link
+#   url: https://example.org                     # optional link on the name
 #   photo: /assets/images/people/jane-doe.jpg    # optional, 240x240 or larger
 #   dates: 2024 - present                        # optional
-#
-# Nobody is listed until you add them here.
+#   links:                                       # optional extra links
+#     Homepage: https://example.org
 
 groups:
   - name: Principal Investigator
-    members: []
+    members:
+      - name: Chaojie Gu
+        role: >-
+          ZJU 100 Young Professor, College of Control Science and Engineering · Deputy Director,
+          Institute of Industrial Process Control
+        url: https://chaojiegu.github.io/
+        links:
+          中文主页: https://person.zju.edu.cn/gucj
   - name: PhD students
     members: []
   - name: Master students

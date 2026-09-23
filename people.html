@@ -29,6 +29,7 @@ navbar_title: People
                 <div>
                     <div class="classic-background-name">{% if member.url %}<a href="{{ member.url }}" target="_blank" rel="noopener noreferrer">{{ member.name }}</a>{% else %}{{ member.name }}{% endif %}</div>
                     {% if member.role %}<div>{{ member.role }}</div>{% endif %}
+                    {% if member.links %}<div class="classic-small">{% for link in member.links %}<a href="{{ link[1] }}" target="_blank" rel="noopener noreferrer">{{ link[0] }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}</div>{% endif %}
                     {% if member.dates %}<div class="classic-date">{{ member.dates }}</div>{% endif %}
                 </div>
             </li>

@@ -16,9 +16,14 @@ navbar_title: Contact
     <section class="classic-section" aria-labelledby="join-heading">
         <h2 id="join-heading" class="classic-section-heading">Join us</h2>
         <p>
-            We host PhD and Master students, undergraduate researchers, and visiting engineers. What
-            we look for is not a long publication list but evidence that you finish things and can
-            explain what went wrong:
+            We have openings for motivated Master and PhD students and for postdocs, and we host
+            undergraduate researchers and visiting engineers. The work sits in Internet of Things
+            systems — industrial IoT, low-power wide-area networks, deterministic networking, and
+            mobile computing.
+        </p>
+        <p>
+            What we look for is not a long publication list but evidence that you finish things and
+            can explain what went wrong:
         </p>
         <ul>
             <li>Something you built, broke, and fixed — hardware, firmware, software, or a measurement setup.</li>
@@ -26,9 +31,11 @@ navbar_title: Contact
             <li>Willingness to write down what you observed before you decide what it means.</li>
         </ul>
         <p>
-            Students and visitors: tell us what you want to work on, what you have already tried, and
-            which of our programmes or reports you read on the way here. That last part is the most
-            useful thing you can put in a first message.
+            Write to the lab lead, <a href="https://chaojiegu.github.io/" target="_blank" rel="noopener noreferrer">Chaojie Gu</a>
+            (<a href="https://person.zju.edu.cn/gucj" target="_blank" rel="noopener noreferrer">中文主页</a>),
+            with your CV and transcripts. Tell us what you want to work on, what you have already
+            tried, and which of our programmes or reports you read on the way here — that last part
+            is the most useful thing you can put in a first message.
         </p>
     </section>
 
@@ -47,6 +54,15 @@ navbar_title: Contact
 
     <section class="classic-section" aria-labelledby="reach-heading">
         <h2 id="reach-heading" class="classic-section-heading">Reaching the lab</h2>
+        {% if site.data.profile.email %}
+        <p>
+            Email: <a href="mailto:{{ site.data.profile.email | encode_email }}">{{ site.data.profile.email | replace: '@', '(at)' }}</a>
+        </p>
+        {% endif %}
+        <p>
+            Post: Room 423, Industrial Control New Building, Yuquan Campus, Zhejiang University,
+            Hangzhou, China
+        </p>
         <p>
             The lab's GitHub organization is the front door for issues, code, and questions about the
             reports:
@@ -54,16 +70,5 @@ navbar_title: Contact
         <p>
             <a class="classic-button" href="https://github.com/{{ site.data.profile.github }}" target="_blank" rel="noopener noreferrer">Open-IIoT-Lab on GitHub</a>
         </p>
-        {% if site.data.profile.email %}
-        <p>
-            Or write to us directly:
-            <a href="mailto:{{ site.data.profile.email | encode_email }}">{{ site.data.profile.email | replace: '@', '(at)' }}</a>
-        </p>
-        {% else %}
-        <p class="classic-small">
-            (A lab mailing address is not published yet; add one under <code>email:</code> in
-            <code>_data/profile.yml</code> and it appears here.)
-        </p>
-        {% endif %}
     </section>
 </div>
