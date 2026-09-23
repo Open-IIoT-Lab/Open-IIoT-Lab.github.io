@@ -162,6 +162,19 @@ repository and publishes it with GitHub Pages:
 - pull requests only build the site, so a broken page is caught before it reaches `main`;
 - runs can also be started by hand from the Actions tab (`workflow_dispatch`).
 
+### If a page looks like the previous version
+
+GitHub Pages serves HTML with `Cache-Control: max-age=600`, so a browser can keep showing the page
+it fetched before a deploy for up to ten minutes. Right after a restructure that is confusing: the
+page you already had open (say `/publications/`) still shows the old navigation while pages you had
+never visited load fresh. It is a stale copy, not a broken build — hard-refresh with
+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> (<kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> on a
+Mac) or open the page in a private window.
+
+Every deploy stamps the short commit it was built from into the footer
+(`Last updated: Sep 2026 · build b61f420`). Compare that with the newest commit on `main`: if the
+footer shows an older build, you are looking at a cached page.
+
 Repository settings that make this work, for reference:
 
 1. **Settings → Pages → Build and deployment → Source: GitHub Actions.** Pages builds with the
