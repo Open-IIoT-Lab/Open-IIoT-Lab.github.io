@@ -11,6 +11,8 @@ pages:
   url: /research/
 - name: Publications
   url: /publications/
+- name: Resources
+  url: /resources/
 - name: People
   url: /people/
 - name: Blog

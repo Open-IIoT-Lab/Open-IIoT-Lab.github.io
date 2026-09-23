@@ -24,16 +24,37 @@ Almost everything lives in data files and Markdown; the layouts and theme in `_l
 | Path | What it holds |
 | --- | --- |
 | `_data/profile.yml` | Lab name, eyebrow, contact links, about text, focus areas, programmes, milestones |
-| `_data/navigation.yml` | The seven navigation tabs |
+| `_data/navigation.yml` | The navigation tabs |
 | `_data/display.yml` | Which homepage sections appear, how many news items, footer text |
 | `_data/authors.yml` | Author names used (and highlighted) in publication lists |
 | `_data/people.yml` | Lab members, grouped by role for the People page |
 | `_data/gallery.yml` | Photo sets for the Gallery page |
 | `_news/*.md` | One file per news line on the homepage |
 | `_publications/<year>/*.md` | One file per report; set `programme:` to list it under a programme |
+| `_resources/*.md` | One file per open-source project on the Resources page |
 | `_posts/*.md` | Blog articles |
 | `_research/<group>/*.md` | Research cards: programme cards and the "how we work" cards |
-| `index.html`, `research.html`, `publications.html`, `people.html`, `blog.html`, `gallery.html`, `contact.html` | Page shells |
+| `index.html`, `research.html`, `publications.html`, `resources.html`, `people.html`, `blog.html`, `gallery.html`, `contact.html` | Page shells |
+
+A resource entry uses front matter for its metadata and the file body for its description:
+
+```yaml
+---
+title: Open Edge Runtime
+date: 2026-02-18 09:00:00 +0800
+package: oil-edge-runtime      # shown in the monospace metadata line
+version: 0.9.2
+license: Apache-2.0
+stack: Go · Rust
+status: stable                 # stable -> "Stable releases"; anything else -> "In development"
+summary: One line about what it is.
+links:
+  Programme: /research/        # internal links keep the site free of dead ends
+  Report: /publications/#<report-title-slug>
+---
+
+A paragraph or two about what the project contains and where it fails.
+```
 
 Each page's front matter carries a `navbar_title` that must match the `name` of its entry in
 `_data/navigation.yml` so the right tab is highlighted. Internal links use the canonical

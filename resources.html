@@ -1,0 +1,49 @@
+---
+layout: default
+title: Resources
+navbar_title: Resources
+---
+
+{% assign software = site.resources | sort: "date" | reverse %}
+{% assign stable = software | where: "status", "stable" %}
+{% assign in_development = software | where_exp: "item", "item.status != 'stable'" %}
+
+<div class="classic-document">
+    <h1 class="classic-section-heading"><img class="classic-icon" src="{{ '/assets/images/classic/icons/16/directory_closed-1.png' | relative_url }}" alt="" width="32" height="32">Resources</h1>
+
+    <p>
+        Open-source software from the lab: the runtimes, toolkits, and harnesses our programmes are
+        built on. They are meant to be read and run by somebody else — small enough to understand in
+        an afternoon, and published with the reports that explain where they fail.
+    </p>
+    <p class="classic-small">
+        Everything is developed in the open under the lab's GitHub organization:
+        <a href="https://github.com/{{ site.data.profile.github }}" target="_blank" rel="noopener noreferrer">github.com/{{ site.data.profile.github }}</a>.
+    </p>
+
+    {% if stable.size > 0 %}
+    <section class="classic-section" aria-labelledby="stable-heading">
+        <h2 id="stable-heading" class="classic-section-heading">Stable releases</h2>
+        {% for item in stable %}{% include widgets/software_item.html item=item hide_bottom_border=forloop.last %}{% endfor %}
+    </section>
+    {% endif %}
+
+    {% if in_development.size > 0 %}
+    <section class="classic-section" aria-labelledby="development-heading">
+        <h2 id="development-heading" class="classic-section-heading">In development</h2>
+        {% for item in in_development %}{% include widgets/software_item.html item=item hide_bottom_border=forloop.last %}{% endfor %}
+    </section>
+    {% endif %}
+
+    <section class="classic-section" aria-labelledby="using-heading">
+        <h2 id="using-heading" class="classic-section-heading">Using the software</h2>
+        <ul>
+            <li><strong>Licences.</strong> Each entry states its own licence; the licence text ships with the release.</li>
+            <li><strong>Reports first.</strong> Every tool links to the report that documents its failure modes — worth reading before a deployment.</li>
+            <li><strong>Tell us where it broke.</strong> A defect report against one of these is a genuine contribution to the research.</li>
+        </ul>
+        <p>
+            <a class="classic-button" href="{{ '/contact/' | relative_url }}">How to get in touch</a>
+        </p>
+    </section>
+</div>

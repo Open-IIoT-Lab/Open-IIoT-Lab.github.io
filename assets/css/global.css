@@ -122,6 +122,13 @@
 .classic-site .carousel-indicators .classic-button { min-width: 28px; padding: 5px 8px; }
 .classic-site .carousel-indicators .active { font-weight: 700; border-color: #111 #fff #fff #111; background: #dfdfdf; }
 .classic-site .carousel-item { transition: none; }
+/* Software entries on the Resources page. They reuse the publication item layout, with a
+   generated program tile in place of a cover and a monospace metadata line. */
+.classic-software .classic-publication-cover { display: flex; align-items: flex-start; }
+.software-tile { display: block; width: 96px; height: 96px; border: 2px solid; border-color: #808080 #fff #fff #808080; box-shadow: inset 1px 1px #111; }
+.classic-site .software-summary { font-size: var(--classic-text-size); margin: 0 0 6px; }
+.classic-site .software-meta { font-family: "Courier New", monospace; font-size: var(--classic-text-size); margin: 0 0 6px; }
+
 @media (max-width: 991px) {
     .classic-home-grid { grid-template-columns: 220px minmax(0, 1fr); gap: 14px; }
     .classic-background-grid { grid-template-columns: 1fr; }

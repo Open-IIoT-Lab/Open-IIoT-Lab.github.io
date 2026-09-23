@@ -1,0 +1,15 @@
+{% comment %}
+The generated "program icon" for a software entry: a beveled tile carrying the project's
+initials in the lab's palette. Usage:
+
+    {% include widgets/software_tile.html name=item.title %}
+{% endcomment %}
+{% assign tile_initials = "" %}
+{% assign tile_words = include.name | split: " " %}
+{% for tile_word in tile_words limit: 2 %}{% assign tile_letter = tile_word | slice: 0, 1 %}{% assign tile_initials = tile_initials | append: tile_letter %}{% endfor %}
+<svg class="software-tile" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="{{ include.name | escape }}" focusable="false">
+    <rect width="96" height="96" fill="#0a4b58"></rect>
+    <path d="M4 4h88v88H4z" fill="none" stroke="#9fe4d5" stroke-width="2"></path>
+    <circle cx="48" cy="48" r="30" fill="none" stroke="#1d6d7a" stroke-width="2"></circle>
+    <text x="48" y="61" text-anchor="middle" font-size="36" fill="#f6f0cf" font-family="W95FA, Arial, sans-serif">{{ tile_initials | upcase }}</text>
+</svg>

@@ -1,0 +1,30 @@
+{% comment %}
+One open-source entry on the Resources page. It borrows the theme's publication item layout:
+a square program tile, then the name, one-line summary, package metadata, description and links.
+
+Front matter it reads: title, summary, package, version, license, stack, status, links, and the
+body of the file as the description.
+{% endcomment %}
+{% assign item = include.item %}
+<article class="classic-publication classic-software {% if include.hide_bottom_border %}classic-publication-last{% endif %}" id="{{ item.title | slugify }}">
+    <div class="classic-publication-cover">
+        {% include widgets/software_tile.html name=item.title %}
+    </div>
+    <div class="classic-publication-content">
+        <h3>{{ item.title }}</h3>
+        {% if item.summary %}<p class="software-summary">{{ item.summary }}</p>{% endif %}
+        <p class="software-meta">
+            {% if item.package %}{{ item.package }}{% endif %}{% if item.version %} v{{ item.version }}{% endif %}
+            {% if item.license %} · {{ item.license }}{% endif %}
+            {% if item.stack %} · {{ item.stack }}{% endif %}
+            {% if item.status %} · <span class="badge badge-pill {% if item.status == 'stable' %}badge-success{% else %}badge-info{% endif %}">{{ item.status }}</span>{% endif %}
+        </p>
+        <div class="classic-publication-abstract">{{ item.content }}</div>
+        <div class="classic-publication-links">
+            {% for link in item.links %}
+            {% if link[1].url %}{% assign link_url = link[1].url %}{% assign link_target = link[1].target | default: '_blank' %}{% else %}{% assign link_url = link[1] %}{% assign link_target = '_self' %}{% endif %}
+            <a class="classic-button" href="{{ link_url | relative_url }}" target="{{ link_target }}" {% if link_target == '_blank' %}rel="noopener noreferrer"{% endif %}>{{ link[0] }}</a>
+            {% endfor %}
+        </div>
+    </div>
+</article>
