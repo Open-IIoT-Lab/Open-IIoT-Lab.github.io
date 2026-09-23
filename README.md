@@ -10,6 +10,8 @@ by [luost26](https://github.com/luost26), which is itself a variant of
 language — teal backdrop, beveled silver chrome, navy masthead, tabbed navigation, classic icons —
 comes from that template; the content, the lab mark, and the section structure are the lab's own.
 
+![The Open IIoT Lab homepage: navy masthead, tabbed navigation, profile rail, and the lab's focus areas, programmes, milestones, and news](assets/images/screenshots/homepage.png)
+
 > **The repository is private.** That is fine for development and for a private preview, but
 > GitHub Pages is only available for private repositories on paid plans (see
 > [Publishing](#publishing)).

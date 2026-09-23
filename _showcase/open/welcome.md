@@ -6,7 +6,7 @@ group: Working in the open
 ---
 
 <div class="p-4">
-    <h2>Working in the open</h2>
+    <h2>About this page</h2>
     <hr />
     <p>
         Everything on this page is a programme rather than a product: something the lab is actively
