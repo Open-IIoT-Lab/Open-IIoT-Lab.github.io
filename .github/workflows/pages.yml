@@ -30,6 +30,11 @@ jobs:
           ruby-version: '3.1'
           bundler-cache: true
 
+      - name: Record which build this is
+        run: |
+          printf 'commit: "%s"\nbuilt: "%s"\n' "${GITHUB_SHA:0:7}" "$(date -u '+%Y-%m-%d %H:%M UTC')" > _data/build.yml
+          cat _data/build.yml
+
       - name: Build the site with Jekyll
         run: bundle exec jekyll build --trace
 
