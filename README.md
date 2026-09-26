@@ -1,90 +1,34 @@
-# Open Industrial IoT Lab — website
+# Open Industrial IoT Lab website
 
-The website of **Open Industrial IoT Lab** (Open IIoT), a research lab working on edge-native
-industrial systems, interoperability, and trustworthy automation.
+Website for Open Industrial IoT Lab at Zhejiang University, led by Chaojie Gu.
 
-**Live: <https://open-iiot-lab.github.io/>**
+## Content and sources
 
-![The lab homepage](assets/images/screenshots/homepage.png)
+The site's research directions, PI biography, contact details and recruitment text are based on:
 
-## Preview locally
+- [Zhejiang University Chinese profile](https://person.zju.edu.cn/gucj)
+- [Chaojie Gu's English homepage](https://chaojiegu.github.io/)
+- [Complete publication list](https://chaojiegu.github.io/publications/)
 
-```bash
-bundle install
-bundle exec jekyll serve     # http://127.0.0.1:4000/
-```
+The local publication list is deliberately selected, not exhaustive. Each entry links to a DOI; available research code links point to repositories listed on the PI's publication page. Verify changes against the official profiles before publishing. No student names or lab news are listed without a verified source.
 
-`bundle exec jekyll build` writes the site to `_site/`.
+## Build locally
+
+The site uses Jekyll 3.x. With Ruby and Bundler installed:
+
+    bundle install
+    bundle exec jekyll build
+    python scripts/check_links.py _site
+    bundle exec jekyll serve
+
+The site builds to `_site/`. A push to `main` triggers the GitHub Pages workflow; pull requests run the build and link check without deploying.
 
 ## Editing
 
-Almost everything lives in data files and Markdown; the layouts and theme in `_layouts/`,
-`_includes/`, and `assets/` rarely need to change.
+- `_data/profile.yml`: lab name, affiliation, contact and profile links
+- `_data/navigation.yml`: navigation
+- `_publications/<year>/*.md`: selected publication entries
+- `index.html`, `research.html`, `publications.html`, `resources.html`, `people.html`, `contact.html`: page content
+- `assets/css/global.css`: visual styles
 
-| Path | What it holds |
-| --- | --- |
-| `_data/profile.yml` | Lab name, eyebrow, contact links, about text, focus areas, programmes, milestones |
-| `_data/navigation.yml` | The navigation tabs |
-| `_data/display.yml` | Which homepage sections appear, how many news items, footer text |
-| `_data/authors.yml` | Author names used (and highlighted) in publication lists |
-| `_data/people.yml` | Lab members, grouped by role for the People page |
-| `_data/gallery.yml` | Photo sets for the Gallery page |
-| `_news/*.md` | One file per news line on the homepage |
-| `_publications/<year>/*.md` | One file per report; set `programme:` to list it under a programme |
-| `_resources/*.md` | One file per open-source project on the Resources page |
-| `_posts/*.md` | Blog articles |
-| `_research/<group>/*.md` | Research cards: programme cards and the "how we work" cards |
-| `index.html`, `research.html`, `publications.html`, `resources.html`, `people.html`, `blog.html`, `gallery.html`, `contact.html` | Page shells |
-
-A resource entry uses front matter for its metadata and the file body for its description:
-
-```yaml
----
-title: Open Edge Runtime
-date: 2026-02-18 09:00:00 +0800
-package: oil-edge-runtime      # shown in the monospace metadata line
-version: 0.9.2
-license: Apache-2.0
-stack: Go · Rust
-status: stable                 # stable -> "Stable releases"; anything else -> "In development"
-summary: One line about what it is.
-links:
-  Programme: /research/        # internal links keep the site free of dead ends
-  Report: /publications/#<report-title-slug>
----
-
-A paragraph or two about what the project contains and where it fails.
-```
-
-Each page's front matter carries a `navbar_title` that must match the `name` of its entry in
-`_data/navigation.yml` so the right tab is highlighted. Internal links use the canonical
-trailing-slash form (`/publications/`); `scripts/check_links.py` fails the build if a link or an
-in-page anchor points at something that does not exist.
-
-## Deployment
-
-Every push to `main` builds the site and publishes it with GitHub Pages through
-`.github/workflows/pages.yml`; pull requests only build, so a broken page is caught first.
-
-After a deploy, hard-refresh (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>) if a page still looks
-like the previous version: GitHub Pages caches HTML for ten minutes. The footer shows the build id
-it was generated from, so a stale page is easy to spot.
-
-## Content status
-
-The reports, news lines, blog articles, and research cards describe the kind of work the lab does;
-they are sample content, and every date, identifier, and number in them is illustrative. The People
-page lists the lab lead and fills up from `_data/people.yml`; the Gallery stays empty until photo
-sets are added to `_data/gallery.yml`, and explains that state rather than showing a broken layout.
-
-The logo and favicon are generated from the lab's wordmark: `assets/images/open-iiot-lab-logo.png`
-is the artwork as supplied, and `favicon.ico`, `favicon-192.png`, and `apple-touch-icon.png` are
-crops of it sized for browser tabs and home screens.
-
-## Credits
-
-The theme is adapted from [academic-homepage — Nostalgia 1990s](https://github.com/luost26/academic-homepage-nostalgia-1990s)
-by [luost26](https://github.com/luost26), released under the MIT licence (see `LICENSE`). The
-bundled icons and font keep their own provenance and licence notices:
-`assets/images/classic/NOTICE.md` and `assets/fonts/classic/NOTICE.md`. Artwork credits also appear
-in the collapsed *Artwork credits* section of the site footer.
+The theme derives from [academic-homepage — Nostalgia 1990s](https://github.com/luost26/academic-homepage-nostalgia-1990s) under the MIT licence. Icon, cursor and font attributions appear in the site footer.

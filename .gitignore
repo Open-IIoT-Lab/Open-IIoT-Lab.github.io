@@ -8,5 +8,6 @@ _data/build.yml
 .bundle/
 vendor/
 Gemfile.lock
+.tools/
 
 .DS_Store

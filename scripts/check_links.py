@@ -62,6 +62,16 @@ def main():
     for source, (text, _) in sorted(pages.items()):
         for raw in LINK_RE.findall(text):
             url = html.unescape(raw)
+            if url.startswith("#"):
+                fragment = url[1:]
+                checked += 1
+                if fragment and fragment not in pages[source][1]:
+                    problems.append(
+                        "{}: {} -> no element with id '{}'".format(
+                            os.path.relpath(source, root), url, fragment
+                        )
+                    )
+                continue
             resolved = target_path(root, url)
             if resolved is None:
                 continue

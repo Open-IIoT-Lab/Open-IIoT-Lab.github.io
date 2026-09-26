@@ -1,106 +1,17 @@
-# Naming: the lab's full name is "Open Industrial IoT Lab". "Open IIoT Lab" is the short form
-# used in running text, "Open IIoT" is the abbreviation (it also survives in the web address,
-# open-iiot-lab.github.io, and in the report identifiers, OIL-TR-…).
-primary_name: "Open Industrial IoT Lab"
-navbar_name: "Open Industrial IoT Lab"
-eyebrow: "Industrial IoT research lab"
+primary_name: Open Industrial IoT Lab
+navbar_name: Open Industrial IoT Lab
+eyebrow: Zhejiang University
 
 positions:
-- name: College of Control Science and Engineering · Zhejiang University
-- name: Edge systems
-- name: Interoperability
-- name: Trustworthy automation
+  - name: College of Control Science and Engineering
 
-# Public contact address of the lab lead, as listed on the ZJU profile page.
-email: "gucj@zju.edu.cn"
-github: Open-IIoT-Lab
-
-# Extra contact-rail buttons. `name` is the label, `url` the destination, and `icon` one of the
-# bundled 16x16 classic icons.
+email: gucj@zju.edu.cn
 links:
-- name: PI homepage
-  url: https://chaojiegu.github.io/
-  icon: /assets/images/classic/icons/16/address_book_card_copy-1.png
-- name: PI 中文主页
-  url: https://person.zju.edu.cn/gucj
-  icon: /assets/images/classic/icons/16/briefcase-1.png
+  - name: English homepage
+    url: https://chaojiegu.github.io/
+    icon: /assets/images/classic/icons/16/address_book_card_copy-1.png
+  - name: Zhejiang University profile
+    url: https://person.zju.edu.cn/gucj
+    icon: /assets/images/classic/icons/16/briefcase-1.png
 
-short_bio_text_justify: false
-short_bio: >-
-  <p>
-    Open Industrial IoT Lab — Open IIoT for short — is our research lab for the unglamorous middle
-    of industrial digitalisation: the place where machines, models, protocols, and people have to
-    agree well enough to run a plant. We build <strong>edge-native systems</strong>, practical
-    <strong>interoperability</strong> layers, and automation that can be inspected, tested, and
-    argued with.
-  </p>
-  <p>
-    Everything the lab produces is published in the open — reference implementations, benchmarks,
-    field notes, and the failure modes that taught us something. We would rather ship a small system
-    that a plant engineer can read end to end than a large one nobody can question.
-  </p>
-  <p>
-    The lab is led by <a href="https://chaojiegu.github.io/" target="_blank" rel="noopener noreferrer">Chaojie Gu</a>,
-    ZJU 100 Young Professor at the College of Control Science and Engineering, Zhejiang University,
-    and Deputy Director of its Institute of Industrial Process Control.
-  </p>
-
-# The lab wordmark stands in for the portrait used by the upstream template.
 portrait_url: /assets/images/open-iiot-lab-logo.png
-portrait_caption: >-
-  College of Control Science and Engineering · Zhejiang University
-
-# The upstream template renders the "education", "experience", and "awards" groups as the
-# background section. For an organisation they carry the lab's focus areas, programmes, and
-# milestones; the headings below rename them without touching the widget.
-section_headings:
-  education: Focus areas
-  experience: Programmes
-  awards: Milestones
-
-education:
-- name: Intelligence at the edge
-  position: >-
-    Low-latency inference, scheduling, and resilience patterns that keep data, decisions, and
-    recovery close to the process.
-- name: Meaning across systems
-  position: >-
-    Open information models and pragmatic interfaces that let equipment, tooling, and people
-    share the same context.
-- name: Automation with agency
-  position: >-
-    Observable, testable automation that leaves room for human judgement, escalation, and
-    accountability.
-- name: Practice and evidence
-  position: >-
-    Benchmarks, field notes, and reference implementations that make industrial claims
-    checkable by someone other than their author.
-
-experience:
-- name: Open Edge Runtime
-  position: >-
-    A portable control plane for running event-driven services beside production equipment.
-  date: 2024 - present
-- name: Plant Graph
-  position: >-
-    An operational knowledge graph that links assets, signals, procedures, and people into one
-    reviewable digital thread.
-  date: 2024 - present
-- name: Open Loop Bench
-  position: >-
-    A repeatable scenario harness for testing industrial AI before it meets a production line.
-  date: 2025 - present
-- name: Protocol Field Notes
-  position: >-
-    Short, practical write-ups on connecting legacy interfaces to inspectable workflows.
-  date: 2023 - present
-
-awards:
-- name: Open Industrial IoT Lab is founded and begins publishing its work in the open
-  date: 2023
-- name: First public release of the Open Edge Runtime reference implementation
-  date: 2024
-- name: Field study programme opens with three partner plants
-  date: 2024
-- name: Open benchmark suite for industrial edge workloads published
-  date: 2025

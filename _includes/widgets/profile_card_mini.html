@@ -2,11 +2,8 @@
     {% if site.data.profile.portrait_url %}
     <figure class="classic-portrait">
         <img src="{{ site.data.profile.portrait_url | relative_url }}" alt="{{ site.data.profile.primary_name | escape }} mark" width="240" height="240">
-        {% if site.data.profile.portrait_caption %}<figcaption>{{ site.data.profile.portrait_caption }}</figcaption>{% endif %}
     </figure>
     {% endif %}
-    <h1 class="classic-profile-name">{{ site.data.profile.primary_name }} {% if site.data.profile.secondary_name %}<span class="classic-small">{{ site.data.profile.secondary_name }}</span>{% endif %}</h1>
-    <div class="classic-profile-positions">{% for position in site.data.profile.positions %}<div>{% if position.logo %}<img class="inline-badge" src="{{ position.logo | relative_url }}" alt="">{% endif %}{{ position.name }}</div>{% endfor %}</div>
 </div>
 <section class="classic-profile-links" aria-labelledby="contact-heading">
     <h2 id="contact-heading" class="classic-rail-heading">Contact & profiles</h2>
@@ -25,7 +22,7 @@
 <nav class="classic-page-index" aria-label="On this page">
     <h2 class="classic-rail-heading">On this page</h2>
     <a href="#about">About the lab</a>
-    {% if site.data.display.homepage.show_experience %}<a href="#experience">Background</a>{% endif %}
-    {% assign count_news = site.news | size %}{% if site.data.display.homepage.show_news and count_news > 0 %}<a href="#news">News</a>{% endif %}
+    <a href="#directions">Research directions</a>
     {% if site.data.display.homepage.show_selected_publications %}<a href="#selected-publications">Selected publications</a>{% endif %}
+    <a href="#opportunities">Opportunities</a>
 </nav>

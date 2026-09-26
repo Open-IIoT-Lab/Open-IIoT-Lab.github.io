@@ -1,35 +1,36 @@
 ---
 layout: default
-title : Homepage
+title: Home
 navbar_title: Home
 ---
 
 <div class="classic-home-grid">
-    <aside class="classic-profile-rail" aria-label="Lab profile and contact">
-        {% include widgets/profile_card_mini.html %}
-    </aside>
-    <div class="classic-document classic-home-document">
+  <aside class="classic-profile-rail" aria-label="Lab profile and contact">
+    {% include widgets/profile_card_mini.html %}
+  </aside>
+  <div class="classic-document classic-home-document">
+    <section id="about" class="classic-section" aria-labelledby="about-heading">
+      <h1 id="about-heading" class="classic-section-heading"><img class="classic-icon" src="{{ '/assets/images/classic/icons/32/tree-0.png' | relative_url }}" alt="" width="32" height="32">About the lab</h1>
+      <p>Led by <a href="https://chaojiegu.github.io/" target="_blank" rel="noopener noreferrer">Chaojie Gu</a>, the lab studies communication and intelligence for industrial systems.</p>
+    </section>
 
-        {% include widgets/profile_card_bio_only.html %}
+    <section id="directions" class="classic-section" aria-labelledby="directions-heading">
+      <h2 id="directions-heading" class="classic-section-heading">Research directions</h2>
+      <div class="classic-background-grid">
+        <div class="classic-background-group"><h3>Industrial networks</h3><p>Industrial IoT, low-power wide-area networks, deterministic networking and mobile computing.</p></div>
+        <div class="classic-background-group"><h3>Industrial intelligence</h3><p>Industrial information modeling, sensing and scheduling.</p></div>
+      </div>
+      <div class="classic-section-end"><a class="classic-button" href="{{ '/research/' | relative_url }}">Explore research</a></div>
+    </section>
 
-        {% if site.data.display.homepage.show_experience %}
-            {% include widgets/experience_card.html %}
-        {% endif %}
+    {% if site.data.display.homepage.show_selected_publications %}
+      {% assign pubs = site.publications | sort: 'date' | reverse | where: 'selected', true %}
+      {% include widgets/publication_card.html publications=pubs title='Selected publications' limit=4 %}
+    {% endif %}
 
-        {% if site.data.display.homepage.show_news %}
-        {% assign count_news = site.news | size %}
-        {% if count_news > 0 %}
-        {% include widgets/news_card.html limit=site.data.display.homepage.num_news %}
-        {% endif %}
-        {% endif %}
-
-        {% if site.data.display.homepage.show_selected_publications %}
-        {% assign pubs = site.publications | sort: "date" | reverse | where: "selected", true %}
-        {%
-        include widgets/publication_card.html
-        publications=pubs
-        title='Selected Publications'
-        %}
-        {% endif %}
-    </div>
+    <section id="opportunities" class="classic-section" aria-labelledby="opportunities-heading">
+      <h2 id="opportunities-heading" class="classic-section-heading">Opportunities</h2>
+      <p>We welcome enquiries from prospective Master's and PhD students and postdoctoral researchers. Please email your CV and transcripts to <a href="mailto:{{ site.data.profile.email | encode_email }}">{{ site.data.profile.email | replace: '@', ' [at] ' }}</a>.</p>
+    </section>
+  </div>
 </div>

@@ -2,45 +2,47 @@
 layout: default
 title: Research
 navbar_title: Research
+permalink: /research/
 ---
 
-{% assign programmes = site.research | where: "show", true | where: "group", "Programmes" | sort: "date" | reverse %}
-{% assign practice = site.research | where: "show", true | where: "group", "How we work" | sort: "date" | reverse %}
+<div class="classic-document">
+  <h1 class="classic-section-heading"><img class="classic-icon" src="{{ '/assets/images/classic/icons/32/tree-0.png' | relative_url }}" alt="" width="32" height="32">Research</h1>
+  <p>The group's two broad directions are <strong>industrial networks</strong> and <strong>industrial intelligence</strong>, as listed on <a href="https://person.zju.edu.cn/gucj" target="_blank" rel="noopener noreferrer">Chaojie Gu's Zhejiang University profile</a>. The topics below connect those directions to work documented in the <a href="{{ '/publications/' | relative_url }}">publication list</a>.</p>
 
-<div class="classic-document classic-showcase">
-    <h1 class="classic-section-heading"><img class="classic-icon" src="{{ '/assets/images/classic/icons/32/tree-0.png' | relative_url }}" alt="" width="32" height="32">Research</h1>
+  <section class="classic-section" aria-labelledby="networks-heading">
+    <h2 id="networks-heading" class="classic-section-heading">Industrial networks</h2>
+    <div class="classic-background-grid">
+      <div class="classic-background-group">
+        <h3>Industrial IoT and interoperability</h3>
+        <p>Industrial communication and information models that help heterogeneous equipment and systems exchange data.</p>
+        <p class="classic-small">Related work: Text2UA; resilience and interoperability in the industrial internet.</p>
+      </div>
+      <div class="classic-background-group">
+        <h3>Deterministic and time-sensitive networking</h3>
+        <p>Routing, scheduling and reliability for networks with timing requirements, including TSN and TSN–Wi-Fi.</p>
+        <p class="classic-small">Related work: DARS; reliability-aware TSN–Wi-Fi scheduling; large-scale deterministic networks.</p>
+      </div>
+      <div class="classic-background-group">
+        <h3>Low-power wide-area networks</h3>
+        <p>LoRa and NB-IoT communication, radio implementations, network performance and security.</p>
+        <p class="classic-small">Related work: SoftNB; LoPhy.</p>
+      </div>
+    </div>
+  </section>
 
-    <p>
-        Our lab works on the middle of industrial digitalisation where the interesting failures
-        happen: between the sensor and the model, between the model and the machine, and between the
-        machine and the person responsible for it. Four directions guide the work, four programmes
-        carry it, and everything we find is published — including the parts that did not work.
-    </p>
-
-    <section class="classic-section" aria-labelledby="directions-heading">
-        <h2 id="directions-heading" class="classic-section-heading">Directions</h2>
-        <div class="classic-background-grid">
-            {% for area in site.data.profile.education %}
-            <section class="classic-background-group">
-                <h2>{{ area.name }}</h2>
-                <p>{{ area.position }}</p>
-            </section>
-            {% endfor %}
-        </div>
-    </section>
-
-    <section class="classic-section" aria-labelledby="programmes-heading">
-        <h2 id="programmes-heading" class="classic-section-heading">Programmes and outputs</h2>
-        <p>
-            Each programme is something we are actively building, instrumenting, or writing about.
-            The reports listed under a programme are the outputs it has produced so far; they link
-            straight into the publication list.
-        </p>
-        {% include widgets/card_grid.html items=programmes %}
-    </section>
-
-    <section class="classic-section" aria-labelledby="practice-heading">
-        <h2 id="practice-heading" class="classic-section-heading">How we work</h2>
-        {% include widgets/card_grid.html items=practice %}
-    </section>
+  <section class="classic-section" aria-labelledby="intelligence-heading">
+    <h2 id="intelligence-heading" class="classic-section-heading">Industrial intelligence</h2>
+    <div class="classic-background-grid">
+      <div class="classic-background-group">
+        <h3>Intelligent production systems</h3>
+        <p>Learning-based scheduling and information modeling for manufacturing systems.</p>
+        <p class="classic-small">Related work: flexible job shop scheduling; Text2UA.</p>
+      </div>
+      <div class="classic-background-group">
+        <h3>Mobile and edge computing</h3>
+        <p>Connected devices, mobile systems and computation near data sources. This is also an area named on the <a href="https://chaojiegu.github.io/" target="_blank" rel="noopener noreferrer">PI's English homepage</a>.</p>
+      </div>
+    </div>
+  </section>
+  <div class="classic-action-row"><a class="classic-button" href="{{ '/publications/' | relative_url }}">Browse selected papers</a><a class="classic-button" href="https://chaojiegu.github.io/publications/" target="_blank" rel="noopener noreferrer">Complete publication list</a></div>
 </div>

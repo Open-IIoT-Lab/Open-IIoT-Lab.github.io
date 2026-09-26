@@ -6,8 +6,8 @@
 # Site settings
 title: Open Industrial IoT Lab
 description: >-
-  The research lab of Open IIoT: industrial IoT systems, edge intelligence, and
-  trustworthy automation, published in the open.
+  Research in industrial networks and industrial intelligence at Zhejiang University,
+  led by Chaojie Gu.
 
 # The repository is named Open-IIoT-Lab.github.io, so GitHub Pages serves it as
 # the organization homepage at https://open-iiot-lab.github.io/ — from the root
@@ -20,8 +20,6 @@ url: "https://open-iiot-lab.github.io"
 # Build settings
 markdown: kramdown
 
-# Blog articles live under /blog/ so that the blog index and the articles share a path prefix.
-permalink: /blog/:year/:month/:day/:title/
 exclude:
   - README.md
   - Gemfile
@@ -37,7 +35,3 @@ plugins:
 
 collections:
   - publications
-  - news
-  - research
-  - resources
-  - posts

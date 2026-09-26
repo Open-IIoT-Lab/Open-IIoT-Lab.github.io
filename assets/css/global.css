@@ -35,9 +35,6 @@
 .classic-profile { padding: 14px; border: 2px solid; border-color: #808080 #fff #fff #808080; }
 .classic-portrait { margin: 0; }
 .classic-portrait img { display: block; width: 100%; height: auto; border: 2px solid; border-color: #111 #dfdfdf #dfdfdf #111; }
-.classic-portrait figcaption { font-size: var(--classic-text-size); line-height: 1.5; margin: 10px 0 0; }
-.classic-site .classic-profile-name { font-size: 22px; margin: 16px 0 8px; }
-.classic-profile-positions { font-size: var(--classic-text-size); }
 .inline-badge { height: 16px; width: auto; vertical-align: middle; margin-right: 5px; }
 .classic-site .classic-rail-heading { font-size: var(--classic-text-size); margin: 22px 0 10px; color: #161616; }
 .classic-profile-links { display: grid; gap: 8px; }
@@ -54,11 +51,21 @@
 .classic-page-index .classic-rail-heading { margin-bottom: 0; }
 .classic-document { min-width: 0; padding: 24px; background: #fff; border: 2px solid; border-color: #808080 #fff #fff #808080; box-shadow: inset 1px 1px #111; }
 .classic-section + .classic-section { border-top: 1px solid #808080; margin-top: 28px; padding-top: 24px; }
+.classic-action-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 0; }
+.classic-resource-list { list-style: none; padding: 0; margin: 0; }
+.classic-resource-list li { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; padding: 16px 0; border-bottom: 1px solid #dfdfdf; }
+.classic-resource-list li:last-child { border-bottom: 0; }
+.classic-resource-list p { margin: 4px 0 0; }
+.classic-resource-list .classic-button { flex: 0 0 auto; }
+.classic-contact-details { margin: 0 0 18px; }
+.classic-contact-details div { display: grid; grid-template-columns: 80px minmax(0, 1fr); gap: 12px; padding: 8px 0; border-bottom: 1px solid #dfdfdf; }
+.classic-contact-details dt { font-weight: 700; }
+.classic-contact-details dd { margin: 0; }
 .classic-section-heading { display: flex; align-items: center; gap: 12px; padding-bottom: 12px; margin: 0 0 20px; border-bottom: 2px solid #000080; color: #000080; }
 /* Heading PNGs are native 32x32 variants, not downscaled 48x48 artwork. */
 .classic-icon { width: 32px; height: 32px; image-rendering: pixelated; flex: 0 0 32px; }
 .classic-background-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
-.classic-background-group h2 { margin-bottom: 14px; color: #000080; }
+.classic-background-group h2, .classic-background-group h3 { margin-bottom: 14px; color: #000080; }
 .classic-background-list { list-style: none; padding: 0; margin: 0; }
 .classic-background-list li { display: flex; gap: 10px; align-items: flex-start; margin: 0 0 18px; font-size: var(--classic-text-size); }
 .classic-background-name { font-weight: 700; margin-bottom: 5px; }
@@ -144,9 +151,7 @@
     .classic-navigation { padding: 12px 2px 0; }
     .classic-site .classic-tab { flex: 1 1 auto; padding: 8px 12px; }
     .classic-home-grid, .classic-archive-grid { grid-template-columns: 1fr; }
-    .classic-profile { display: grid; grid-template-columns: minmax(100px, 160px) minmax(0, 1fr); gap: 10px 16px; align-items: start; }
-    .classic-portrait { grid-row: span 2; }
-    .classic-profile-name { align-self: end; }
+    .classic-profile { width: 192px; max-width: 100%; }
     .classic-profile-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .classic-profile-links .classic-rail-heading { grid-column: 1 / -1; }
     .classic-page-index { display: flex; flex-wrap: wrap; gap: 12px; margin: 12px 0; }
@@ -167,12 +172,14 @@
     .classic-site { padding: 8px; }
     .classic-masthead { padding: 16px; }
     .classic-site .classic-site-name, .classic-site h1 { font-size: 22px; }
-    .classic-profile { grid-template-columns: 92px minmax(0, 1fr); gap: 10px; padding: 10px; }
-    .classic-profile-name { margin-top: 0 !important; }
+    .classic-profile { width: 124px; padding: 10px; }
     .classic-profile-links { grid-template-columns: 1fr; }
     .classic-document { padding: 14px; }
     .classic-news-list li { grid-template-columns: 1fr; gap: 3px; }
     .classic-message { margin: 0; padding: 20px; }
+    .classic-resource-list li { display: block; }
+    .classic-resource-list .classic-button { margin-top: 10px; }
+    .classic-contact-details div { grid-template-columns: 1fr; gap: 2px; }
 }
 @media (pointer: coarse) {
     .classic-site .classic-button, .classic-site .classic-tab { min-height: 44px; }

@@ -1,11 +1,4 @@
 homepage:
-  show_experience: true
-  show_news: true
   show_selected_publications: true
-  num_news: 6
-
-# Feel free to replace the footer text if you would like to, but I will greatly appreciate it
-# if you keep the link to the template so that more people can benefit from it. Thanks!
 footer_text: >-
-  Open Industrial IoT Lab · built with the
-  <a href="https://github.com/luost26/academic-homepage-nostalgia-1990s" target="_blank" rel="noopener noreferrer">Nostalgia 1990s academic homepage template</a>
+  Open Industrial IoT Lab · <a href="https://github.com/luost26/academic-homepage-nostalgia-1990s" target="_blank" rel="noopener noreferrer">site template</a>

@@ -2,73 +2,23 @@
 layout: default
 title: Contact
 navbar_title: Contact
+permalink: /contact/
 ---
 
 <div class="classic-document">
-    <h1 class="classic-section-heading"><img class="classic-icon" src="{{ '/assets/images/classic/icons/16/mailbox_world-1.png' | relative_url }}" alt="" width="32" height="32">Contact</h1>
-
-    <p>
-        We are open to conversations that start with a real constraint rather than a pitch: a line
-        that will not hold a deadline, a protocol nobody documented, a model that behaves differently
-        on the night shift than it did in the lab.
-    </p>
-
-    <section class="classic-section" aria-labelledby="join-heading">
-        <h2 id="join-heading" class="classic-section-heading">Join us</h2>
-        <p>
-            We have openings for motivated Master and PhD students and for postdocs, and we host
-            undergraduate researchers and visiting engineers. The work sits in Internet of Things
-            systems — industrial IoT, low-power wide-area networks, deterministic networking, and
-            mobile computing.
-        </p>
-        <p>
-            What we look for is not a long publication list but evidence that you finish things and
-            can explain what went wrong:
-        </p>
-        <ul>
-            <li>Something you built, broke, and fixed — hardware, firmware, software, or a measurement setup.</li>
-            <li>A problem you can describe in one page, with the constraint that makes it hard.</li>
-            <li>Willingness to write down what you observed before you decide what it means.</li>
-        </ul>
-        <p>
-            Write to the lab lead, <a href="https://chaojiegu.github.io/" target="_blank" rel="noopener noreferrer">Chaojie Gu</a>
-            (<a href="https://person.zju.edu.cn/gucj" target="_blank" rel="noopener noreferrer">中文主页</a>),
-            with your CV and transcripts. Tell us what you want to work on, what you have already
-            tried, and which of our programmes or reports you read on the way here — that last part
-            is the most useful thing you can put in a first message.
-        </p>
-    </section>
-
-    <section class="classic-section" aria-labelledby="collaborate-heading">
-        <h2 id="collaborate-heading" class="classic-section-heading">Collaborate with us</h2>
-        <p>
-            Plants, integrators, and research groups: we take on bounded problems where a result can
-            be measured and published. Bring the constraints, the signals you already have, and a
-            definition of "better" — we will tell you honestly if it is not a fit.
-        </p>
-        <p>
-            We also like it when people run our work and tell us where it broke. A defect report
-            against one of our reference implementations is a genuine contribution.
-        </p>
-    </section>
-
-    <section class="classic-section" aria-labelledby="reach-heading">
-        <h2 id="reach-heading" class="classic-section-heading">Reaching the lab</h2>
-        {% if site.data.profile.email %}
-        <p>
-            Email: <a href="mailto:{{ site.data.profile.email | encode_email }}">{{ site.data.profile.email | replace: '@', '(at)' }}</a>
-        </p>
-        {% endif %}
-        <p>
-            Post: Room 423, Industrial Control New Building, Yuquan Campus, Zhejiang University,
-            Hangzhou, China
-        </p>
-        <p>
-            The lab's GitHub organization is the front door for issues, code, and questions about the
-            reports:
-        </p>
-        <p>
-            <a class="classic-button" href="https://github.com/{{ site.data.profile.github }}" target="_blank" rel="noopener noreferrer">Open-IIoT-Lab on GitHub</a>
-        </p>
-    </section>
+  <h1 class="classic-section-heading"><img class="classic-icon" src="{{ '/assets/images/classic/icons/16/mailbox_world-1.png' | relative_url }}" alt="" width="32" height="32">Contact &amp; opportunities</h1>
+  <section class="classic-section" aria-labelledby="join-heading">
+    <h2 id="join-heading" class="classic-section-heading">Join the lab</h2>
+    <p>We welcome enquiries from prospective Master and PhD students and postdoctoral researchers. Relevant interests include IoT, Industrial IoT, low-power wide-area networks, deterministic networking and mobile computing.</p>
+    <p>To enquire, email <a href="mailto:{{ site.data.profile.email | encode_email }}">{{ site.data.profile.email | replace: '@', ' [at] ' }}</a> with your CV and transcripts, as requested on <a href="https://chaojiegu.github.io/" target="_blank" rel="noopener noreferrer">Chaojie Gu's English homepage</a>.</p>
+  </section>
+  <section class="classic-section" aria-labelledby="reach-heading">
+    <h2 id="reach-heading" class="classic-section-heading">Reach us</h2>
+    <dl class="classic-contact-details">
+      <div><dt>Email</dt><dd><a href="mailto:{{ site.data.profile.email | encode_email }}">{{ site.data.profile.email | replace: '@', ' [at] ' }}</a></dd></div>
+      <div><dt>Phone</dt><dd>+86 571 8795 1879</dd></div>
+      <div><dt>Office</dt><dd>Room 423, IIPC Building, Yuquan Campus, Zhejiang University, Hangzhou, China</dd></div>
+    </dl>
+    <p><a href="https://person.zju.edu.cn/gucj" target="_blank" rel="noopener noreferrer">Zhejiang University profile</a> · <a href="https://chaojiegu.github.io/" target="_blank" rel="noopener noreferrer">English homepage</a></p>
+  </section>
 </div>

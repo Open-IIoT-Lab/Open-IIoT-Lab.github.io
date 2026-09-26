@@ -2,72 +2,22 @@
 layout: default
 title: People
 navbar_title: People
+permalink: /people/
 ---
 
-{% assign member_total = 0 %}
-{% for group in site.data.people.groups %}
-{% assign member_total = member_total | plus: group.members.size %}
-{% endfor %}
-
 <div class="classic-document">
-    <h1 class="classic-section-heading"><img class="classic-icon" src="{{ '/assets/images/classic/icons/16/address_book_card_copy-1.png' | relative_url }}" alt="" width="32" height="32">People</h1>
-
-    <p>
-        The lab is small on purpose. We work in small teams on problems that need both a bench and a
-        plant, and we would rather list a few people properly than a long roster that says nothing.
-    </p>
-
-    {% if member_total > 0 %}
-    {% for group in site.data.people.groups %}
-    {% if group.members.size > 0 %}
-    <section class="classic-section" aria-labelledby="group-{{ group.name | slugify }}">
-        <h2 id="group-{{ group.name | slugify }}" class="classic-section-heading">{{ group.name }}</h2>
-        <ul class="classic-background-list">
-            {% for member in group.members %}
-            <li>
-                {% if member.photo %}<img class="classic-institution-logo" src="{{ member.photo | relative_url }}" alt="" width="48" height="48">{% endif %}
-                <div>
-                    <div class="classic-background-name">{% if member.url %}<a href="{{ member.url }}" target="_blank" rel="noopener noreferrer">{{ member.name }}</a>{% else %}{{ member.name }}{% endif %}</div>
-                    {% if member.role %}<div>{{ member.role }}</div>{% endif %}
-                    {% if member.links %}<div class="classic-small">{% for link in member.links %}<a href="{{ link[1] }}" target="_blank" rel="noopener noreferrer">{{ link[0] }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}</div>{% endif %}
-                    {% if member.dates %}<div class="classic-date">{{ member.dates }}</div>{% endif %}
-                </div>
-            </li>
-            {% endfor %}
-        </ul>
-    </section>
-    {% endif %}
-    {% endfor %}
-
-    {% else %}
-    <section class="classic-section" aria-labelledby="roster-heading">
-        <h2 id="roster-heading" class="classic-section-heading">Roster</h2>
-        <p>
-            We publish names only once each person is happy to appear on a public page, so this
-            roster is filled in as the lab confirms who wants to be listed. It is organised the way
-            a lab usually is:
-        </p>
-        <ul>
-            {% for group in site.data.people.groups %}
-            <li><strong>{{ group.name }}</strong></li>
-            {% endfor %}
-        </ul>
-        <p>
-            In the meantime, the work itself is the best introduction to us:
-            <a href="{{ '/research/' | relative_url }}">research</a> shows what we are building and
-            <a href="{{ '/publications/' | relative_url }}">publications</a> shows what came out of it.
-        </p>
-    </section>
-    {% endif %}
-
-    <section class="classic-section" aria-labelledby="joining-heading">
-        <h2 id="joining-heading" class="classic-section-heading">Working with us</h2>
-        <p>
-            We host PhD and Master students, undergraduate researchers, and visiting engineers, and
-            we collaborate with plants and integrators on problems that are bounded enough to finish.
-        </p>
-        <p>
-            <a class="classic-button" href="{{ '/contact/' | relative_url }}">How to get in touch</a>
-        </p>
-    </section>
+  <h1 class="classic-section-heading"><img class="classic-icon" src="{{ '/assets/images/classic/icons/16/address_book_card_copy-1.png' | relative_url }}" alt="" width="32" height="32">People</h1>
+  <section class="classic-section" aria-labelledby="pi-heading">
+    <h2 id="pi-heading" class="classic-section-heading">Principal investigator</h2>
+    <h3>Chaojie Gu</h3>
+    <p>Chaojie Gu is a ZJU 100 Young Professor and doctoral supervisor at the College of Control Science and Engineering, Zhejiang University, and Deputy Director of the Institute of Industrial Process Control. He received his B.Eng. from Harbin Institute of Technology and his Ph.D. in Computer Science and Engineering from Nanyang Technological University, Singapore.</p>
+    <p>His research includes Industrial IoT, low-power wide-area networks, deterministic networking and mobile computing. He is a Senior Member of IEEE and CCF and serves as an Associate Editor for IEEE Transactions on Industrial Informatics, IEEE Internet of Things Journal and Smart Health.</p>
+    <p>His recognitions include the NSFC Excellent Young Scientists Fund (Overseas) and the IEEE TCSC Award for Excellence (Early Career Researcher).</p>
+    <div class="classic-action-row"><a class="classic-button" href="https://chaojiegu.github.io/" target="_blank" rel="noopener noreferrer">English homepage</a><a class="classic-button" href="https://person.zju.edu.cn/gucj" target="_blank" rel="noopener noreferrer">Zhejiang University profile</a></div>
+  </section>
+  <section class="classic-section" aria-labelledby="students-heading">
+    <h2 id="students-heading" class="classic-section-heading">Students and alumni</h2>
+    <p>For the current supervised student list, please refer to the <a href="https://person.zju.edu.cn/gucj" target="_blank" rel="noopener noreferrer">Zhejiang University profile</a>.</p>
+    <p>Interested in joining? See <a href="{{ '/contact/' | relative_url }}">open opportunities and contact details</a>.</p>
+  </section>
 </div>

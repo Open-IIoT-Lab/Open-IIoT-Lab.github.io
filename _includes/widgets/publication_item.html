@@ -6,12 +6,12 @@
     <div class="classic-publication-content">
         <h3>{{ item.title }}</h3>
         <p class="classic-publication-authors">{% include widgets/author_list.html authors=item.authors %}</p>
-        <p class="classic-publication-venue">{{ item.pub_pre }}<i>{{ item.pub }}</i>{{ item.pub_post }} {{ item.pub_date }} {{ item.pub_last }} <span data-semantic-scholar-id="{{ item.semantic_scholar_id }}"></span></p>
-        <div class="classic-publication-abstract">{{ item.abstract }}</div>
+        <p class="classic-publication-venue"><i>{{ item.pub }}</i> · {{ item.pub_date }}</p>
+        {% if item.abstract %}<p class="classic-publication-abstract">{{ item.abstract }}</p>{% endif %}
         <div class="classic-publication-links">
             {% for link in item.links %}
             {% if link[1].url %}{% assign link_url = link[1].url %}{% assign link_target = link[1].target | default: '_blank' %}{% else %}{% assign link_url = link[1] %}{% assign link_target = '_blank' %}{% endif %}
-            <a class="classic-button" href="{{ link_url | relative_url }}" target="{{ link_target }}" {% if link_target == '_blank' %}rel="noopener noreferrer"{% endif %}>{{ link[0] }}</a>
+            <a class="classic-button" href="{{ link_url }}" target="{{ link_target }}" {% if link_target == '_blank' %}rel="noopener noreferrer"{% endif %}>{{ link[0] }}</a>
             {% endfor %}
         </div>
     </div>
