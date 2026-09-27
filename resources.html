@@ -5,15 +5,35 @@ navbar_title: Resources
 permalink: /resources/
 ---
 
+{% assign groups = site.data.resources | group_by: 'group' %}
 <div class="classic-document">
-  <h1 class="classic-section-heading"><img class="classic-icon" src="{{ '/assets/images/classic/icons/16/directory_closed-1.png' | relative_url }}" alt="" width="32" height="32">Research code</h1>
-  <p>Code repositories linked from <a href="https://chaojiegu.github.io/publications/" target="_blank" rel="noopener noreferrer">Chaojie Gu's publication list</a>. Each project is maintained at its linked repository; check there for its current status, licence and usage instructions.</p>
-  <section class="classic-section" aria-labelledby="code-heading">
-    <h2 id="code-heading" class="classic-section-heading">Available repositories</h2>
-    <ul class="classic-resource-list">
-      <li><div><strong>Text2UA</strong><p>Automatic OPC UA information modeling from textual data.</p></div><a class="classic-button" href="https://github.com/RKWin93/Text2UA" target="_blank" rel="noopener noreferrer">View code</a></li>
-      <li><div><strong>SoftNB</strong><p>Software-defined NB-IoT physical layer processing for SDR platforms.</p></div><a class="classic-button" href="https://github.com/beginnerzjz/SoftNB" target="_blank" rel="noopener noreferrer">View code</a></li>
-      <li><div><strong>HiMon</strong><p>Network monitoring via hierarchical sketching.</p></div><a class="classic-button" href="https://github.com/YAUAYzyc/HiMon-code" target="_blank" rel="noopener noreferrer">View code</a></li>
-    </ul>
+  <h1 class="classic-section-heading"><img class="classic-icon" src="{{ '/assets/images/classic/icons/32/directory_open_file_mydocs-0.png' | relative_url }}" alt="" width="32" height="32">Code & resources</h1>
+  <p>Build on the work: experiment with radio processing, generate network workloads, or explore models for industrial data and sensing. Each resource is linked to the publications behind it.</p>
+  <nav class="classic-resource-nav" aria-label="Resource categories">{% for group in groups %}<a class="classic-button" href="#{{ group.name | slugify }}">{{ group.name }}</a>{% endfor %}</nav>
+  {% for group in groups %}
+  <section class="classic-section" aria-labelledby="{{ group.name | slugify }}">
+    <h2 id="{{ group.name | slugify }}" class="classic-section-heading">{{ group.name }}</h2>
+    <div class="classic-resource-grid">
+      {% for resource in group.items %}
+      <article id="{{ resource.id }}" class="classic-resource-card">
+        <p class="classic-resource-type">{{ resource.type }}</p>
+        <h3>{{ resource.name }}</h3>
+        <p>{{ resource.description }}</p>
+        {% if resource.status_note %}<p class="classic-resource-status">{{ resource.status_note }}</p>{% endif %}
+        <ul class="classic-resource-papers">
+          {% for key in resource.papers %}
+          {% assign paper = site.publications | where: 'bib_key', key | first %}
+          <li><a href="{{ '/publications/' | relative_url }}#{{ paper.paper_id }}">{{ paper.venue_abbr }} · {{ paper.pub_date }}</a></li>
+          {% endfor %}
+        </ul>
+        <div class="classic-action-row">
+          {% if resource.url %}<a class="classic-button" href="{{ resource.url }}" target="_blank" rel="noopener noreferrer">{{ resource.button }}</a>{% endif %}
+          {% if resource.additional_url %}<a class="classic-button" href="{{ resource.additional_url }}" target="_blank" rel="noopener noreferrer">{{ resource.additional_label }}</a>{% endif %}
+          {% unless resource.url %}{% assign first_key = resource.papers | first %}{% assign paper = site.publications | where: 'bib_key', first_key | first %}<a class="classic-button" href="{{ '/publications/' | relative_url }}#{{ paper.paper_id }}">Paper & materials</a>{% endunless %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
   </section>
+  {% endfor %}
 </div>

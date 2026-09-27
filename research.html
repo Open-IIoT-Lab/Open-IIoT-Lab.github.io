@@ -7,42 +7,40 @@ permalink: /research/
 
 <div class="classic-document">
   <h1 class="classic-section-heading"><img class="classic-icon" src="{{ '/assets/images/classic/icons/32/tree-0.png' | relative_url }}" alt="" width="32" height="32">Research</h1>
-  <p>The group's two broad directions are <strong>industrial networks</strong> and <strong>industrial intelligence</strong>, as listed on <a href="https://person.zju.edu.cn/gucj" target="_blank" rel="noopener noreferrer">Chaojie Gu's Zhejiang University profile</a>. The topics below connect those directions to work documented in the <a href="{{ '/publications/' | relative_url }}">publication list</a>.</p>
+  <div class="classic-research-intro">
+    <h2>From physical signals to dependable industrial decisions</h2>
+    <p>Industrial intelligence starts with a measurement. That measurement must be trustworthy, reach the right place on time, and make sense to the system that uses it. We study the connections between these requirements, from radio waveforms and network protocols to information models and learning.</p>
+    <p>Our work combines models, algorithms and working systems. Four connected questions guide it.</p>
+  </div>
+  <nav class="classic-research-map" aria-label="Research themes">
+    {% for theme in site.data.research %}
+    <a href="#{{ theme.id }}"><span class="classic-theme-number" aria-hidden="true">0{{ forloop.index }}</span><strong>{{ theme.short_title }}</strong><span>{{ theme.summary }}</span></a>
+    {% endfor %}
+  </nav>
 
-  <section class="classic-section" aria-labelledby="networks-heading">
-    <h2 id="networks-heading" class="classic-section-heading">Industrial networks</h2>
-    <div class="classic-background-grid">
-      <div class="classic-background-group">
-        <h3>Industrial IoT and interoperability</h3>
-        <p>Industrial communication and information models that help heterogeneous equipment and systems exchange data.</p>
-        <p class="classic-small">Related work: Text2UA; resilience and interoperability in the industrial internet.</p>
+  {% for theme in site.data.research %}
+  <section id="{{ theme.id }}" class="classic-section classic-research-theme" aria-labelledby="{{ theme.id }}-heading">
+    <h2 id="{{ theme.id }}-heading" class="classic-section-heading"><span class="classic-theme-number" aria-hidden="true">0{{ forloop.index }}</span>{{ theme.title }}</h2>
+    <p class="classic-research-question">{{ theme.question }}</p>
+    <p>{{ theme.introduction }}</p>
+    <div class="classic-research-threads">
+      {% for thread in theme.threads %}
+      <div class="classic-research-thread">
+        <h3>{{ thread.title }}</h3>
+        <p>{{ thread.description }}</p>
+        <ul class="classic-evidence-links" aria-label="Related publications">
+          {% for reference in thread.papers %}
+          {% assign paper = site.publications | where: 'bib_key', reference.key | first %}
+          <li><a href="{{ '/publications/' | relative_url }}#{{ paper.paper_id }}">{{ reference.label }}</a> <span class="text-muted">{{ paper.pub_date }}</span></li>
+          {% endfor %}
+        </ul>
       </div>
-      <div class="classic-background-group">
-        <h3>Deterministic and time-sensitive networking</h3>
-        <p>Routing, scheduling and reliability for networks with timing requirements, including TSN and TSN–Wi-Fi.</p>
-        <p class="classic-small">Related work: DARS; reliability-aware TSN–Wi-Fi scheduling; large-scale deterministic networks.</p>
-      </div>
-      <div class="classic-background-group">
-        <h3>Low-power wide-area networks</h3>
-        <p>LoRa and NB-IoT communication, radio implementations, network performance and security.</p>
-        <p class="classic-small">Related work: SoftNB; LoPhy.</p>
-      </div>
+      {% endfor %}
+    </div>
+    <div class="classic-research-end">
+      <p><strong>Code & resources:</strong> {% for resource_id in theme.resources %}{% assign resource = site.data.resources | where: 'id', resource_id | first %}<a href="{{ '/resources/' | relative_url }}#{{ resource.id }}">{{ resource.name }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}</p>
+      <a class="classic-button" href="{{ '/publications/' | relative_url }}?topic={{ theme.id }}">All papers in this theme</a>
     </div>
   </section>
-
-  <section class="classic-section" aria-labelledby="intelligence-heading">
-    <h2 id="intelligence-heading" class="classic-section-heading">Industrial intelligence</h2>
-    <div class="classic-background-grid">
-      <div class="classic-background-group">
-        <h3>Intelligent production systems</h3>
-        <p>Learning-based scheduling and information modeling for manufacturing systems.</p>
-        <p class="classic-small">Related work: flexible job shop scheduling; Text2UA.</p>
-      </div>
-      <div class="classic-background-group">
-        <h3>Mobile and edge computing</h3>
-        <p>Connected devices, mobile systems and computation near data sources. This is also an area named on the <a href="https://chaojiegu.github.io/" target="_blank" rel="noopener noreferrer">PI's English homepage</a>.</p>
-      </div>
-    </div>
-  </section>
-  <div class="classic-action-row"><a class="classic-button" href="{{ '/publications/' | relative_url }}">Browse selected papers</a><a class="classic-button" href="https://chaojiegu.github.io/publications/" target="_blank" rel="noopener noreferrer">Complete publication list</a></div>
+  {% endfor %}
 </div>

@@ -1,0 +1,48 @@
+# Bibliographic corrections and additional author-published resources.
+# Source bibliography: https://chaojiegu.github.io/publications/
+gu2017one:
+  source: https://doi.org/10.1109/INFOCOM.2018.8486301
+  bib:
+    year: '2018'
+gu2018lora:
+  source: https://doi.org/10.5555/3324320.3324420
+  bib:
+    year: '2019'
+gu2019attack:
+  source: https://doi.org/10.1109/ICDCS47774.2020.00109
+  bib:
+    year: '2020'
+chaojie2020exploiting:
+  bib:
+    author: 'Gu, Chaojie'
+    title: 'Exploiting LoRaWAN for Efficient and Resilient IoT Networks'
+LoRaLoc:
+  kind: Book
+  bib:
+    ENTRYTYPE: book
+    title: 'LoRa Localization: System Design and Performance Analysis'
+'10.1145/3676848':
+  source: https://github.com/gimmyy/TSN-data-set-generation
+  bib:
+    journal: ACM Transactions on Sensor Networks
+    code: https://github.com/gimmyy/TSN-data-set-generation
+gamage2020lmac:
+  source: https://nws.sg/amalinda/lmac/
+  bib:
+    website: https://nws.sg/amalinda/lmac/
+'10.1145/3564530':
+  source: https://nws.sg/amalinda/lmac/
+  bib:
+    website: https://nws.sg/amalinda/lmac/
+Tian_2026_DARS:
+  selected: true
+  abstract: Routing and scheduling that adapt to changing reliability in time-sensitive networks.
+'10.1109/ton.2026.3665549':
+  selected: true
+  abstract: An open NB-IoT physical layer for inspecting, adapting and validating radio processing on SDR hardware.
+'10965923':
+  selected: true
+  abstract: Turning industrial text into structured OPC UA information models with large language models.
+MSESN:
+  selected: true
+  abstract: Learning from multiple sensing modalities during training to recognize activities with one modality and few labels.
