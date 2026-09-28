@@ -6,7 +6,7 @@ date: '2020-01-01'
 year: 2020
 kind: Conference paper
 topics:
-- wireless
+- networks
 selected: false
 pub: The 26th Annual International Conference on Mobile Computing and Networking
 pub_date: '2020'

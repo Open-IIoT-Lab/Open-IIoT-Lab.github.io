@@ -6,7 +6,7 @@ date: '2019-01-01'
 year: 2019
 kind: Workshop / demo
 topics:
-- sensing
+- intelligence
 selected: false
 pub: Proceedings of the 2019 International Conference on Embedded Wireless Systems and Networks
 pub_date: '2019'

@@ -6,7 +6,7 @@ date: '2024-01-01'
 year: 2024
 kind: Book
 topics:
-- sensing
+- intelligence
 selected: false
 pub: Springer Cham
 pub_date: '2024'

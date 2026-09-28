@@ -1,15 +1,21 @@
 {% assign item = include.item %}
-<article class="classic-publication {% if include.compact %}classic-publication-compact{% endif %} {% unless item.cover %}classic-publication-no-cover{% endunless %} {% if include.hide_bottom_border %}classic-publication-last{% endif %}" id="{{ item.paper_id }}" data-year="{{ item.year }}" data-kind="{{ item.kind | escape }}" data-topics="{{ item.topics | join: ' ' }}" data-code="{% if item.links.Code or item.links.Project %}true{% else %}false{% endif %}">
+<article class="classic-publication {% if include.compact %}classic-publication-compact{% endif %} {% if include.featured %}classic-publication-featured{% endif %} {% unless item.cover %}classic-publication-no-cover{% endunless %} {% if include.hide_bottom_border %}classic-publication-last{% endif %}" id="{{ item.paper_id }}" data-year="{{ item.year }}" data-kind="{{ item.kind | escape }}" data-topics="{{ item.topics | join: ' ' }}" data-code="{% if item.links.Code or item.links.Project %}true{% else %}false{% endif %}">
     {% if item.legacy_anchor %}<span class="classic-legacy-anchor" id="{{ item.legacy_anchor }}" aria-hidden="true"></span>{% endif %}
     {% if item.cover and include.compact != true %}
-    <div class="classic-publication-cover">
-        <img src="{{ item.cover | relative_url }}" alt="Cover for {{ item.title | escape }}" loading="lazy" class="classic-research-cover">
-    </div>
+    <figure class="classic-publication-cover">
+        <a class="classic-figure-link" href="{{ item.cover | relative_url }}" target="_blank" rel="noopener noreferrer" aria-label="Enlarge: {{ item.cover_caption | escape }}">
+            <img src="{{ item.cover | relative_url }}" alt="{{ item.cover_alt | escape }}" width="{{ item.cover_width }}" height="{{ item.cover_height }}" loading="lazy" class="classic-research-cover">
+        </a>
+        <figcaption>{{ item.cover_caption }} · <a href="{{ item.cover_source }}" target="_blank" rel="noopener noreferrer">Fig. {{ item.cover_figure }}</a></figcaption>
+    </figure>
     {% endif %}
     <div class="classic-publication-content">
-        <h3>{{ item.title | escape }}</h3>
+        {% assign heading_level = include.heading_level | default: 3 %}
+        <h{{ heading_level }}>{% if include.featured %}<a href="{{ '/publications/' | relative_url }}#{{ item.paper_id }}">{{ item.title | escape }}</a>{% else %}{{ item.title | escape }}{% endif %}</h{{ heading_level }}>
+        {% if include.featured and item.selection_basis %}{% assign selection = site.data.publication_selection[item.selection_basis] %}<a class="classic-selection-badge" href="{{ selection.source }}" target="_blank" rel="noopener noreferrer">{{ item.selection_basis }}</a>{% endif %}
         <p class="classic-publication-authors">{% include widgets/author_list.html authors=item.authors %}</p>
         <p class="classic-publication-venue"><i>{{ item.pub | escape }}</i> · {{ item.pub_date }} <span class="classic-publication-kind">{{ item.kind }}{% if item.venue_abbr and item.venue_abbr != item.kind %} · {{ item.venue_abbr }}{% endif %}</span></p>
+        {% if item.publication_status %}<p class="classic-publication-status">{{ item.publication_status }}</p>{% endif %}
         {% if item.abstract and include.compact != true %}<p class="classic-publication-abstract">{{ item.abstract }}</p>{% endif %}
         <div class="classic-publication-links">
             {% for link in item.links %}

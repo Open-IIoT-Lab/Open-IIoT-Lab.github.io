@@ -54,7 +54,8 @@
     search.value = params.get('q') || '';
     year.value = params.get('year') || '';
     type.value = params.get('type') || '';
-    topic.value = params.get('topic') || '';
+    var requestedTopic = params.get('topic') || '';
+    topic.value = {wireless: 'networks', sensing: 'intelligence'}[requestedTopic] || requestedTopic;
     code.checked = params.get('code') === '1';
     form.hidden = false;
     form.addEventListener('input', function () { update(true); });

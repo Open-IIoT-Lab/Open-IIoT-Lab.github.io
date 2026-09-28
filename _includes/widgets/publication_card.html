@@ -1,6 +1,14 @@
 {% assign publications = include.publications %}
 <section id="selected-publications" class="classic-section" aria-labelledby="selected-publications-heading">
-    <h2 id="selected-publications-heading" class="classic-section-heading"><img class="classic-icon" src="{{ '/assets/images/classic/icons/32/directory_open_file_mydocs-0.png' | relative_url }}" alt="" width="32" height="32">{% if include.title %}{{ include.title }}{% else %}Selected Recent Publications{% endif %}</h2>
-    {% for item in publications limit:include.limit %}{% include widgets/publication_item.html item=item hide_bottom_border=forloop.last %}{% endfor %}
+    <h2 id="selected-publications-heading" class="classic-section-heading"><img class="classic-icon" src="{{ '/assets/images/classic/icons/32/directory_open_file_mydocs-0.png' | relative_url }}" alt="" width="32" height="32">{{ include.title | default: 'Selected Publications' }}</h2>
+    {% for theme in site.data.research %}
+    {% assign theme_publications = publications | where: 'selected_topic', theme.id %}
+    <section class="classic-selected-theme" aria-labelledby="selected-{{ theme.id }}">
+        <h3 id="selected-{{ theme.id }}" class="classic-selected-heading">{{ theme.title }}</h3>
+        <div class="classic-featured-grid">
+            {% for item in theme_publications %}{% include widgets/publication_item.html item=item featured=true heading_level=4 %}{% endfor %}
+        </div>
+    </section>
+    {% endfor %}
     <div class="classic-section-end"><a class="classic-button" href="{{ '/publications/' | relative_url }}">All {{ site.publications.size }} publications</a></div>
 </section>

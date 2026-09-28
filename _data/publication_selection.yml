@@ -1,0 +1,13 @@
+# Venue classifications checked on 2026-09-28.
+CCF-A:
+  source: https://www.ccf.org.cn/Academic_Evaluation/CN/
+  venues:
+  - IEEE Transactions on Mobile Computing
+  - IEEE Transactions on Networking
+  - IEEE/ACM Transactions on Networking
+CAA-A+:
+  source: https://www.cast.org.cn/xw/gzdt/KJCX/art/2025/art_7affb3ed494c436b9a69aedb8604e400.html
+  edition: CAA 2025 revision, CAST fifth compilation, printed page 27
+  venues:
+  - IEEE Transactions on Industrial Informatics
+  - IEEE/CAA Journal of Automatica Sinica

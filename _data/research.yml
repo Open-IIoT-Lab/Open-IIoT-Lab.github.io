@@ -1,236 +1,195 @@
-- id: wireless
-  title: Open and trustworthy wireless
-  short_title: Wireless systems
-  question: How can we see, control and trust what happens inside a low-power radio network?
-  summary: Open radio platforms, resilient timing and efficient spectrum access.
-  introduction: >-
-    A received packet reveals only part of the story. Timing, frequency and channel activity
-    carry information about both network operation and failure. We expose those signals,
-    build mechanisms around them, and make the physical layer available for experimentation.
-  threads:
-    - title: Make hidden radio behavior observable
-      description: >-
-        LoRaCP separates control traffic from the data network. LoRaTS uses radio observations
-        to examine the trustworthiness of timestamps. Our Sim2Real work extends this line
-        to calibration across individual radio devices.
-      papers:
-        - {key: gu2019one, label: LoRaCP}
-        - {key: '10.1145/3474368', label: LoRaTS}
-        - {key: Gu_2026_Sim2RealCalibration, label: Sim2Real calibration}
-    - title: Open the physical layer
-      description: >-
-        SoftNB develops from a working NB-IoT prototype into a portable SDR implementation
-        and a tutorial on synchronization, demodulation and validation. The code gives
-        researchers a platform on which to inspect and change the receiver.
-      papers:
-        - {key: Zheng2024, label: SoftNB prototype}
-        - {key: '10.1109/ton.2026.3665549', label: SoftNB system}
-        - {key: Zheng_2026, label: NB-IoT PHY tutorial}
-    - title: Rethink how radios share spectrum
-      description: >-
-        LMAC examines carrier sensing for LoRa. LoPhy and nonlinear chirp research explore
-        how waveform structure changes what a channel can carry and how reliably it can be decoded.
-      papers:
-        - {key: '10.1145/3564530', label: LMAC}
-        - {key: lophy_journal, label: LoPhy}
-        - {key: Shi_2026_NonlinearCSS, label: Nonlinear CSS}
-  resources: [softnb, lmac]
-  paper_keys:
-    - gu2017one
-    - gu2019one
-    - gamage2020lmac
-    - '10.1145/3564530'
-    - gu2019attack
-    - '10.1145/3474368'
-    - '10.1145/3302506.3312603'
-    - gu2021lorawan
-    - chaojie2020exploiting
-    - gu2021electromagnetic
-    - Zheng2024
-    - Zheng_2026
-    - '10.1109/ton.2026.3665549'
-    - Sim2Real_2025
-    - Gu_2026_Sim2RealCalibration
-    - lophy_journal
-    - '10.1145/3583120.3586952'
-    - Shi_2026_NonlinearCSS
-    - '10.1109/hpcc64274.2024.00120'
-
-- id: sensing
-  title: Sensing with less energy
-  short_title: Sensing and perception
-  question: What can the physical world tell us through signals that are already there?
-  summary: Localization, backscatter and perception from radio, acoustic and magnetic signals.
-  introduction: >-
-    Wireless signals interact with motion, objects and the human body. We study how to turn
-    those interactions into useful measurements while limiting the cost in energy, hardware
-    and labeled data. The work connects physical models, working sensing systems and learning.
-  threads:
-    - title: Locate and track through communication signals
-      description: >-
-        Our LoRa localization work moves from understanding the opportunities and limits
-        to robot tracking with LTrack and indoor localization using standard LoRaWAN
-        uplinks with ILLOC.
-      papers:
-        - {key: gu2018lora, label: Localization foundations}
-        - {key: '9684677', label: LTrack}
-        - {key: '10.1145/3517245', label: ILLOC}
-    - title: Let the environment modulate the radio
-      description: >-
-        Backscatter links reuse incident radio energy. Collaborative work on Mighty,
-        Twaltz and WindScatter explores longer links, communication across frequency
-        bands and wind measurements encoded in the reflected signal.
-      papers:
-        - {key: '10742296', label: Mighty}
-        - {key: '11045842', label: Twaltz}
-        - {key: '10.1109/tmc.2026.3650936', label: WindScatter}
-    - title: Bridge physical signals and human activity
-      description: >-
-        Biomagnetic and mmWave sensing reveal physiological and behavioral information.
-        MESEN and DecoupledHAR address a complementary challenge: making learned
-        representations useful when sensing modalities, labels or datasets change.
-      papers:
-        - {key: guo2024magwear, label: Biomagnetism}
-        - {key: MSESN, label: MESEN}
-        - {key: Tang_2026_DecoupledAxes, label: DecoupledHAR}
-  resources: [decoupledhar, mesen]
-  paper_keys:
-    - '10.1145/3264945'
-    - gu2018lora
-    - '10.1145/3485730.3492877'
-    - '9684677'
-    - '10.1145/3517245'
-    - '10096835'
-    - '10066509'
-    - '10.1145/3596264'
-    - MSESN
-    - '10.1145/3628357.3629711'
-    - LoRaLoc
-    - guo2024magwear
-    - xu2024gestureprint
-    - '10660525'
-    - WAN2024109756
-    - '10742296'
-    - '10.1145/3708324'
-    - '10.1145/3712272'
-    - '11045842'
-    - '11060909'
-    - '11074322'
-    - Chen_2024
-    - Shi_2025
-    - '10.1109/tmc.2026.3650936'
-    - Tan_2026_Metasurface
-    - Tan_2026_Device
-    - Tang_2026_RobotSLR
-    - Tang_2026_DecoupledAxes
-
 - id: networks
-  title: Networks that keep their promises
-  short_title: Deterministic networks
-  question: Can a network deliver on time when traffic, scale and link quality keep changing?
-  summary: Scheduling, reliability and monitoring for time-sensitive industrial networks.
-  introduction: >-
-    Industrial applications need data at the right time, even when resources are shared
-    and links are imperfect. We study how to plan and adapt communication across devices,
-    switches and wireless links, with timing and reliability treated as coupled requirements.
+  title: Industrial Networks
+  short_title: Industrial Networks
+  question: How can connected machines exchange the right information, at the right time, with limited resources?
+  summary: Open wireless platforms, efficient sensing and dependable communication for connected machines.
+  introduction: Industrial networks must do more than move packets. They need to expose physical events, share scarce
+    radio and computing resources, and maintain timely service as conditions change. We study these requirements
+    from the radio waveform to the network schedule.
   threads:
-    - title: Move beyond a single central schedule
-      description: >-
-        MSS studies how to place flows in cyclic queues. Dependency-aware scheduling
-        captures interactions among flows, while DiRTS distributes scheduling decisions
-        to make them more responsive to local conditions.
-      papers:
-        - {key: '9893358', label: MSS}
-        - {key: guo2024, label: Dependency-aware scheduling}
-        - {key: '10.1145/3676848', label: DiRTS}
-    - title: Adapt the plan to uncertainty
-      description: >-
-        TSN–Wi-Fi scheduling brings wireless reliability into the allocation of time,
-        space and frequency. DARS connects routing and scheduling with changing
-        reliability, extending the question from a feasible plan to fault-tolerant service.
-      papers:
-        - {key: '10401973', label: Deterministic network architecture}
-        - {key: '10.1145/3716550.3722018', label: TSN–Wi-Fi}
-        - {key: Tian_2026_DARS, label: DARS}
-    - title: Observe the network at manageable cost
-      description: >-
-        Adaptation requires visibility. HiMon uses hierarchical sketching to balance
-        measurement accuracy with the memory and processing cost of network monitoring.
-      papers:
-        - {key: HiMon_2026, label: HiMon}
-  resources: [mss, tsn-datasets, himon]
+  - title: Open the radio, expand what it can carry
+    description: SoftNB makes NB-IoT physical-layer processing available for experimentation. LoPhy embeds an additional
+      information channel within LoRa waveforms; LoRaCP and LMAC explore how control and channel access can make
+      low-power networks more manageable.
+    papers:
+    - key: 10.1109/ton.2026.3665549
+      label: SoftNB
+    - key: lophy_journal
+      label: LoPhy
+    - key: gu2017one
+      label: LoRaCP
+    - key: gamage2020lmac
+      label: LMAC
+  - title: Make timely delivery a system property
+    description: MSS turns flow features and resource availability into a scheduling score. DiRTS distributes scheduling
+      decisions, while TSN-Wi-Fi and DARS address wireless uncertainty and failures. Together these studies connect
+      efficient planning with reliable service.
+    papers:
+    - key: '9893358'
+      label: MSS
+    - key: 10.1145/3676848
+      label: DiRTS
+    - key: 10.1145/3716550.3722018
+      label: TSN-Wi-Fi
+    - key: Tian_2026_DARS
+      label: DARS
+  - title: Extract more from physical signals
+    description: Backscatter and passive wireless systems use interactions with the environment to communicate and
+      sense at low energy cost. Twaltz studies communication across frequency bands, while collaborative work on
+      Mighty and WindScatter explores long-range links and environmental measurements.
+    papers:
+    - key: '11045842'
+      label: Twaltz
+    - key: '10742296'
+      label: Mighty
+    - key: 10.1109/tmc.2026.3650936
+      label: WindScatter
+  - title: Measure before adapting
+    description: Reliable adaptation depends on what a network can observe. LoRaTS studies trustworthy timing from
+      radio observations; Sim2Real calibrates device-specific frequency offsets; HiMon aggregates traffic measurements
+      with bounded resource cost.
+    papers:
+    - key: 10.1145/3474368
+      label: LoRaTS
+    - key: Gu_2026_Sim2RealCalibration
+      label: Sim2Real calibration
+    - key: HiMon_2026
+      label: HiMon
+  resources:
+  - softnb
+  - lmac
+  - mss
+  - tsn-datasets
+  - himon
   paper_keys:
-    - '9629333'
-    - '9976177'
-    - '9893358'
-    - '10183779'
-    - '10335763'
-    - '10401973'
-    - guo2024
-    - '10.1145/3676848'
-    - '10.1145/3716550.3722018'
-    - HiMon_2026
-    - '10.1109/tvt.2025.3637134'
-    - Huang_2026_CV2X
-    - Tian_2026_DARS
-    - Zhou_2024
-
+  - gu2017one
+  - gu2019one
+  - gamage2020lmac
+  - 10.1145/3564530
+  - gu2019attack
+  - 10.1145/3474368
+  - 10.1145/3302506.3312603
+  - gu2021lorawan
+  - chaojie2020exploiting
+  - gu2021electromagnetic
+  - Zheng2024
+  - Zheng_2026
+  - 10.1109/ton.2026.3665549
+  - Sim2Real_2025
+  - Gu_2026_Sim2RealCalibration
+  - lophy_journal
+  - 10.1145/3583120.3586952
+  - Shi_2026_NonlinearCSS
+  - 10.1109/hpcc64274.2024.00120
+  - '9629333'
+  - '9976177'
+  - '9893358'
+  - '10183779'
+  - '10335763'
+  - '10401973'
+  - guo2024
+  - 10.1145/3676848
+  - 10.1145/3716550.3722018
+  - HiMon_2026
+  - 10.1109/tvt.2025.3637134
+  - Huang_2026_CV2X
+  - Tian_2026_DARS
+  - Zhou_2024
+  - '10742296'
+  - '11045842'
+  - 10.1109/tmc.2026.3650936
+  - '10066509'
+  - '11060909'
+  - Tan_2026_Metasurface
+  - Tan_2026_Device
+  - LoRaSim_2025
 - id: intelligence
-  title: Intelligence across industrial systems
-  short_title: Industrial intelligence
-  question: How can heterogeneous data become useful decisions on real industrial systems?
-  summary: Interoperable information models, learning and computation from devices to the cloud.
-  introduction: >-
-    Useful industrial intelligence must cross boundaries between equipment, data formats
-    and computing resources. We connect information modeling with learning and scheduling
-    so that applications can interpret data and make decisions under practical constraints.
+  title: Industrial Intelligence
+  short_title: Industrial Intelligence
+  question: How can heterogeneous observations become useful decisions on real machines?
+  summary: Information models, transferable perception and resource-aware learning for industrial systems.
+  introduction: Data becomes useful when a system can interpret it, learn from it and act within practical constraints.
+    We connect industrial information modeling with sensing and learning, then study how to place computation and
+    schedule decisions across devices, factories and the cloud.
   threads:
-    - title: Give machines a shared description
-      description: >-
-        Work on flat industrial IoT architectures and Asset Administration Shells studies
-        how heterogeneous equipment can be represented and connected. Text2UA extends
-        this effort by turning textual descriptions into OPC UA information models.
-      papers:
-        - {key: WANG2022102631, label: Interoperable IIoT architecture}
-        - {key: '9976146', label: AAS production platform}
-        - {key: '10965923', label: Text2UA}
-    - title: Bring decisions within resource budgets
-      description: >-
-        Production scheduling, distributed inference and computation offloading all
-        couple application goals to limited resources. Our work studies these decisions
-        from the factory job shop to heterogeneous processors and end–edge–cloud systems.
-      papers:
-        - {key: '10734312', label: Flexible job shop scheduling}
-        - {key: Shen_2025, label: Hetero2Pipe}
-        - {key: Long_2026, label: End–edge–cloud coordination}
-    - title: Learn under changing data and privacy constraints
-      description: >-
-        ObfNet studies what devices should reveal for remote inference. MESEN and
-        DecoupledHAR explore how sensing models can learn from complementary data
-        and transfer across deployment conditions.
-      papers:
-        - {key: xu2020lightweight, label: ObfNet}
-        - {key: MSESN, label: MESEN}
-        - {key: Tang_2026_DecoupledAxes, label: DecoupledHAR}
-  resources: [text2ua, obfnet, decoupledhar]
+  - title: Give industrial data a shared meaning
+    description: Work on interoperable industrial architectures and Asset Administration Shells connects heterogeneous
+      equipment. Text2UA carries this effort into language-model-assisted engineering, translating textual descriptions
+      into structured OPC UA information models.
+    papers:
+    - key: WANG2022102631
+      label: Interoperable IIoT
+    - key: '9976146'
+      label: AAS production platform
+    - key: '10965923'
+      label: Text2UA
+  - title: Learn perception that transfers
+    description: Useful sensing models should cope with scarce labels and changing devices or environments. MESEN
+      learns across sensing modalities, DecoupledHAR transfers across sensor datasets, and RoboSign uses a robotic
+      arm-hand system to generate radar training data from video.
+    papers:
+    - key: MSESN
+      label: MESEN
+    - key: Tang_2026_DecoupledAxes
+      label: DecoupledHAR
+    - key: Tang_2026_RobotSLR
+      label: RoboSign
+  - title: Turn models into executable decisions
+    description: Learning and optimization must respect latency, energy and hardware limits. We study production
+      scheduling, multi-model inference on heterogeneous processors and coordinated computation across the device-edge-cloud
+      continuum. Privacy-aware inference adds a further constraint on what devices should reveal.
+    papers:
+    - key: '10734312'
+      label: Job shop scheduling
+    - key: Shen_2025
+      label: Hetero2Pipe
+    - key: Long_2026
+      label: End-edge-cloud coordination
+    - key: xu2020lightweight
+      label: ObfNet
+  resources:
+  - text2ua
+  - decoupledhar
+  - robosign
+  - mesen
+  - obfnet
   paper_keys:
-    - xu2020lightweight
-    - '10.1145/3363347.3363357'
-    - '9976146'
-    - WANG2022102631
-    - '10.1145/3579371.3589077'
-    - GU20241
-    - '10368331'
-    - '10734312'
-    - '10965923'
-    - Fan_2023
-    - Zhao_2025
-    - Shen_2025
-    - Long_2026
-    - '10.1016/j.ultramic.2025.114226'
-    - '10.1109/mwc.2025.3600930'
-    - GrainSegNet_2025
-    - Zhao_2026_SCDOP
-    - Ji_2026_RobustDistillation
-    - MSESN
-    - Tang_2026_DecoupledAxes
+  - xu2020lightweight
+  - 10.1145/3363347.3363357
+  - '9976146'
+  - WANG2022102631
+  - 10.1145/3579371.3589077
+  - GU20241
+  - '10368331'
+  - '10734312'
+  - '10965923'
+  - Fan_2023
+  - Zhao_2025
+  - Shen_2025
+  - Long_2026
+  - 10.1016/j.ultramic.2025.114226
+  - 10.1109/mwc.2025.3600930
+  - GrainSegNet_2025
+  - Zhao_2026_SCDOP
+  - Ji_2026_RobustDistillation
+  - MSESN
+  - Tang_2026_DecoupledAxes
+  - 10.1145/3264945
+  - gu2018lora
+  - 10.1145/3485730.3492877
+  - '9684677'
+  - 10.1145/3517245
+  - '10096835'
+  - 10.1145/3596264
+  - 10.1145/3628357.3629711
+  - LoRaLoc
+  - guo2024magwear
+  - xu2024gestureprint
+  - '10660525'
+  - WAN2024109756
+  - 10.1145/3708324
+  - 10.1145/3712272
+  - '11074322'
+  - Chen_2024
+  - Shi_2025
+  - Tang_2026_RobotSLR

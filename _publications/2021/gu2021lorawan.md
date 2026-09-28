@@ -6,7 +6,7 @@ date: '2021-01-01'
 year: 2021
 kind: Journal article
 topics:
-- wireless
+- networks
 selected: false
 pub: Chinese Journal of Internet of Things
 pub_date: '2021'

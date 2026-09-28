@@ -1,5 +1,3 @@
-# Bibliographic corrections and additional author-published resources.
-# Source bibliography: https://chaojiegu.github.io/publications/
 gu2017one:
   source: https://doi.org/10.1109/INFOCOM.2018.8486301
   bib:
@@ -14,14 +12,14 @@ gu2019attack:
     year: '2020'
 chaojie2020exploiting:
   bib:
-    author: 'Gu, Chaojie'
-    title: 'Exploiting LoRaWAN for Efficient and Resilient IoT Networks'
+    author: Gu, Chaojie
+    title: Exploiting LoRaWAN for Efficient and Resilient IoT Networks
 LoRaLoc:
   kind: Book
   bib:
     ENTRYTYPE: book
     title: 'LoRa Localization: System Design and Performance Analysis'
-'10.1145/3676848':
+10.1145/3676848:
   source: https://github.com/gimmyy/TSN-data-set-generation
   bib:
     journal: ACM Transactions on Sensor Networks
@@ -30,19 +28,74 @@ gamage2020lmac:
   source: https://nws.sg/amalinda/lmac/
   bib:
     website: https://nws.sg/amalinda/lmac/
-'10.1145/3564530':
+10.1145/3564530:
   source: https://nws.sg/amalinda/lmac/
   bib:
     website: https://nws.sg/amalinda/lmac/
 Tian_2026_DARS:
-  selected: true
   abstract: Routing and scheduling that adapt to changing reliability in time-sensitive networks.
-'10.1109/ton.2026.3665549':
+10.1109/ton.2026.3665549:
+  abstract: An open NB-IoT physical layer that makes radio synchronization, demodulation and validation accessible
+    across SDR platforms.
   selected: true
-  abstract: An open NB-IoT physical layer for inspecting, adapting and validating radio processing on SDR hardware.
+  selected_order: 1
+  selected_topic: networks
+  figure: softnb
+  selection_basis: CCF-A
 '10965923':
+  abstract: Specialized language-model agents extract information, generate syntax and validate OPC UA models from
+    industrial text.
   selected: true
-  abstract: Turning industrial text into structured OPC UA information models with large language models.
+  selected_order: 5
+  selected_topic: intelligence
+  figure: text2ua
+  selection_basis: CAA-A+
 MSESN:
+  abstract: Learning from multiple sensing modalities during training to recognize activities with one modality
+    and few labels.
+HiMon_2026:
   selected: true
-  abstract: Learning from multiple sensing modalities during training to recognize activities with one modality and few labels.
+  selected_order: 2
+  selected_topic: networks
+  figure: himon
+  selection_basis: CCF-A
+  abstract: Hierarchical sketching combines network-wide traffic visibility with low memory, bandwidth and processing
+    overhead.
+lophy_journal:
+  selected: true
+  selected_order: 3
+  selected_topic: networks
+  figure: lophy
+  selection_basis: CCF-A
+  abstract: An additional chirp channel carried inside LoRa waveforms, designed to preserve the operation of the
+    primary link.
+'9893358':
+  selected: true
+  selected_order: 4
+  selected_topic: networks
+  figure: mss
+  selection_basis: CAA-A+
+  abstract: A mapping score couples flow requirements with resource availability to plan start times in cyclic queuing
+    and forwarding networks.
+Long_2026:
+  selected: true
+  selected_order: 6
+  selected_topic: intelligence
+  figure: edge
+  selection_basis: CCF-A
+  abstract: Joint task offloading, resource allocation and scheduling across mobile devices, edge nodes and the
+    cloud.
+Tang_2026_RobotSLR:
+  source: https://github.com/Zipperhya/robosign
+  bib:
+    code: https://github.com/Zipperhya/robosign
+  selected: true
+  selected_order: 7
+  selected_topic: intelligence
+  figure: robosign
+  selection_basis: CCF-A
+  abstract: A video-to-robot-to-radar pipeline generates training data and transfers recognition models from robotic
+    to human motion.
+LoRaSim_2025:
+  publication_status: Accepted; proceedings forthcoming
+  source: https://link.springer.com/book/9789819221936

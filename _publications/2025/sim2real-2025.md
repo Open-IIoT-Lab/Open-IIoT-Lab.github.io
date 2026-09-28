@@ -6,7 +6,7 @@ date: '2025-12-01'
 year: 2025
 kind: Conference paper
 topics:
-- wireless
+- networks
 selected: false
 pub: IEEE Global Communications Conference (GLOBECOM)
 pub_date: '2025'

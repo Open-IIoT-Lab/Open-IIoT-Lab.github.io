@@ -8,9 +8,9 @@ permalink: /research/
 <div class="classic-document">
   <h1 class="classic-section-heading"><img class="classic-icon" src="{{ '/assets/images/classic/icons/32/tree-0.png' | relative_url }}" alt="" width="32" height="32">Research</h1>
   <div class="classic-research-intro">
-    <h2>From physical signals to dependable industrial decisions</h2>
-    <p>Industrial intelligence starts with a measurement. That measurement must be trustworthy, reach the right place on time, and make sense to the system that uses it. We study the connections between these requirements, from radio waveforms and network protocols to information models and learning.</p>
-    <p>Our work combines models, algorithms and working systems. Four connected questions guide it.</p>
+    <h2>Connect the physical world. Make its data useful.</h2>
+    <p>Our research follows two connected directions. In <strong>Industrial Networks</strong>, we make information available reliably and efficiently. In <strong>Industrial Intelligence</strong>, we turn that information into models, perception and decisions.</p>
+    <p>The two meet in working systems: what a machine can learn depends on what it can sense and communicate, while application needs shape how networks and computing resources should be designed.</p>
   </div>
   <nav class="classic-research-map" aria-label="Research themes">
     {% for theme in site.data.research %}
@@ -20,6 +20,8 @@ permalink: /research/
 
   {% for theme in site.data.research %}
   <section id="{{ theme.id }}" class="classic-section classic-research-theme" aria-labelledby="{{ theme.id }}-heading">
+    {% if theme.id == 'networks' %}<span id="wireless" class="classic-legacy-anchor" aria-hidden="true"></span>{% endif %}
+    {% if theme.id == 'intelligence' %}<span id="sensing" class="classic-legacy-anchor" aria-hidden="true"></span>{% endif %}
     <h2 id="{{ theme.id }}-heading" class="classic-section-heading"><span class="classic-theme-number" aria-hidden="true">0{{ forloop.index }}</span>{{ theme.title }}</h2>
     <p class="classic-research-question">{{ theme.question }}</p>
     <p>{{ theme.introduction }}</p>

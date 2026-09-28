@@ -11,7 +11,7 @@ navbar_title: Home
   <div class="classic-document classic-home-document">
     <section id="about" class="classic-section" aria-labelledby="about-heading">
       <h1 id="about-heading" class="classic-section-heading"><img class="classic-icon" src="{{ '/assets/images/classic/icons/32/tree-0.png' | relative_url }}" alt="" width="32" height="32">About the lab</h1>
-      <p>Led by <a href="https://chaojiegu.github.io/" target="_blank" rel="noopener noreferrer">Chaojie Gu</a>, we study how industrial systems sense the physical world, communicate dependably and turn data into decisions.</p>
+      <p>Led by <a href="https://chaojiegu.github.io/" target="_blank" rel="noopener noreferrer">Chaojie Gu</a>, we build the networking and intelligence that help industrial systems connect, understand and act.</p>
     </section>
 
     <section id="directions" class="classic-section" aria-labelledby="directions-heading">
@@ -25,8 +25,8 @@ navbar_title: Home
     </section>
 
     {% if site.data.display.homepage.show_selected_publications %}
-      {% assign pubs = site.publications | sort: 'date' | reverse | where: 'selected', true %}
-      {% include widgets/publication_card.html publications=pubs title='Selected publications' limit=4 %}
+      {% assign pubs = site.publications | where: 'selected', true | sort: 'selected_order' %}
+      {% include widgets/publication_card.html publications=pubs title='Selected Publications' %}
     {% endif %}
 
     <section id="opportunities" class="classic-section" aria-labelledby="opportunities-heading">

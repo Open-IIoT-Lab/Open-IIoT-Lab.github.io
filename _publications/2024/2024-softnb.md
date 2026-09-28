@@ -6,7 +6,7 @@ date: '2024-10-01'
 year: 2024
 kind: Conference paper
 topics:
-- wireless
+- networks
 selected: false
 pub: 2024 IEEE 32nd International Conference on Network Protocols (ICNP)
 pub_date: '2024'

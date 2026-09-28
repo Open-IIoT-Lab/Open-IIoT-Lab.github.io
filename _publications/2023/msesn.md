@@ -6,9 +6,8 @@ date: '2023-11-01'
 year: 2023
 kind: Conference paper
 topics:
-- sensing
 - intelligence
-selected: true
+selected: false
 pub: Proceedings of the 21st ACM Conference on Embedded Networked Sensor Systems
 pub_date: '2023'
 venue_abbr: SenSys'23

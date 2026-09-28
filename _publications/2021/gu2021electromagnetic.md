@@ -6,7 +6,7 @@ date: '2021-01-01'
 year: 2021
 kind: Conference paper
 topics:
-- wireless
+- networks
 selected: false
 pub: IEEE International Conference on Parallel and Distributed Systems
 pub_date: '2021'

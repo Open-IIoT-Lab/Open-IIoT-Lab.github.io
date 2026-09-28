@@ -6,7 +6,7 @@ date: '2024-01-01'
 year: 2024
 kind: Conference paper
 topics:
-- sensing
+- intelligence
 selected: false
 pub: The 30th Annual International Conference on Mobile Computing and Networking
 pub_date: '2024'

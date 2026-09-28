@@ -1,0 +1,87 @@
+softnb:
+  file: TON'26-SoftNB.pdf
+  page: 3
+  figure: 3
+  crop:
+  - 46
+  - 203
+  - 566
+  - 311
+  alt: SoftNB transmission chain, showing the uplink and downlink radio processing stages.
+  caption: SoftNB transmission chain
+  source: https://doi.org/10.1109/TON.2026.3665549
+himon:
+  file: TON'26-HiMON.pdf
+  page: 4
+  figure: 4
+  crop:
+  - 309
+  - 51
+  - 566
+  - 205
+  alt: HiMon architecture linking MaxSketch measurements in the data plane to hierarchical aggregation in the control
+    plane.
+  caption: HiMon design overview
+  source: https://doi.org/10.1109/TON.2026.3672801
+lophy:
+  file: TON'24.pdf
+  page: 3
+  figure: 2
+  crop:
+  - 47
+  - 53
+  - 565
+  - 142
+  alt: LoPhy transmitter and receiver, embedding an additional chirp channel within a LoRa signal.
+  caption: LoPhy system architecture
+  source: https://doi.org/10.1109/TNET.2024.3398814
+mss:
+  file: TII'22.pdf
+  page: 2
+  figure: 1
+  crop:
+  - 36
+  - 56
+  - 291
+  - 271
+  alt: MSS jointly evaluates flow features and resource availability to choose flow and start-time pairs.
+  caption: Mapping-score scheduling
+  source: https://doi.org/10.1109/TII.2022.3206815
+text2ua:
+  file: JAS'25-Text2UA.pdf
+  page: 2
+  figure: 2
+  crop:
+  - 48
+  - 48
+  - 302
+  - 185
+  alt: Text2UA framework, using information extraction, syntax generation and validation agents to build an OPC
+    UA information model.
+  caption: Text2UA modeling framework
+  source: https://doi.org/10.1109/JAS.2025.125114
+edge:
+  file: TMC'25-Edge.pdf
+  page: 3
+  figure: 1
+  crop:
+  - 299
+  - 65
+  - 554
+  - 217
+  alt: Divisible and indivisible tasks distributed among mobile devices, edge nodes and a cloud server.
+  caption: End-edge-cloud task allocation
+  source: https://doi.org/10.1109/TMC.2025.3599885
+robosign:
+  file: TMC'26-RoboSign.pdf
+  page: 3
+  figure: 1
+  crop:
+  - 68
+  - 52
+  - 550
+  - 237
+  alt: RoboSign converts sign-language videos into robotic movements and radar training data, then adapts recognition
+    models to human gestures.
+  caption: Robot-assisted radar data generation
+  source: https://doi.org/10.1109/TMC.2026.3689215

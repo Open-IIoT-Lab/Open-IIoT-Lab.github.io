@@ -6,7 +6,6 @@ date: '2026-01-01'
 year: 2026
 kind: Journal article
 topics:
-- sensing
 - intelligence
 selected: false
 pub: IEEE Transactions on Mobile Computing

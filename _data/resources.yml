@@ -1,83 +1,115 @@
 - id: softnb
   name: SoftNB
-  group: Wireless systems
+  group: Industrial Networks
   type: SDR platform
-  description: An NB-IoT physical layer for software-defined radios, with synchronization, channel estimation and decoding modules for radio experiments.
+  description: An NB-IoT physical layer for software-defined radios, with synchronization, channel estimation and
+    decoding modules for radio experiments.
   url: https://github.com/beginnerzjz/SoftNB
   button: Repository
-  papers: [Zheng2024, '10.1109/ton.2026.3665549']
+  papers:
+  - Zheng2024
+  - 10.1109/ton.2026.3665549
   source: https://chaojiegu.github.io/publications/
 - id: lmac
   name: LMAC
-  group: Wireless systems
+  group: Industrial Networks
   type: Implementation guide
-  description: Author-maintained examples and deployment instructions for carrier-sense access in LoRa and LoRaWAN, including RadioLib and LoRa Basics Modem implementations.
+  description: Author-maintained examples and deployment instructions for carrier-sense access in LoRa and LoRaWAN,
+    including RadioLib and LoRa Basics Modem implementations.
   url: https://nws.sg/amalinda/lmac/
   button: Code & guide
-  papers: [gamage2020lmac, '10.1145/3564530']
+  papers:
+  - gamage2020lmac
+  - 10.1145/3564530
   source: https://nws.sg/amalinda/lmac/
 - id: mss
   name: MSS-CQF
-  group: Network scheduling & measurement
+  group: Industrial Networks
   type: Algorithms & baselines
-  description: The MSS scheduling algorithm and comparison methods for planning flow start times in cyclic queuing and forwarding networks.
+  description: The MSS scheduling algorithm and comparison methods for planning flow start times in cyclic queuing
+    and forwarding networks.
   url: https://github.com/gimmyy/MSS-CQF
   button: Repository
-  papers: ['9893358']
+  papers:
+  - '9893358'
   source: https://github.com/gimmyy/MSS-CQF
 - id: tsn-datasets
   name: TSN dataset generator
-  group: Network scheduling & measurement
+  group: Industrial Networks
   type: Dataset generator
-  description: Generate network topologies and traffic flows with custom requirements for evaluating TSN scheduling algorithms. Released with the DiRTS work on distributed IEEE 802.1Qbv scheduling.
+  description: Generate network topologies and traffic flows with custom requirements for evaluating TSN scheduling
+    algorithms. Released with the DiRTS work on distributed IEEE 802.1Qbv scheduling.
   url: https://github.com/gimmyy/TSN-data-set-generation
   button: Repository
-  papers: ['10.1145/3676848']
+  papers:
+  - 10.1145/3676848
   source: https://github.com/gimmyy/TSN-data-set-generation
 - id: himon
   name: HiMon
-  group: Network scheduling & measurement
+  group: Industrial Networks
   type: Network measurement
-  description: A hierarchical sketching implementation for studying the tradeoff between network-monitoring accuracy and resource cost.
+  description: A hierarchical sketching implementation for studying the tradeoff between network-monitoring accuracy
+    and resource cost.
   url: https://github.com/YAUAYzyc/HiMon-code
   button: Repository
-  papers: [HiMon_2026]
+  papers:
+  - HiMon_2026
   source: https://chaojiegu.github.io/publications/
 - id: text2ua
   name: Text2UA
-  group: Learning & industrial data
+  group: Industrial Intelligence
   type: Information modeling
-  description: Generate OPC UA information models from industrial text using large language models. Includes the implementation and examples for the published workflow.
+  description: Generate OPC UA information models from industrial text using large language models. Includes the
+    implementation and examples for the published workflow.
   url: https://github.com/RKWin93/Text2UA
   button: Repository
-  papers: ['10965923']
+  papers:
+  - '10965923'
   source: https://github.com/RKWin93/Text2UA
 - id: decoupledhar
   name: DecoupledHAR
-  group: Learning & industrial data
+  group: Industrial Intelligence
   type: Sensing & transfer learning
-  description: Model and align individual sensor axes for human activity recognition across datasets. Includes preprocessing, adaptation, ensemble prediction and comparison methods.
+  description: Model and align individual sensor axes for human activity recognition across datasets. Includes preprocessing,
+    adaptation, ensemble prediction and comparison methods.
   url: https://github.com/Empty-Thought/DecoupledHAR
   button: Repository
-  papers: [Tang_2026_DecoupledAxes]
+  papers:
+  - Tang_2026_DecoupledAxes
   source: https://github.com/Empty-Thought/DecoupledHAR
+- id: robosign
+  name: RoboSign
+  group: Industrial Intelligence
+  type: Robot-assisted sensing
+  description: Code for generating radar training data from robotic motion and adapting sign-language recognition
+    models to human motion. Includes pose estimation, data loaders and training routines.
+  url: https://github.com/Zipperhya/robosign
+  button: Repository
+  status_note: Code is available; the repository lists the dataset as forthcoming.
+  papers:
+  - Tang_2026_RobotSLR
+  source: https://github.com/Zipperhya/robosign
 - id: obfnet
   name: ObfNet
-  group: Learning & industrial data
+  group: Industrial Intelligence
   type: Privacy & edge inference
-  description: Lightweight data obfuscation for remote inference at the IoT edge, with an implementation and a companion demonstration.
+  description: Lightweight data obfuscation for remote inference at the IoT edge, with an implementation and a companion
+    demonstration.
   url: https://github.com/ntu-aiot/ObfNet
   button: Repository
   additional_url: https://github.com/ntu-aiot/ObfNet-showcase
   additional_label: Demonstration
-  papers: [xu2020lightweight]
+  papers:
+  - xu2020lightweight
   source: https://chaojiegu.github.io/publications/
 - id: mesen
   name: MESEN
-  group: Learning & industrial data
+  group: Industrial Intelligence
   type: Multimodal learning
-  description: Use unlabeled multimodal data during training to improve activity recognition with one sensing modality and few labels at deployment.
+  description: Use unlabeled multimodal data during training to improve activity recognition with one sensing modality
+    and few labels at deployment.
   status_note: The code URL cited in the paper is currently unavailable. The paper and slides remain linked below.
-  papers: [MSESN]
+  papers:
+  - MSESN
   unavailable_url: https://github.com/initxu/MESEN
   source: https://chaojiegu.github.io/assets/pdf/MESEN-SenSys23.pdf

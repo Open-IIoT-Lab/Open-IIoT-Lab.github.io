@@ -6,7 +6,7 @@ date: '2019-01-01'
 year: 2019
 kind: Journal article
 topics:
-- wireless
+- networks
 selected: false
 pub: ACM Transactions on Sensor Networks (TOSN)
 pub_date: '2019'

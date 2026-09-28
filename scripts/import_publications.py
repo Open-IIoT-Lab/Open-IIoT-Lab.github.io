@@ -33,6 +33,8 @@ def main():
     database = bibtexparser.loads(BIB.read_text(encoding="utf-8"), parser=parser)
     overrides = yaml.safe_load((ROOT / "_data/publication_overrides.yml").read_text(encoding="utf-8"))
     themes = yaml.safe_load((ROOT / "_data/research.yml").read_text(encoding="utf-8"))
+    figures = yaml.safe_load((ROOT / "_data/publication_figures.yml").read_text(encoding="utf-8"))
+    selection = yaml.safe_load((ROOT / "_data/publication_selection.yml").read_text(encoding="utf-8"))
     keys = {e["ID"] for e in database.entries}
     assert len(keys) == len(database.entries), "Duplicate bibliography keys"
     assert set(overrides) <= keys, "Override refers to an unknown bibliography key"
@@ -72,6 +74,11 @@ def main():
         if "WKP" in entry.get("abbr", "") or any(s in entry.get("abbr", "") for s in ["Poster", "Demo"]):
             kind = "Workshop / demo"
         venue = clean(entry.get("journal") or entry.get("booktitle") or entry.get("school") or entry.get("publisher", ""))
+        if extra.get("selected"):
+            assert extra.get("selected_topic") in topics[key], f"Selected theme mismatch: {key}"
+            assert extra.get("figure") in figures, f"Missing figure provenance: {key}"
+            assert venue in selection[extra["selection_basis"]]["venues"], f"Unverified venue classification: {key}"
+            assert figures[extra["figure"]]["source"].lower() == ("https://doi.org/" + doi).lower(), f"Figure source mismatch: {key}"
         links = {}
         if doi:
             links["DOI"] = "https://doi.org/" + doi
@@ -93,6 +100,18 @@ def main():
         }
         if extra.get("abstract"):
             record["abstract"] = extra["abstract"]
+        for field in ["selected_order", "selected_topic", "selection_basis", "publication_status"]:
+            if extra.get(field) is not None:
+                record[field] = extra[field]
+        if extra.get("figure"):
+            figure = figures[extra["figure"]]
+            record["cover"] = f"/assets/images/publications/{extra['figure']}.png"
+            record["cover_alt"] = figure["alt"]
+            record["cover_caption"] = figure["caption"]
+            record["cover_figure"] = figure["figure"]
+            record["cover_source"] = figure["source"]
+            record["cover_width"] = round((figure["crop"][2] - figure["crop"][0]) * 3)
+            record["cover_height"] = round((figure["crop"][3] - figure["crop"][1]) * 3)
         match = existing.get(key) or existing.get(("https://doi.org/" + doi).lower())
         if match:
             path, old = match
@@ -103,7 +122,9 @@ def main():
         else:
             path = ROOT / "_publications" / str(year) / (slug(key) + ".md")
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text("---\n" + yaml.safe_dump(record, allow_unicode=True, sort_keys=False, width=110) + "---\n", encoding="utf-8", newline="\n")
+        content = "---\n" + yaml.safe_dump(record, allow_unicode=True, sort_keys=False, width=110) + "---\n"
+        if not path.exists() or path.read_text(encoding="utf-8") != content:
+            path.write_text(content, encoding="utf-8", newline="\n")
         generated.append(path)
     assert set((ROOT / "_publications").glob("*/*.md")) == set(generated), "Stale publication files need review"
     BIB.write_text(bibtexparser.dumps(database).rstrip() + "\n", encoding="utf-8", newline="\n")

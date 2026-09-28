@@ -6,7 +6,7 @@ date: '2026-01-01'
 year: 2026
 kind: Journal article
 topics:
-- wireless
+- networks
 selected: false
 pub: IEEE Transactions on Wireless Communications
 pub_date: '2026'

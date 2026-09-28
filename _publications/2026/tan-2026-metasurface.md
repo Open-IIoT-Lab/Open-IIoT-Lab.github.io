@@ -6,7 +6,7 @@ date: '2026-07-01'
 year: 2026
 kind: Journal article
 topics:
-- sensing
+- networks
 selected: false
 pub: Cell Reports Physical Science
 pub_date: '2026'

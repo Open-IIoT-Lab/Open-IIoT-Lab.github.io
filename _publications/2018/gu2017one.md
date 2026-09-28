@@ -6,7 +6,7 @@ date: '2018-01-01'
 year: 2018
 kind: Conference paper
 topics:
-- wireless
+- networks
 selected: false
 pub: IEEE Conference on Computer Communications
 pub_date: '2018'
