@@ -259,12 +259,28 @@
 .classic-publication-cover figcaption { margin-top: 8px; font-size: 14px; line-height: 1.4; color: #535353; }
 .classic-publication-featured .classic-publication-content { display: flex; flex-direction: column; flex: 1; }
 .classic-site .classic-publication-featured h4 { font-size: 20px; margin: 0 0 8px; }
-.classic-site .classic-selection-badge { align-self: flex-start; padding: 1px 7px; margin: 0 0 10px; color: #000080; border: 1px solid #808080; background: #f3f6fa; font-size: 14px; text-decoration: none; }
 .classic-publication-featured .classic-publication-kind { display: none; }
 .classic-publication-featured .classic-publication-links { margin-top: auto; padding-top: 8px; }
 .classic-site .classic-publication-status { margin: 6px 0; color: #535353; font-style: italic; }
+.classic-lab-affiliation { border-left: 3px solid #000080; padding-left: 12px; }
+.classic-people-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 28px; }
+.classic-people-group { margin-bottom: 32px; scroll-margin-top: 20px; }
+.classic-people-group > h3 { color: #000080; border-bottom: 1px solid #c0c0c0; padding-bottom: 10px; margin: 0 0 18px; }
+.classic-people-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; list-style: none; padding: 0; margin: 0; }
+.classic-member-card { display: flex; align-items: flex-start; gap: 14px; padding: 16px; border: 1px solid #c0c0c0; }
+.classic-member-avatar { display: block; width: 80px; height: 80px; flex: 0 0 80px; object-fit: cover; border: 2px solid; border-color: #808080 #fff #fff #808080; }
+.classic-member-placeholder { display: flex; align-items: center; justify-content: center; background: #efefef; color: #535353; font-size: 26px; }
+.classic-member-info { min-width: 0; }
+.classic-site .classic-member-info h4 { font-size: 20px; margin: 0 0 6px; }
+.classic-site .classic-member-info p { margin: 0; }
+.classic-member-role span { display: block; color: #535353; }
+.classic-member-dates { color: #535353; }
+.classic-site .classic-member-next { border-top: 1px solid #dfdfdf; padding-top: 8px; margin-top: 8px; }
+.classic-people-alumni .classic-member-avatar { width: 52px; height: 52px; flex-basis: 52px; font-size: 20px; }
+.classic-people-source { color: #535353; }
 @media (max-width: 1100px) {
     .classic-featured-grid { grid-template-columns: 1fr; }
+    .classic-people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 991px) {
     .classic-research-map { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -272,6 +288,7 @@
 }
 @media (max-width: 767px) {
     .classic-resource-grid, .classic-publication-filters { grid-template-columns: 1fr; }
+    .classic-people-grid { grid-template-columns: 1fr; }
     .classic-resource-card { padding: 16px; }
     .classic-year-navigation { position: static; }
 }
@@ -286,4 +303,5 @@
     .classic-research-map { display: none; }
     .classic-research-threads, .classic-resource-grid { display: block; }
     .classic-resource-card { break-inside: avoid; margin-bottom: 16px; }
+    .classic-member-card { break-inside: avoid; }
 }

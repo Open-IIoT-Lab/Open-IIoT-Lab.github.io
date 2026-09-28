@@ -15,9 +15,35 @@ permalink: /people/
     <p>His recognitions include the NSFC Excellent Young Scientists Fund (Overseas) and the IEEE TCSC Award for Excellence (Early Career Researcher).</p>
     <div class="classic-action-row"><a class="classic-button" href="https://chaojiegu.github.io/" target="_blank" rel="noopener noreferrer">English homepage</a><a class="classic-button" href="https://person.zju.edu.cn/gucj" target="_blank" rel="noopener noreferrer">Zhejiang University profile</a></div>
   </section>
-  <section class="classic-section" aria-labelledby="students-heading">
-    <h2 id="students-heading" class="classic-section-heading">Students and alumni</h2>
-    <p>For the current supervised student list, please refer to the <a href="https://person.zju.edu.cn/gucj" target="_blank" rel="noopener noreferrer">Zhejiang University profile</a>.</p>
+  <section class="classic-section" aria-labelledby="members-heading">
+    <h2 id="members-heading" class="classic-section-heading">Students and alumni</h2>
+    <p>Meet our students, co-supervised researchers and alumni. Photos and individual profiles are being added.</p>
+    <nav class="classic-people-nav" aria-label="Member groups">
+      {% for group in site.data.people.groups %}<a class="classic-button" href="#{{ group.id }}">{{ group.name }} ({{ group.members.size }})</a>{% endfor %}
+    </nav>
+    {% for group in site.data.people.groups %}
+    <section id="{{ group.id }}" class="classic-people-group" aria-labelledby="{{ group.id }}-heading">
+      <h3 id="{{ group.id }}-heading">{{ group.name }}</h3>
+      <ul class="classic-people-grid{% if group.id == 'alumni' %} classic-people-alumni{% endif %}">
+        {% for member in group.members %}
+        <li class="classic-member-card">
+          {% if member.photo %}
+          <img class="classic-member-avatar" src="{{ member.photo | relative_url }}" alt="{{ member.name | escape }}" width="80" height="80" loading="lazy">
+          {% else %}
+          <div class="classic-member-avatar classic-member-placeholder" aria-hidden="true">{{ member.initials }}</div>
+          {% endif %}
+          <div class="classic-member-info">
+            <h4>{% if member.url %}<a href="{{ member.url }}" target="_blank" rel="noopener noreferrer">{{ member.name | escape }}</a>{% else %}{{ member.name | escape }}{% endif %}</h4>
+            <p class="classic-member-role">{{ member.role }}{% if member.co_supervised %}<span>Co-supervised</span>{% endif %}</p>
+            {% if member.dates %}<p class="classic-member-dates">{{ member.dates }}</p>{% endif %}
+            {% if member.next_step %}<p class="classic-member-next">{{ member.next_step }}</p>{% endif %}
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endfor %}
+    <p class="classic-people-source">Roster based on the <a href="{{ site.data.people.source }}" target="_blank" rel="noopener noreferrer">Zhejiang University profile</a>, checked {{ site.data.people.checked }}. Alumni destinations refer to the next step reported there.</p>
     <p>Interested in joining? See <a href="{{ '/contact/' | relative_url }}">open opportunities and contact details</a>.</p>
   </section>
 </div>

@@ -30,6 +30,7 @@ The site builds to `_site/`. A push to `main` triggers the GitHub Pages workflow
 ## Editing
 
 - `_data/profile.yml`: lab name, affiliation, contact and profile links
+- `_data/people.yml`: sourced student and alumni roster; add optional `photo` and `url` fields as profiles become available
 - `_data/navigation.yml`: navigation
 - `assets/bibliography/publications.bib`: complete downloadable bibliography
 - `_publications/<year>/*.md`: generated publication records

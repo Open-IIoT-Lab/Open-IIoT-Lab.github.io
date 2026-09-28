@@ -1,27 +1,213 @@
-# Lab members. The People page renders one section per group, in the order listed
-# below, and skips any group that is still empty. Add a member like this:
-#
-# - name: Jane Doe
-#   role: PhD student, battery-free wireless sensing
-#   url: https://example.org                     # optional link on the name
-#   photo: /assets/images/people/jane-doe.jpg    # optional, 240x240 or larger
-#   dates: 2024 - present                        # optional
-#   links:                                       # optional extra links
-#     Homepage: https://example.org
-
+# Public roster; preserve the supervision status and dates given by the source.
+# Add optional photo and url fields when member portraits and profiles are ready.
+source: https://person.zju.edu.cn/gucj#members
+checked: September 28, 2026
 groups:
-  - name: Principal Investigator
-    members:
-      - name: Chaojie Gu
-        role: >-
-          ZJU 100 Young Professor, College of Control Science and Engineering · Deputy Director,
-          Institute of Industrial Process Control
-        url: https://chaojiegu.github.io/
-        links:
-          Zhejiang University profile: https://person.zju.edu.cn/gucj
-  - name: PhD students
-    members: []
-  - name: Master students
-    members: []
-  - name: Alumni
-    members: []
+- id: phd-students
+  name: PhD students
+  members:
+  - name: Shixiong Wan
+    initials: SW
+    role: PhD student
+    co_supervised: true
+  - name: Yuchen Zhang
+    initials: YZ
+    role: PhD student
+    co_supervised: true
+    dates: 2021–present
+  - name: Wenbin Tian
+    initials: WT
+    role: PhD student
+    dates: 2022–present
+  - name: Haoran Shi
+    initials: HS
+    role: PhD student
+    co_supervised: true
+    dates: 2022–present
+  - name: Yifei Sun
+    initials: YS
+    role: PhD student
+    co_supervised: true
+    dates: 2022–present
+  - name: Yiyang Jing
+    initials: YJ
+    role: PhD student
+    dates: 2023–present
+  - name: Junying Huang
+    initials: JH
+    role: PhD student
+    dates: 2023–present
+  - name: Jingze Zheng
+    initials: JZ
+    role: PhD student
+    co_supervised: true
+    dates: 2023–present
+  - name: Zhipeng Tang
+    initials: ZT
+    role: PhD student
+    dates: 2024–present
+  - name: Ruizhe He
+    initials: RH
+    role: PhD student
+    co_supervised: true
+    dates: 2024–present
+  - name: Huanzhe Yang
+    initials: HY
+    role: PhD student
+    co_supervised: true
+    dates: 2024–present
+  - name: Yichuan Yang
+    initials: YY
+    role: Integrated bachelor's–PhD program
+    co_supervised: true
+    dates: 2022–present
+  - name: Binhong Yu
+    initials: BY
+    role: PhD student
+    dates: 2025–present
+  - name: Kaihang Xu
+    initials: KX
+    role: PhD student
+    dates: 2025–present
+  - name: Leqi Sun
+    initials: LS
+    role: PhD student
+    dates: 2026–present
+- id: masters-students
+  name: Master's students
+  members:
+  - name: Zheyan Zheng
+    initials: ZZ
+    role: Master's student
+    dates: 2025–present
+  - name: Hao Chen
+    initials: HC
+    role: Master's student
+    dates: 2026–present
+- id: alumni
+  name: Alumni
+  members:
+  - name: Kang Hu
+    initials: KH
+    role: PhD
+    co_supervised: true
+    dates: 2019–2022
+    next_step: Alibaba Cloud, 2022
+  - name: Luyue Ji
+    initials: LJ
+    role: PhD
+    co_supervised: true
+    dates: 2020–2024
+    next_step: Huawei, 2024
+  - name: Rongkai Wang
+    initials: RW
+    role: PhD
+    co_supervised: true
+    next_step: Associate Professor, Fuzhou University, 2025
+  - name: Miao Guo
+    initials: MG
+    role: PhD
+    co_supervised: true
+    next_step: COSCO, 2025
+  - name: Huimin Chen
+    initials: HC
+    role: PhD
+    co_supervised: true
+    next_step: China Mobile, 2025
+  - name: Yang Liu
+    initials: YL
+    role: Master's
+    co_supervised: true
+    dates: 2020–2023
+    next_step: Alibaba Cloud, 2023
+  - name: Yihao Wu
+    initials: YW
+    role: Master's
+    co_supervised: true
+    dates: 2020–2023
+    next_step: Yoozoo Games, 2023
+  - name: Lilin Xu
+    initials: LX
+    role: Master's
+    co_supervised: true
+    dates: 2021–2024
+    next_step: PhD program, Columbia University, 2024 · Presidential Fellowship
+  - name: Boya Liu
+    initials: BL
+    role: Master's
+    dates: 2021–2024
+    next_step: Research staff, HKUST, 2024; PhD program, 2025 · HKPFS
+  - name: Chenyang Yu
+    initials: CY
+    role: Master's
+    dates: 2021–2024
+    next_step: China Mobile, 2024
+  - name: Yuchen Miao
+    initials: YM
+    role: Master's
+    dates: 2021–2024
+    next_step: Alibaba, 2024
+  - name: Lei Zheng
+    initials: LZ
+    role: Master's
+    co_supervised: true
+    dates: 2021–2024
+    next_step: Pony.ai, 2024
+  - name: Keyi Wang
+    initials: KW
+    role: Undergraduate
+    dates: Jun–Aug 2022
+    next_step: Master's program, UC San Diego, 2023
+  - name: Renlang Huang
+    initials: RH
+    role: Undergraduate
+    dates: Sep 2021–Sep 2022
+    next_step: PhD program, Zhejiang University, 2022
+  - name: Huajian Zhou
+    initials: HZ
+    role: Master's
+    dates: 2022–2025
+    next_step: Huawei, 2025
+  - name: Ruoyu Tian
+    initials: RT
+    role: Master's
+    co_supervised: true
+    dates: 2022–2025
+    next_step: China Southern Power Grid, 2025
+  - name: Zixin Li
+    initials: ZL
+    role: Master's
+    co_supervised: true
+    dates: 2022–2025
+    next_step: Huawei, 2025
+  - name: Yukai Lin
+    initials: YL
+    role: Master's
+    co_supervised: true
+    dates: 2023–2026
+    next_step: Zhejiang Seaport Group, 2026
+  - name: Mengxuan Song
+    initials: MS
+    role: Undergraduate
+    dates: 2023–2024
+    next_step: PhD program, HKUST, 2024 · HKPFS
+  - name: Ruiying Zhu
+    initials: RZ
+    role: Undergraduate
+    dates: 2023–2024
+    next_step: Master's program, Lund University, 2024
+  - name: Zenan Shao
+    initials: ZS
+    role: Undergraduate
+    dates: 2024–2025
+    next_step: ECE master's program, Cornell University, 2025
+  - name: Yeerzhati (Yerzat) Abudunuer
+    initials: YA
+    role: Undergraduate
+    dates: 2024–2025
+    next_step: PhD program, CUHK, 2025
+  - name: Yizhen Wang
+    initials: YW
+    role: Undergraduate
+    dates: 2024–2025
+    next_step: PhD program, HKUST, 2025 · HKPFS
