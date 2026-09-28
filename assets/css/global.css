@@ -276,7 +276,7 @@
 .classic-member-role span { display: block; color: #535353; }
 .classic-member-dates { color: #535353; }
 .classic-site .classic-member-next { border-top: 1px solid #dfdfdf; padding-top: 8px; margin-top: 8px; }
-.classic-people-alumni .classic-member-avatar { width: 52px; height: 52px; flex-basis: 52px; font-size: 20px; }
+.classic-people-alumni .classic-member-card { display: block; }
 .classic-people-source { color: #535353; }
 @media (max-width: 1100px) {
     .classic-featured-grid { grid-template-columns: 1fr; }

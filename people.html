@@ -17,7 +17,7 @@ permalink: /people/
   </section>
   <section class="classic-section" aria-labelledby="members-heading">
     <h2 id="members-heading" class="classic-section-heading">Students and alumni</h2>
-    <p>Meet our students, co-supervised researchers and alumni. Photos and individual profiles are being added.</p>
+    <p>Meet our students, co-supervised researchers and alumni. Student photos and individual profiles are being added.</p>
     <nav class="classic-people-nav" aria-label="Member groups">
       {% for group in site.data.people.groups %}<a class="classic-button" href="#{{ group.id }}">{{ group.name }} ({{ group.members.size }})</a>{% endfor %}
     </nav>
@@ -27,11 +27,13 @@ permalink: /people/
       <ul class="classic-people-grid{% if group.id == 'alumni' %} classic-people-alumni{% endif %}">
         {% for member in group.members %}
         <li class="classic-member-card">
+          {% unless group.id == 'alumni' %}
           {% if member.photo %}
           <img class="classic-member-avatar" src="{{ member.photo | relative_url }}" alt="{{ member.name | escape }}" width="80" height="80" loading="lazy">
           {% else %}
           <div class="classic-member-avatar classic-member-placeholder" aria-hidden="true">{{ member.initials }}</div>
           {% endif %}
+          {% endunless %}
           <div class="classic-member-info">
             <h4>{% if member.url %}<a href="{{ member.url }}" target="_blank" rel="noopener noreferrer">{{ member.name | escape }}</a>{% else %}{{ member.name | escape }}{% endif %}</h4>
             <p class="classic-member-role">{{ member.role }}{% if member.co_supervised %}<span>Co-supervised</span>{% endif %}</p>
