@@ -7,6 +7,7 @@ groups:
   name: PhD students
   members:
   - name: Shixiong Wan
+    photo: /assets/images/people/shixiong-wan.jpg
     initials: SW
     role: PhD student
     co_supervised: true
@@ -60,6 +61,7 @@ groups:
     co_supervised: true
     dates: 2024–present
   - name: Huanzhe Yang
+    photo: /assets/images/people/huanzhe-yang.jpg
     initials: HY
     role: PhD student
     co_supervised: true
