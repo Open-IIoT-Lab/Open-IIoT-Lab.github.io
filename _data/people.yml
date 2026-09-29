@@ -11,20 +11,24 @@ groups:
     role: PhD student
     co_supervised: true
   - name: Yuchen Zhang
+    photo: /assets/images/people/yuchen-zhang.jpg
     initials: YZ
     role: PhD student
     co_supervised: true
     dates: 2021–present
   - name: Wenbin Tian
+    photo: /assets/images/people/wenbin-tian.jpg
     initials: WT
     role: PhD student
     dates: 2022–present
   - name: Haoran Shi
+    photo: /assets/images/people/haoran-shi.jpg
     initials: HS
     role: PhD student
     co_supervised: true
     dates: 2022–present
   - name: Yifei Sun
+    photo: /assets/images/people/yifei-sun.jpg
     initials: YS
     role: PhD student
     co_supervised: true
@@ -34,19 +38,23 @@ groups:
     role: PhD student
     dates: 2023–present
   - name: Junying Huang
+    photo: /assets/images/people/junying-huang.jpg
     initials: JH
     role: PhD student
     dates: 2023–present
   - name: Jingze Zheng
+    photo: /assets/images/people/jingze-zheng.jpg
     initials: JZ
     role: PhD student
     co_supervised: true
     dates: 2023–present
   - name: Zhipeng Tang
+    photo: /assets/images/people/zhipeng-tang.jpg
     initials: ZT
     role: PhD student
     dates: 2024–present
   - name: Ruizhe He
+    photo: /assets/images/people/ruizhe-he.jpg
     initials: RH
     role: PhD student
     co_supervised: true
@@ -57,19 +65,23 @@ groups:
     co_supervised: true
     dates: 2024–present
   - name: Yichuan Yang
+    photo: /assets/images/people/yichuan-yang.jpg
     initials: YY
     role: Integrated bachelor's–PhD program
     co_supervised: true
     dates: 2022–present
   - name: Binhong Yu
+    photo: /assets/images/people/binhong-yu.jpg
     initials: BY
     role: PhD student
     dates: 2025–present
   - name: Kaihang Xu
+    photo: /assets/images/people/kaihang-xu.jpg
     initials: KX
     role: PhD student
     dates: 2025–present
   - name: Leqi Sun
+    photo: /assets/images/people/leqi-sun.jpg
     initials: LS
     role: PhD student
     dates: 2026–present
@@ -77,13 +89,23 @@ groups:
   name: Master's students
   members:
   - name: Zheyan Zheng
+    photo: /assets/images/people/zheyan-zheng.jpg
     initials: ZZ
     role: Master's student
     dates: 2025–present
   - name: Hao Chen
+    photo: /assets/images/people/hao-chen.jpg
     initials: HC
     role: Master's student
     dates: 2026–present
+  - name: Qizhi Cai
+    photo: /assets/images/people/qizhi-cai.jpg
+    initials: QC
+    role: Master's student
+  - name: Yizhen Wang
+    photo: /assets/images/people/yizhen-wang.jpg
+    initials: YW
+    role: Master's student
 - id: alumni
   name: Alumni
   members:
