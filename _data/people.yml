@@ -104,10 +104,12 @@ groups:
     photo: /assets/images/people/qizhi-cai.jpg
     initials: QC
     role: Master's student
+    dates: 2026–present
   - name: Yizhen Wang
     photo: /assets/images/people/yizhen-wang.jpg
     initials: YW
     role: Master's student
+    dates: 2026–present
 - id: alumni
   name: Alumni
   members:
